@@ -47,7 +47,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, topBar
                   <img
                     alt="8K Ruta de las Mandarinas"
                     src="/assets/imgs/template/logo-mandarinas-blanco.svg"
-                    style={{ height: "70px" }}
+                    style={{ height: "50px" }}
                   />
                 </Link>
               </div>

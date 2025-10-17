@@ -10030,3 +10030,144 @@ a.icon-socials:hover {
 /* 1.MENU BOTONES */
 
 
+
+/* ==========================================================
+   🎨 NUEVA LÍNEA GRÁFICA — 10K Independencia de Ambato (2025)
+   ========================================================== */
+
+:root {
+  --brand-primary: #1CA7A6;   /* Verde azulado */
+  --brand-secondary: #D6E764; /* Verde lima */
+  --brand-text: #FFFFFF;      /* Blanco */
+  --brand-dark: #0B0B0B;      /* Fondo oscuro base */
+}
+
+/* Fondo general del sitio */
+body {
+  background: linear-gradient(180deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  color: var(--brand-text);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Formularios */
+input, select, textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--brand-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botones principales */
+.btn,
+button,
+input[type=submit] {
+  background-color: var(--brand-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover,
+button:hover,
+input[type=submit]:hover {
+  background-color: var(--brand-secondary);
+  color: var(--brand-dark);
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brand-text);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Tarjetas, banners o secciones oscuras */
+.section-dark,
+.card-dark {
+  background-color: var(--brand-dark);
+  color: var(--brand-text);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* “Inscripciones cerradas” o alertas */
+.alert-cerradas {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--brand-secondary);
+  color: var(--brand-secondary);
+  border-radius: 10px;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   🎨 NUEVA LÍNEA GRÁFICA — 10K Independencia de Ambato (2025)
+   ========================================================== */
+
+
+   /* ==========================================================
+   🎨 Actualización botón principal — 10K Independencia de Ambato
+   ========================================================== */
+
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+
+.btn.btn-brand-4-medium {
+    background-color: #1CA7A6 !important; /* Verde azulado principal */
+    color: #ffffff !important;             /* Texto blanco */
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-brand-4-medium:hover {
+    background-color: #D6E764 !important;  /* Verde lima al pasar */
+    color: #0B0B0B !important;             /* Texto oscuro */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(28, 167, 166, 0.3);
+}
+
+
+/* === Forzar override del botón === */
+body .btn.btn-brand-4-medium,
+html .btn.btn-brand-4-medium {
+  background-color: #1CA7A6 !important; /* verde azulado */
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+body .btn.btn-brand-4-medium:hover,
+html .btn.btn-brand-4-medium:hover {
+  background-color: #D6E764 !important; /* verde lima hover */
+  color: #0B0B0B !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 15px rgba(28, 167, 166, 0.3) !important;
+}
+
+.header {
+    top: 20px!important;
+}
+
+
+
+
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+/* Header1.js */
+

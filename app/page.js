@@ -1,4 +1,34 @@
+import Layout from '@/components/layout/Layout';
+import FromHome from '@/components/sections/home1/FormHome';
+
+// opcional si quieres asegurar build estático
+export const dynamic = 'force-static';
+
+export const metadata = {
+  title: 'Inscripción | 8K Ruta de las Mandarinas',
+  description: 'Formulario oficial de inscripción para la 8K Ruta de las Mandarinas.',
+  alternates: { canonical: 'https://8krutadelasmandarinas.com/inscripcion' },
+};
+
+export default function InscripcionPage() {
+  return (
+    <Layout headerStyle={1} footerStyle={1} logoWhite>
+      <div style={{ paddingTop: '50px' }}>
+        <FromHome />
+      </div>
+    </Layout>
+  );
+}
+
+/*
+==========================================
+🏠 Página principal (Home.jsx) — COMENTADA
+==========================================
+
+// Importa el layout principal del sitio
 import Layout from "@/components/layout/Layout";
+
+// Importa las secciones de la página de inicio
 import Section1 from "@/components/sections/home1/Section1";
 import Section10 from "@/components/sections/home1/Section10";
 import Section11 from "@/components/sections/home1/Section11";
@@ -17,6 +47,8 @@ import MandarinaOptions from '@/components/sections/home1/MandarinaOptions';
 import FromHome from '@/components/sections/home1/FormHome';
 import RaceStatsBar from '@/components/sections/home1/RaceStatsBar';
 import PremiosTabs from "@/components/sections/informacion/PremiosTabs";
+
+// Componente principal de la página Home
 export default function Home() {
     return (
         <>
@@ -27,7 +59,7 @@ export default function Home() {
                 <MandarinaOptions />
                 <Section2 />
                 <VideoF1 />
-                {/* 🔽 Envolver el formulario con un ID para scroll */}
+                // 🔽 Envolver el formulario con un ID para scroll
                 <div id="formulario">
                     <FromHome />
                 </div>
@@ -45,5 +77,7 @@ export default function Home() {
     );
 }
 
-/*. <Section12 /> testimonio */
-/*. <Section13 />. blog */
+// Secciones adicionales comentadas
+// <Section12 /> // testimonio
+// <Section13 /> // blog
+*/

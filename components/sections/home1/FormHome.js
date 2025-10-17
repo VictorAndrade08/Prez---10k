@@ -4,8 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'; // opcional
 import { toast } from 'sonner'; // Notificaciones
 
-/* ⏰ DEADLINE: 26 Sep 2025, 14:00 hora Ecuador (UTC-5) */
-const DEADLINE = new Date('2025-09-26T14:00:00-05:00').getTime();
+/* ⏰ DEADLINE: fecha/hora de la CARRERA (hora Ecuador, UTC-5) */
+const DEADLINE = new Date('2025-11-23T08:00:00-05:00').getTime();
+// ↑ Cambia '2025-11-23T08:00:00-05:00' por tu fecha real de carrera
 
 /* =========================================================
    Configuración integración WordPress (admin-ajax)
@@ -282,7 +283,7 @@ export default function SectionFormInscripcion() {
     };
 
     const msgLines = [
-      'Hola, me quiero inscribir en la *8K Ruta de las Mandarinas*.',
+      'Hola, me quiero inscribir en la *10K Independencia de Ambato 2025*.',
       '',
       '*Datos del participante:*',
       `Nombre: ${safe.nombre}`,
@@ -353,7 +354,7 @@ export default function SectionFormInscripcion() {
       className="section-box mandarina-form-wrapper scroll-offset"
     >
       <div className="container">
-        <h2 className="mandarina-form-title">Inscripción Oficial 8K Ruta de las Mandarinas</h2>
+        <h2 className="mandarina-form-title">Inscripción Oficial 10K Independencia de Ambato 2025</h2>
 
         {/* ⏳ Contador (con placeholder para evitar hydration) */}
         <div
