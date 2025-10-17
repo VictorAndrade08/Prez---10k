@@ -1,0 +1,5114 @@
+/* ========================================================================== */
+/* 8K RUTA DE LAS MANDARINAS - MAIN CSS                                       */
+/* Limpieza + colores de marca + fondo global + tipografía deportiva          */
+/* ========================================================================== */
+
+
+/* -------------------------------------------------------------------------- */
+/* MENÚ OCULTO (temporal)                                                     */
+/* -------------------------------------------------------------------------- */
+.main-menu {
+  visibility: hidden;
+}
+
+    .burger-icon {
+        display: none!important;
+        top: 0px;
+    }
+
+
+
+.burger-icon > span.burger-icon-mid {
+    display: none;
+}
+
+
+.sticky-bar.stick .burger-icon {
+    display: none;
+}
+
+.btn.btn-search {
+  padding: 10px 30px;
+  background: url(../imgs/template/icons/search.svg) no-repeat center;
+  visibility: hidden;
+}
+
+
+
+.scroll-target {
+  scroll-margin-top: 120px; /* O el alto exacto de tu header */
+}
+
+/* Puedes ajustar el valor según la altura de tu header */
+.scroll-offset {
+  scroll-margin-top: 100px; /* por ejemplo si tu header mide 100px */
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* VARIABLES DE MARCA                                                         */
+/* -------------------------------------------------------------------------- */
+:root {
+  /* Colores Bootstrap override */
+  --bs-primary: #FF6C00 !important;      /* Naranja Mandarina */
+  --bs-secondary: #4C1C6F !important;    /* Púrpura Intenso */
+  --bs-success: #A5C32A !important;      /* Verde Hoja */
+  --bs-danger: #D14A00 !important;       /* Rojo Mandarina */
+  --bs-dark: #1A1A1A !important;         /* Negro Profundo */
+  --bs-warning: #FFC300 !important;      /* Amarillo cálido */
+
+  /* Alias personalizados */
+  --color-naranja-mandarina: #FF6C00;
+  --color-purpura-intenso: #4C1C6F;
+  --color-verde-hoja: #A5C32A;
+  --color-rojo-mandarina: #D14A00;
+  --color-negro-profundo: #1A1A1A;
+
+  /* Tipografías (Barlow Condensed ya cargada vía next/font/google en layout) */
+  --tg-body-font-family: 'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif;
+  --tg-heading-font-family: 'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Escala tipográfica (puedes ajustar) */
+  --h1-size: clamp(2.5rem, 5vw, 4rem);
+  --h2-size: clamp(1.75rem, 3vw, 3rem);
+  --h3-size: clamp(1.25rem, 2vw, 2rem);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* FONDO GLOBAL (degradado + imagen)                                          */
+/* -------------------------------------------------------------------------- */
+html {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,108,0,0.85) 0%,
+      rgba(76,28,111,0.95) 100%
+    ),
+    url('/assets/imgs/page/homepage1/mandarinafondo.webp') center / cover no-repeat fixed;
+  background-attachment: fixed, fixed;
+  background-blend-mode: multiply;
+}
+
+body {
+  background: transparent;
+  color: #1A1A1A;
+  font-family: var(--tg-body-font-family);
+  line-height: 1.4;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* TIPOGRAFÍA DEPORTIVA GLOBAL PARA HEADINGS                                  */
+/* -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3,
+.hero-title,
+.mandarina-card h3 {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 1.1;
+  font-family: var(--tg-heading-font-family);
+}
+
+h1, .h1 { font-size: var(--h1-size); }
+h2, .h2 { font-size: var(--h2-size); }
+h3, .h3 { font-size: var(--h3-size); }
+
+/* Ajuste heredado */
+.display-2 { font-size: 55px !important; } /* si aún lo necesitas */
+
+
+/* -------------------------------------------------------------------------- */
+/* CONTADOR HOME                                                              */
+/* -------------------------------------------------------------------------- */
+/* ===== Desktop tal como estaba ===== */
+.countdown-wrapper {
+  background-color: var(#4c1c6f00);
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-title h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-right: 40px;
+  text-align: right;
+  font-family: 'Poppins', sans-serif;
+  max-width: 300px;
+}
+
+.countdown-grid {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.circle { width: 100%; height: 100%; }
+
+.track {
+  fill: none;
+  stroke: var(--color-verde-hoja);
+  stroke-width: 20;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+}
+
+.indicator {
+  fill: none;
+  stroke: var(--color-naranja-mandarina);
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-dasharray: 565.48;
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.number-label { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.number { font-size: 50px; font-weight: 800; line-height: 1; }
+.label  { font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ===== Responsive: 2×2 ===== */
+@media (max-width: 991.98px) {
+  .countdown-wrapper{
+    flex-direction: column !important;
+    padding: 28px 12px 24px !important;
+    overflow: hidden !important;
+  }
+
+  .countdown-title h2{
+    max-width: 640px !important;
+    margin: 0 0 14px 0 !important;
+    text-align: center !important;
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .countdown-grid{
+    display: grid !important;                    
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px 16px !important;                   
+    width: 100% !important;
+    max-width: 560px !important;                 
+    margin: 0 auto !important;
+    justify-items: center !important;
+    align-items: center !important;
+    padding: 4px 6px 10px !important;
+  }
+
+  .countdown-grid > *{
+    flex: initial !important;
+    max-width: none !important;
+  }
+
+  .circle-container{
+    width: clamp(128px, 34vw, 168px) !important;
+    height: clamp(128px, 34vw, 168px) !important;
+  }
+
+  .number { font-size: clamp(26px, 6.2vw, 40px) !important; }
+  .label  { font-size: clamp(10px, 2.6vw, 13px) !important; }
+}
+
+/* -------------------------------------------------------------------------- */
+/* BOTONES MARATÓN (versión antigua; se mantiene por si se usa en otra vista) */
+/* -------------------------------------------------------------------------- */
+.botones-maraton {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #ffffff;
+}
+
+.boton-maraton {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 3px solid var(--color-naranja-mandarina);
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 340px;
+  min-height: 150px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--color-purpura-intenso);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.boton-maraton:hover {
+  background-color: var(--color-naranja-mandarina);
+  color: #ffffff;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 108, 0, 0.4);
+}
+
+.contenido {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.icono {
+  font-size: 2.2rem;
+  color: var(--color-purpura-intenso);
+  transition: color 0.3s ease;
+}
+
+.texto {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-purpura-intenso);
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.boton-maraton:hover .icono,
+.boton-maraton:hover .texto {
+  color: #ffffff;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* VARIACIONES DE BOTÓN (si usas Bootstrappy)                                 */
+/* -------------------------------------------------------------------------- */
+.btn.btn-brand-4-medium {
+  background-color: var(--color-naranja-mandarina) !important;
+  color: #ffffff !important;
+}
+.btn.btn-brand-4-medium svg { fill: #ffffff !important; }
+
+.btn.btn-brand-5-new span {
+  background-color: var(--color-verde-hoja) !important;
+  color: #191919;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* VARIOS ESTILOS EXISTENTES                                                  */
+/* -------------------------------------------------------------------------- */
+.box-authors .item-author .text-num-author {
+  background-color: var(--color-verde-hoja);
+  color: #ffffff;
+}
+
+.logo-icon-mandarina {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.strate-icon {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.icon-logo-mandarina {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #C5FF55;
+  padding: 5px;
+}
+
+.mandarina-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mandarina-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.mandarina-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #191919;
+  margin: 0;
+}
+
+.box-our-track-2 { padding-block: 50px !important; }
+.box-how-it-work { padding-block: 50px !important; }
+.box-pricing-3 { padding-block: 50px !important; }
+
+
+/* -------------------------------------------------------------------------- */
+/* BOTONES MANDARINA – CUADROS DE IMAGEN (los de la fila de 4)                */
+/* -------------------------------------------------------------------------- */
+.botones-mandarina .mandarina-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-inline: auto;
+  max-width: 1600px;
+}
+
+@media (max-width: 991.98px) {
+  .botones-mandarina .mandarina-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575.98px) {
+  .botones-mandarina .mandarina-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.botones-mandarina .mandarina-card--square {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+}
+
+/* Cuadro 1:1 */
+.botones-mandarina .mandarina-card--square .mandarina-bg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  /* clave: texto abajo vía flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1rem 1.25rem; /* ajusta distancia al borde inferior */
+}
+
+/* Overlay gradiente p/ legibilidad */
+.botones-mandarina .mandarina-card--square .mandarina-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,.45) 75%,
+    rgba(0,0,0,.75) 100%
+  );
+  z-index: 0;
+  transition: background .25s ease;
+}
+
+/* Texto dentro (usa .mandarina-text en el <h3>) */
+.botones-mandarina .mandarina-card--square .mandarina-bg .mandarina-text,
+.botones-mandarina .mandarina-card--square .mandarina-bg h3 {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+
+  color: #fff;
+  font-family: var(--tg-heading-font-family, var(--tg-body-font-family));
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(1rem, 1.6vw, 1.75rem);
+  text-shadow: 0 0 6px rgba(0,0,0,.65);
+}
+
+@media (max-width: 575.98px) {
+  .botones-mandarina .mandarina-card--square .mandarina-bg {
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Hover: zoom leve + glow mandarina */
+.botones-mandarina .mandarina-card--square:hover .mandarina-bg,
+.botones-mandarina .mandarina-card--square:focus-visible .mandarina-bg {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 4px rgba(255,108,0,.85);
+}
+.botones-mandarina .mandarina-card--square:hover .mandarina-bg::after,
+.botones-mandarina .mandarina-card--square:focus-visible .mandarina-bg::after {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.25) 50%,
+    rgba(0,0,0,.80) 100%
+  );
+}
+
+/* Focus accesible en el link */
+.botones-mandarina .mandarina-card--square:focus-visible {
+  outline: 4px solid var(--color-naranja-mandarina);
+  outline-offset: 3px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* VIDEO OFICIAL                                                              */
+/* -------------------------------------------------------------------------- */
+.video-oficial-section {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.video-oficial-section h2 {
+  font-family: var(--tg-heading-font-family, var(--tg-body-font-family));
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  margin: 0;
+}
+
+.video-oficial-section p {
+  max-width: 48ch;
+  margin-inline: auto;
+  line-height: 1.4;
+}
+
+/* Marco oscuro (franja negra) */
+.video-frame {
+  background: #1c1c1c;
+  padding: clamp(8px, 1vw, 24px);
+  margin-inline: auto;
+  border-radius: 0;
+  max-width: 100%;
+}
+
+/* Contenedor 16:9 */
+.video-responsive {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #000;
+}
+.video-responsive iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Fallback sin aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+  .video-responsive { height: 0; padding-top: 56.25%; }
+  .video-responsive iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+}
+
+
+/* Texto claro sobre fondo oscuro en la sección del video */
+.video-oficial-section {
+  color: #fff;
+}
+
+.video-oficial-section h2 {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+
+.video-oficial-section p {
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+}
+
+/* Texto claro en el párrafo bajo el video */
+.video-oficial-section .neutral-700,
+.video-oficial-section .text-lg,
+.video-oficial-section p {
+  color: rgba(255,255,255,.92) !important; /* casi blanco */
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+
+/* ============================================================
+   UTILIDAD: TEXTO CLARO SOBRE FONDOS OSCUROS
+   Aplica .on-dark a cualquier sección que vaya sobre el degradado
+   ============================================================ */
+.on-dark {
+  color: rgba(255,255,255,.92);
+}
+
+.on-dark h1,
+.on-dark h2,
+.on-dark h3,
+.on-dark h4,
+.on-dark h5,
+.on-dark h6 {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+
+.on-dark p,
+.on-dark .neutral-700,
+.on-dark .text-lg,
+.on-dark .lead {
+  color: rgba(255,255,255,.85) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+/* Links dentro de secciones oscuras */
+.on-dark a {
+  color: #fff;
+  text-decoration: underline;
+}
+.on-dark a:hover,
+.on-dark a:focus-visible {
+  color: var(--color-naranja-mandarina);
+}
+
+
+/* Texto blanco SOLO en el párrafo introductorio de Section4 (.box-preparing-2) */
+.box-preparing-2 .text-center > p,
+.box-preparing-2 .text-center > .neutral-700,
+.box-preparing-2 .text-center > .text-lg {
+  color: #ffffff !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+
+/* ============================================================
+   Section4 (box-preparing-2) – Ajustes visuales solicitados
+   ============================================================ */
+
+/* Título y copy intro ya blancos; refuerzo por si otras reglas pisan */
+.box-preparing-2 .text-center > h2 {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+.box-preparing-2 .text-center > p {
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+/* --- Cards --- */
+.box-preparing-2 .card-preparing {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+/* Quita el bloque/gris/degradado y deja la imagen full-width */
+.box-preparing-2 .card-preparing .card-image {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 auto 1.25rem;
+  width: 100%;
+  max-width: 100%;
+}
+.box-preparing-2 .card-preparing .card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* cambia a 8px si quieres esquinas redondeadas */
+}
+
+/* Texto bajo cada imagen en blanco */
+.box-preparing-2 .card-preparing h5 {
+  color: #ffffff !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.6);
+  margin-bottom: .5rem;
+}
+.box-preparing-2 .card-preparing p {
+  color: rgba(255,255,255,.9) !important;
+  text-shadow: 0 0 3px rgba(0,0,0,.5);
+  max-width: none !important; /* anula w-85 */
+}
+
+/* Aumenta aire debajo de la sección (se cortaba muy rápido) */
+.box-preparing-2 {
+  padding-bottom: clamp(4rem, 8vw, 10rem) !important;
+}
+
+
+/* ============================================
+   Section5 (box-our-track-2) - Texto en blanco
+   ============================================ */
+
+.box-our-track-2 {
+  color: #ffffff;
+}
+
+.box-our-track-2 h2,
+.box-our-track-2 h3,
+.box-our-track-2 p {
+  color: #ffffff !important;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.box-our-track-2 .text-md,
+.box-our-track-2 .text-lg {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.box-our-track-2 .btn-learmore-2 {
+  color: #C5FF55 !important;
+}
+
+
+/* ================================
+   Section7 (.box-how-it-work)
+   Texto superior en blanco
+   ================================ */
+.box-how-it-work > .container > h2 {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+
+.box-how-it-work > .container > p {
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+
+
+/* ========================================================================== */
+/* Section10 – Categorías (Mandarina Clean)                                   */
+/* ========================================================================== */
+
+.mandarina-cats-legacy {
+  padding-top: 60px !important;
+  padding-bottom: 100px !important;
+}
+
+/* Texto encabezado */
+.mandarina-cats-legacy .text-center h2 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.55);
+}
+.mandarina-cats-legacy .text-center p {
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+}
+
+/* Ocultamos precios (no se usan) */
+.mandarina-cats-legacy .card-pricing .card-price {
+  display: none !important;
+}
+
+/* Ajuste padding general de las tarjetas */
+.mandarina-cats-legacy .card-pricing.card-pricing-style-3 {
+  padding: 2.25rem 2rem 2.75rem !important;
+  border-radius: 48px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tarjetas claras (por defecto) */
+.mandarina-cats-legacy .card-pricing:not(.card-pricing-popular) {
+  background: #EDEFF5 !important;       /* gris muy claro */
+  border: 2px solid rgba(255,108,0,.35) !important;
+  color: #191919 !important;
+}
+
+/* Tarjeta Popular (oscura) */
+.mandarina-cats-legacy .card-pricing-popular {
+  background: #191919 !important;
+  border: 2px solid rgba(197,255,85,.85) !important;
+  color: #FFFFFF !important;
+}
+
+/* Badge “Popular” */
+.mandarina-cats-legacy .card-pricing-popular .btn-popular {
+  background: #C5FF55 !important;
+  color: #191919 !important;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  border: none !important;
+  padding: .25rem .75rem;
+  line-height: 1;
+  border-radius: 999px;
+  top: -12px;
+}
+
+/* Títulos dentro de las tarjetas */
+.mandarina-cats-legacy .card-pricing .card-title h6 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: inherit !important; /* se ajusta según tarjeta */
+}
+
+/* Botón call‑to‑action (tarjetas claras) */
+.mandarina-cats-legacy .card-pricing .btn-get-started {
+  background: #FFFFFF;
+  border: 2px solid #FF6C00;
+  color: #191919;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: 999px;
+  padding: 0.9rem 2rem;
+  display: inline-block;
+  transition: all .18s ease;
+}
+
+/* Flechas heredadas fuera */
+.mandarina-cats-legacy .card-pricing .btn-get-started::after,
+.mandarina-cats-legacy .card-pricing .btn-get-started svg {
+  display: none !important;
+  content: none !important;
+}
+
+/* Hover tarjetas claras: Mandarina + texto blanco */
+.mandarina-cats-legacy .card-pricing:not(.card-pricing-popular) .btn-get-started:hover,
+.mandarina-cats-legacy .card-pricing:not(.card-pricing-popular) .btn-get-started:focus-visible {
+  background: #FF6C00;
+  border-color: #FF6C00;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255,108,0,.45);
+}
+
+/* Botón en tarjeta popular (lima) */
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started {
+  background: #C5FF55 !important;
+  border: 2px solid #C5FF55 !important;
+  color: #191919 !important;
+}
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started:hover,
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(197,255,85,.45);
+}
+
+/* Label “Categorías” */
+.mandarina-cats-legacy .card-pricing .card-lists strong {
+  display: block;
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: inherit !important; /* se adapta */
+}
+
+/* Lista (limpia, sin SVG pesado) */
+.mandarina-cats-legacy .card-pricing .list-feature {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: .5rem;
+}
+.mandarina-cats-legacy .card-pricing .list-feature svg {
+  display: none !important;
+}
+.mandarina-cats-legacy .card-pricing .list-feature li {
+  position: relative;
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: inherit !important;
+}
+.mandarina-cats-legacy .card-pricing .list-feature li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #C5FF55;
+  font-weight: 700;
+}
+
+/* =======================================================================
+   Section10 – Mandarina Categorías (clean)
+   ======================================================================= */
+.mandarina-cats-clean {
+  padding-top: 60px !important;
+  padding-bottom: 100px !important;
+  color: #ffffff; /* color base para texto de encabezado */
+}
+.mandarina-cats-clean .text-center h2 {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.55);
+}
+.mandarina-cats-clean .text-center p {
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+}
+
+/* Cards base (heredan del theme) */
+.mandarina-cats-clean .card-pricing {
+  color: inherit;
+}
+
+/* Tarjetas claras */
+.mandarina-cats-clean .card-pricing:not(.card-pricing-popular) {
+  background: rgba(255,255,255,.9) !important;
+  border: 2px solid rgba(255,255,255,.35) !important;
+  color: #191919 !important;
+  backdrop-filter: blur(6px);
+}
+.mandarina-cats-clean .card-pricing:not(.card-pricing-popular) .card-title h6,
+.mandarina-cats-clean .card-pricing:not(.card-pricing-popular) .card-lists strong,
+.mandarina-cats-clean .card-pricing:not(.card-pricing-popular) .card-lists li {
+  color: #191919 !important;
+}
+
+/* Tarjeta Popular (negra) */
+.mandarina-cats-clean .card-pricing-popular {
+  background: #191919 !important;
+  border: 2px solid rgba(197,255,85,.85) !important;
+  color: #ffffff !important;
+}
+.mandarina-cats-clean .card-pricing-popular .card-title h6,
+.mandarina-cats-clean .card-pricing-popular .card-lists strong,
+.mandarina-cats-clean .card-pricing-popular .card-lists li {
+  color: #ffffff !important;
+}
+
+/* Ocultar precios */
+.mandarina-cats-clean .card-price {
+  display: none !important;
+}
+
+/* Botones claros (no-arrow) */
+.mandarina-cats-clean .btn-cat-light {
+  background: #ffffff !important;
+  border: 2px solid #FF6C00 !important;
+  color: #191919 !important;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.9rem 2rem;
+  line-height: 1;
+  transition: all .18s ease;
+}
+.mandarina-cats-clean .btn-cat-light:hover,
+.mandarina-cats-clean .btn-cat-light:focus-visible {
+  background: #FF6C00 !important;
+  border-color: #FF6C00 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255,108,0,.45);
+}
+
+/* Botón Popular (negra) */
+.mandarina-cats-clean .btn-cat-popular {
+  background: #C5FF55 !important;
+  border: 2px solid #C5FF55 !important;
+  color: #191919 !important;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.9rem 2rem;
+  line-height: 1;
+  transition: all .18s ease;
+}
+.mandarina-cats-clean .btn-cat-popular:hover,
+.mandarina-cats-clean .btn-cat-popular:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(197,255,85,.45);
+}
+
+/* Badge Popular */
+.mandarina-cats-clean .card-pricing-popular .btn-popular {
+  background: #C5FF55 !important;
+  color: #191919 !important;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: .25rem .75rem;
+  line-height: 1;
+  top: -12px;
+}
+
+/* Listas numeradas */
+.mandarina-cats-clean .list-feature--numbered {
+  list-style: decimal;
+  margin: 1.25rem 0 0 1.25rem; /* sangría de lista decimal */
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.mandarina-cats-clean .card-pricing-popular .list-feature--numbered {
+  margin-left: 1.5rem;
+}
+
+/* Ajuste padding tarjetas */
+.mandarina-cats-clean .card-pricing.card-pricing-style-3 {
+  padding: 2.25rem 2rem 2.75rem !important;
+}
+
+/* ==============================================
+   Section10 ajustes – quitar flechas & hover
+   ============================================== */
+
+/* Quita cualquier pseudo-flecha heredada del theme */
+.mandarina-cats-legacy .btn-get-started::after {
+  content: none !important;
+}
+
+/* Oculta cualquier svg flecha dentro del botón */
+.mandarina-cats-legacy .btn-get-started svg {
+  display: none !important;
+}
+
+/* Botones claros que marcamos con .no-arrow  */
+.mandarina-cats-legacy .btn-get-started.no-arrow {
+  background: #FFFFFF;
+  border: 2px solid #FF6C00;
+  color: #191919;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: all .18s ease;
+}
+
+/* Hover / focus: invertimos a Mandarina con texto blanco */
+.mandarina-cats-legacy .btn-get-started.no-arrow:hover,
+.mandarina-cats-legacy .btn-get-started.no-arrow:focus-visible {
+  background: #FF6C00;
+  border-color: #FF6C00;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255,108,0,.45);
+}
+
+/* Asegura que el botón popular (tarjeta negra) conserve su estilo limo */
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started {
+  background: #C5FF55;
+  border: 2px solid #C5FF55;
+  color: #191919;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: all .18s ease;
+}
+
+/* Hover en Popular: leve glow lima, NO cambiar texto a blanco (lo que pediste) */
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started:hover,
+.mandarina-cats-legacy .card-pricing-popular .btn-get-started:focus-visible {
+  background: #C5FF55;
+  border-color: #C5FF55;
+  color: #191919;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(197,255,85,.45);
+}
+
+
+/* ----- Section10: Encabezado en blanco ----- */
+.box-pricing-2 .mandarina-cats-head {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.55);
+}
+
+.box-pricing-2 .mandarina-cats-sub {
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+}
+
+
+/* =========================================================
+   Section10 / mandarina-cats - estilos por tarjeta
+   ========================================================= */
+
+/* Encabezado blanco (ya lo tenías, repito por claridad) */
+.mandarina-cats-head{
+  color:#fff!important;
+  text-shadow:0 0 8px rgba(0,0,0,.55);
+}
+.mandarina-cats-sub{
+  color:rgba(255,255,255,.92)!important;
+  text-shadow:0 0 4px rgba(0,0,0,.5);
+}
+
+/* Base todas las tarjetas */
+.mandarina-cats .mandarina-cat {
+  border:none!important;              /* quita línea */
+  box-shadow:0 0 0 2px rgba(255,255,255,.15) inset; /* borde suave interior */
+  border-radius:48px!important;
+  padding:2.25rem 2rem 2.75rem!important;
+  position:relative;
+}
+
+/* Texto base en tarjetas */
+.mandarina-cats .mandarina-cat .card-title h6,
+.mandarina-cats .mandarina-cat .card-lists strong,
+.mandarina-cats .mandarina-cat .list-feature li {
+  font-style:italic;
+  font-weight:700;
+  text-transform:uppercase;
+  line-height:1.1;
+}
+
+/* Lista, chequecitos */
+.mandarina-cats .mandarina-cat .list-feature{
+  list-style:none;
+  margin:1.25rem 0 0;
+  padding:0;
+  display:grid;
+  gap:.5rem;
+  font-size:0.95rem;
+  line-height:1.35;
+}
+.mandarina-cats .mandarina-cat .list-feature svg{display:none!important;}
+.mandarina-cats .mandarina-cat .list-feature li{
+  position:relative;
+  padding-left:1.4rem;
+}
+.mandarina-cats .mandarina-cat .list-feature li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#C5FF55; /* verde lima */
+  font-weight:700;
+}
+
+/* ---------------- Principales (naranja) ---------------- */
+.mandarina-cats .mandarina-cat--principales{
+  background:rgba(255,108,0,.15);
+  color:#191919;
+}
+.mandarina-cats .mandarina-cat--principales .card-title h6,
+.mandarina-cats .mandarina-cat--principales .card-lists strong,
+.mandarina-cats .mandarina-cat--principales .list-feature li{
+  color:#191919;
+}
+.mandarina-cats .mandarina-cat-btn--principales{
+  background:#C5FF55;
+  border:2px solid #C5FF55;
+  color:#191919!important;
+  border-radius:999px;
+  padding:.9rem 2rem;
+  font-weight:700;
+  font-style:italic;
+  text-transform:uppercase;
+  line-height:1;
+  transition:all .18s ease;
+}
+.mandarina-cats .mandarina-cat-btn--principales:hover,
+.mandarina-cats .mandarina-cat-btn--principales:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(197,255,85,.45);
+}
+
+/* ---------------- Master (tarjeta negra) ---------------- */
+.mandarina-cats .mandarina-cat--master{
+  background:#191919;
+  box-shadow:0 0 0 2px rgba(197,255,85,.65) inset;
+  color:#fff;
+}
+.mandarina-cats .mandarina-cat--master .card-title h6,
+.mandarina-cats .mandarina-cat--master .card-lists strong,
+.mandarina-cats .mandarina-cat--master .list-feature li{
+  color:#fff;
+}
+.mandarina-cats .mandarina-cat--master .btn-popular{
+  background:#C5FF55!important;
+  color:#191919!important;
+  border:none!important;
+  font-weight:700;
+  font-style:italic;
+  text-transform:uppercase;
+  border-radius:999px;
+  padding:.25rem .75rem;
+  line-height:1;
+  position:absolute;
+  right:2rem;
+  top:-14px;
+}
+.mandarina-cats .mandarina-cat-btn--master{
+  background:#C5FF55;
+  border:2px solid #C5FF55;
+  color:#191919!important;
+  border-radius:999px;
+  padding:.9rem 2rem;
+  font-weight:700;
+  font-style:italic;
+  text-transform:uppercase;
+  line-height:1;
+  transition:all .18s ease;
+}
+.mandarina-cats .mandarina-cat-btn--master:hover,
+.mandarina-cats .mandarina-cat-btn--master:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(197,255,85,.45);
+}
+
+/* ---------------- Especiales (claro/púrpura) ---------------- */
+.mandarina-cats .mandarina-cat--especiales{
+  background:rgba(76,28,111,.08);
+  color:#191919;
+}
+.mandarina-cats .mandarina-cat--especiales .card-title h6,
+.mandarina-cats .mandarina-cat--especiales .card-lists strong,
+.mandarina-cats .mandarina-cat--especiales .list-feature li{
+  color:#191919;
+}
+.mandarina-cats .mandarina-cat-btn--especiales{
+  background:#fff;
+  border:2px solid #FF6C00;
+  color:#191919!important;
+  border-radius:999px;
+  padding:.9rem 2rem;
+  font-weight:700;
+  font-style:italic;
+  text-transform:uppercase;
+  line-height:1;
+  transition:all .18s ease;
+}
+.mandarina-cats .mandarina-cat-btn--especiales:hover,
+.mandarina-cats .mandarina-cat-btn--especiales:focus-visible{
+  background:#FF6C00;
+  border-color:#FF6C00;
+  color:#fff!important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(255,108,0,.45);
+}
+
+
+/* =========================================================
+   FIX Section10 - quitar línea fantasma + texto en blanco
+   ========================================================= */
+
+/* Encabezado sección en blanco (por si otras reglas pisan) */
+.section-box.box-pricing-2.box-pricing-3 .text-center h2,
+.section-box.box-pricing-2.box-pricing-3 .text-center p {
+  color:#fff!important;
+  text-shadow:0 0 8px rgba(0,0,0,.55);
+}
+
+/* Quitar cualquier borde/outline/ghost-line del theme */
+.mandarina-cats .mandarina-cat,
+.section-box.box-pricing-2.box-pricing-3 .card-pricing-style-3 {
+  border:none!important;
+  outline:none!important;
+  box-shadow:none!important;
+  background-clip:padding-box!important;
+  position:relative;
+}
+
+/* También anula pseudo-elementos que dibujan líneas */
+.mandarina-cats .mandarina-cat::before,
+.mandarina-cats .mandarina-cat::after,
+.section-box.box-pricing-2.box-pricing-3 .card-pricing-style-3::before,
+.section-box.box-pricing-2.box-pricing-3 .card-pricing-style-3::after {
+  content:none!important;
+  display:none!important;
+}
+
+/* Fondo oscuro translúcido para las tarjetas que van sobre el degradado
+   (principales y especiales) para que el texto blanco tenga contraste. */
+.mandarina-cats .mandarina-cat--principales,
+.mandarina-cats .mandarina-cat--especiales {
+  background:rgba(0,0,0,.35)!important;
+  color:#fff!important;
+}
+
+/* Textos en blanco dentro de esas tarjetas */
+.mandarina-cats .mandarina-cat--principales .card-title h6,
+.mandarina-cats .mandarina-cat--principales .card-lists strong,
+.mandarina-cats .mandarina-cat--principales .list-feature li,
+.mandarina-cats .mandarina-cat--especiales .card-title h6,
+.mandarina-cats .mandarina-cat--especiales .card-lists strong,
+.mandarina-cats .mandarina-cat--especiales .list-feature li {
+  color:#fff!important;
+}
+
+/* Botones de esas tarjetas: estilo claro → hover mandarina */
+.mandarina-cats .mandarina-cat-btn--principales,
+.mandarina-cats .mandarina-cat-btn--especiales {
+  background:#fff;
+  border:2px solid #FF6C00;
+  color:#191919!important;
+  border-radius:999px;
+  padding:.9rem 2rem;
+  font-weight:700;
+  font-style:italic;
+  text-transform:uppercase;
+  line-height:1;
+  transition:all .18s ease;
+}
+.mandarina-cats .mandarina-cat-btn--principales:hover,
+.mandarina-cats .mandarina-cat-btn--principales:focus-visible,
+.mandarina-cats .mandarina-cat-btn--especiales:hover,
+.mandarina-cats .mandarina-cat-btn--especiales:focus-visible {
+  background:#FF6C00;
+  border-color:#FF6C00;
+  color:#fff!important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(255,108,0,.45);
+}
+
+/* Checks lime se mantienen visibles sobre fondo oscuro */
+.mandarina-cats .mandarina-cat--principales .list-feature li::before,
+.mandarina-cats .mandarina-cat--especiales .list-feature li::before {
+  color:#C5FF55!important;
+}
+
+
+/* =========================================================
+   Section10 - matar línea fantasma horizontal
+   ========================================================= */
+
+/* 1) Quita cualquier borde-top / background-line en los wrappers */
+.section-box.box-pricing-2.box-pricing-3 .block-pricing,
+.section-box.box-pricing-2.box-pricing-3 .block-pricing .row {
+  border:0!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+
+/* 2) Muchos themes dibujan hairlines con pseudos; los apagamos */
+.section-box.box-pricing-2.box-pricing-3 .block-pricing::before,
+.section-box.box-pricing-2.box-pricing-3 .block-pricing::after,
+.section-box.box-pricing-2.box-pricing-3 .block-pricing .row::before,
+.section-box.box-pricing-2.box-pricing-3 .block-pricing .row::after {
+  content:none!important;
+  display:none!important;
+}
+
+/* 3) Por si alguna columna tiene borde superior */
+.section-box.box-pricing-2.box-pricing-3 .block-pricing [class*="col-"] {
+  border-top:0!important;
+  background-image:none!important;
+}
+
+/* 4) Asegura que las tarjetas se pinten encima (tapan residuos) */
+.section-box.box-pricing-2.box-pricing-3 .card-pricing-style-3 {
+  position:relative;
+  z-index:1;
+}
+
+/* ==== QUITAR LA LÍNEA FANTASMA EN SECTION10 ==================== */
+/* Aplica al <section class="... mandarina-cats"> y descendientes. */
+
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing .row,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .mandarina-cat {
+  border: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important; /* evita hairlines de gradients */
+}
+
+/* Desactiva pseudo-elementos decorativos que dibujan líneas */
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats::before,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats::after,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing::before,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing::after,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing .row::before,
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing .row::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Por si alguna columna trae un borde-top heredado */
+.section-box.box-pricing-2.box-pricing-3.mandarina-cats .block-pricing [class*="col-"] {
+  border-top: 0 !important;
+  background-image: none !important;
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Línea gráfica Mandarina (usada en Section3, reusable)          */
+/* -------------------------------------------------------------- */
+.mandarina-graphic-line {
+  width: clamp(80px, 20%, 160px);
+  height: 8px;
+  margin-bottom: 1.25rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #FF6C00 0%,
+    #FFC300 35%,
+    #C5FF55 100%
+  );
+  box-shadow:
+    0 0 8px rgba(255,108,0,.65),
+    0 0 16px rgba(197,255,85,.35);
+}
+
+/* Variante centrada opcional */
+.mandarina-graphic-line.is-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Section3 sobre fondo oscuro: forza texto blanco */
+.box-our-track.on-dark,
+.box-our-track.on-dark * {
+  /* inherit base color blanco suave */
+  color: rgba(255,255,255,.92);
+}
+
+.box-our-track.on-dark h1,
+.box-our-track.on-dark h2,
+.box-our-track.on-dark h3,
+.box-our-track.on-dark h4,
+.box-our-track.on-dark h5,
+.box-our-track.on-dark h6 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+
+.box-our-track.on-dark p,
+.box-our-track.on-dark .text-md,
+.box-our-track.on-dark .text-lg,
+.box-our-track.on-dark .neutral-700,
+.box-our-track.on-dark .neutral-500 {
+  color: rgba(255,255,255,.90) !important;
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+/* Links dentro de Section3 sobre oscuro */
+.box-our-track.on-dark a {
+  color: #FFFFFF;
+}
+.box-our-track.on-dark a:hover,
+.box-our-track.on-dark a:focus-visible {
+  color: #FF6C00; /* Mandarina highlight */
+}
+
+
+
+/* Línea gráfica base (ya definida antes; repito por claridad) */
+.mandarina-graphic-line {
+  width: 160px;
+  height: 4px;
+  margin: 16px 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #FF6C00 0%,
+    #FF6C00 30%,
+    #C5FF55 100%
+  );
+  pointer-events: none;
+}
+
+/* Variante más corta / alineada para FAQ (columna izquierda) */
+.mandarina-graphic-line--faq {
+  width: 120px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Quitar glow en la línea gráfica de la sección FAQ */
+.box-faq-left .mandarina-graphic-line--faq {
+  box-shadow: none !important;
+  filter: none !important;
+  /* opcional: ajusta altura/ancho si quieres más discreta */
+  height: 4px;
+  width: 120px;
+  background: linear-gradient(90deg,#FF6C00 0%,#FFAA00 40%,#C5FF55 100%);
+}
+
+
+.mandarina-graphic-line { box-shadow: none; filter: none; }
+
+/* FAQ Mandarina tweaks */
+.mandarina-faqs .mandarina-wa-link {
+  color: var(--color-naranja-mandarina, #FF6C00) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.mandarina-faqs .mandarina-wa-link:hover,
+.mandarina-faqs .mandarina-wa-link:focus-visible {
+  color: #ffffff !important;
+  background: var(--color-naranja-mandarina, #FF6C00);
+  text-decoration: none;
+  padding: 0 .25em;
+  border-radius: 4px;
+}
+
+/* Si por algún motivo quedó una línea gráfica previa, la apagamos */
+.mandarina-faqs .mandarina-graphic-line,
+.box-faqs-3 .mandarina-graphic-line {
+  display: none !important;
+}
+
+
+
+/* ===========================================
+   Formulario Inscripción 8K Mandarina
+   =========================================== */
+.mandarina-form-wrapper {
+  padding-block: clamp(4rem, 6vw, 8rem);
+}
+
+/* Títulos */
+.mandarina-form-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 0 8px rgba(0,0,0,.6);
+}
+.mandarina-form-intro {
+  max-width: 48ch;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 0 4px rgba(0,0,0,.55);
+}
+
+/* Step indicator */
+.mandarina-form-steps {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: italic;
+  color: rgba(255,255,255,.5);
+}
+.mandarina-form-steps span.is-current {
+  color: #fff;
+  position: relative;
+}
+.mandarina-form-steps span.is-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: var(--color-naranja-mandarina,#FF6C00);
+  border-radius: 2px;
+}
+
+/* Form container */
+.mandarina-form {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* Fieldset block */
+.mandarina-form-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.mandarina-form-fieldset + .mandarina-form-fieldset { margin-top: 3rem; }
+
+.mandarina-form-fieldset > legend {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid rgba(255,255,255,.25);
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: 1.25rem;
+}
+
+/* Field generic */
+.mandarina-field {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.mandarina-field-group {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width:575.98px){
+  .mandarina-field-group { grid-template-columns: 1fr; }
+}
+
+.mandarina-field label {
+  display: block;
+  margin-bottom: .25rem;
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: .95rem;
+  line-height: 1.2;
+}
+
+/* inputs */
+.mandarina-field input[type="text"],
+.mandarina-field input[type="email"],
+.mandarina-field input[type="tel"],
+.mandarina-field input[type="number"],
+.mandarina-field select,
+.mandarina-field input[type="file"] {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.mandarina-field input::placeholder {
+  color: rgba(255,255,255,.55);
+  font-style: italic;
+}
+.mandarina-field select {
+  background-color: rgba(0,0,0,.35);
+}
+.mandarina-field input[type="file"] {
+  padding: .75rem;
+  cursor: pointer;
+}
+
+.mandarina-field input:focus,
+.mandarina-field select:focus,
+.mandarina-field input[type="file"]:focus {
+  outline: none;
+  border-color: var(--color-naranja-mandarina,#FF6C00);
+  box-shadow: 0 0 0 3px rgba(255,108,0,.45);
+}
+
+/* file name */
+.mandarina-file-name {
+  display: block;
+  margin-top: .5rem;
+  color: rgba(255,255,255,.75);
+  font-size: .85rem;
+}
+
+/* errors */
+.mandarina-error {
+  display: block;
+  margin-top: .25rem;
+  color: var(--color-rojo-mandarina,#D14A00);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+/* nav buttons */
+.mandarina-form-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.mandarina-form-nav.is-two { justify-content: space-between; }
+
+.mandarina-btn {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.mandarina-btn-next,
+.mandarina-btn-submit {
+  background: var(--color-naranja-mandarina,#FF6C00);
+  color: #fff;
+}
+.mandarina-btn-prev {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.35);
+}
+.mandarina-btn:hover,
+.mandarina-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+.mandarina-btn-next:hover,
+.mandarina-btn-submit:hover,
+.mandarina-btn-next:focus-visible,
+.mandarina-btn-submit:focus-visible {
+  box-shadow: 0 8px 22px rgba(255,108,0,.45);
+}
+.mandarina-btn-prev:hover,
+.mandarina-btn-prev:focus-visible {
+  box-shadow: 0 8px 22px rgba(255,255,255,.25);
+}
+
+/* privacy text */
+.mandarina-form-privacy {
+  margin-top: 2.5rem;
+  text-align: center;
+  max-width: 48ch;
+  margin-inline: auto;
+  font-size: .85rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.3;
+}
+
+/* ==== Ajustes para evitar que el teclado tape los campos en móvil ==== */
+
+/* El wrapper del formulario debe permitir crecer con el teclado */
+.mandarina-form-wrapper {
+  min-height: 100dvh; /* Altura dinámica real del viewport en móvil */
+  overflow-y: auto; /* Permitir scroll vertical */
+  padding-bottom: clamp(72px, 20vh, 160px); /* Espacio extra para cuando sube el teclado */
+}
+
+/* Inputs en móvil: evitar zoom de iOS y corregir offset de scroll */
+.mandarina-form-wrapper input,
+.mandarina-form-wrapper select,
+.mandarina-form-wrapper textarea {
+  font-size: 16px; /* Evita el zoom forzado en iOS */
+  scroll-margin-top: var(--header-offset, 88px); /* Evita que el header sticky tape el campo enfocado */
+}
+
+/* Offset para scroll automático si hay header sticky */
+:root {
+  --header-offset: 88px; /* Cambia según la altura real de tu header */
+}
+  
+
+/* =========================================
+   Formulario Mandarina – extras paso 2
+   ========================================= */
+.mandarina-form .mandarina-price-hint {
+  display:block;
+  margin-top:.25rem;
+  font-size:.85rem;
+  color:var(--color-verde-hoja,#C5FF55);
+  font-weight:600;
+  font-style:italic;
+}
+
+/* Tarjeta info banco */
+.mandarina-bank-card {
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding:1.5rem;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:16px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  color:#fff;
+  font-size:1rem;
+  line-height:1.35;
+}
+.mandarina-bank-card h3{
+  margin:0 0 .75rem 0;
+  font-size:1.25rem;
+  text-transform:uppercase;
+  font-style:italic;
+  font-weight:700;
+  color:#fff;
+}
+.mandarina-bank-card p{
+  margin:0 0 1rem 0;
+  color:rgba(255,255,255,.9);
+}
+.mandarina-bank-card ul{
+  margin:0 0 1rem 1.25rem;
+  padding:0;
+  list-style:disc;
+}
+.mandarina-bank-card li{
+  margin-bottom:.25rem;
+  color:#fff;
+}
+.mandarina-bank-wa{
+  margin:0;
+  font-size:.95rem;
+  color:rgba(255,255,255,.85);
+  font-style:italic;
+}
+
+
+
+.mandarina-form select,
+.mandarina-form option {
+  color: #fff;               /* texto visible */
+  background-color: #1a1a1a; /* fondo consistente */
+}
+
+/* Placeholder "Selecciona…" */
+.mandarina-form option[value=""] {
+  color: #aaa;
+}
+
+/* Quitar estilos nativos de Safari/Android */
+.mandarina-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* FromHome.js */
+/* FromHome.js */
+/* FromHome.js */
+/* FromHome.js */
+
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+
+.mandarinas-stats-bar {
+  background: linear-gradient(90deg, #4c1c6f47, #4c1c6f69);
+  color: #fff;
+  padding: 28px 24px;
+  font-family: 'Arial', sans-serif;
+}
+
+.mandarinas-stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.mandarinas-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.label {
+  font-size: 15px; /* Más grande en desktop */
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 22px; /* Más grande en desktop */
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.2;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.value.special {
+  font-size: 24px; /* Más grande en desktop */
+  font-weight: 900;
+  color: #fff700;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 14px rgba(255, 255, 255, 1);
+  }
+}
+
+/* ✅ Responsive: más compacto en móvil */
+@media (max-width: 768px) {
+  .mandarinas-stats-bar {
+    padding: 20px 12px;
+  }
+
+  .mandarinas-stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .label {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .value {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .value.special {
+    font-size: 17px;
+  }
+}
+
+
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+/* RaceStatsBar.js */
+
+/* Section1.js */
+/* Section1.js */
+/* Section1.js */
+/* Section1.js */
+
+/* ========= ESTILOS HERO - VIDEO Y BOTONES ========= */
+
+/* ========================
+   Estilos Hero Sección 1
+   ======================== */
+
+/* 🎥 Fondo del video */
+.hero-video-bg {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  transform-origin: center center;
+  border: none;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* 🔆 Capa fosforescente */
+.btn-fosforescente {
+  background-color: #c4ff00;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.btn-fosforescente:hover {
+  transform: scale(1.05);
+}
+.etiqueta {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 🟠 Botón principal vibrante */
+.btn-inscribete-vibrante {
+  background-color: #ff6c00;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-align: center;
+}
+.btn-inscribete-vibrante:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================
+   RESPONSIVE: Móviles
+   ======================== */
+@media (max-width: 768px) {
+  /* 🎥 Video responsivo vertical */
+  .hero-video-bg {
+    width: 250vw !important;
+    height: 140vh !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1.4) !important;
+    transform-origin: center center !important;
+    pointer-events: none !important;
+    z-index: -2 !important;
+  }
+
+  /* 📢 Título principal */
+  .display-2 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  /* 📄 Subtítulo */
+  .text-lg, .text-md, .subtitle-text {
+    font-size: 16px !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 📦 Espaciado horizontal */
+  .container, .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 🔃 Alineación vertical */
+  .d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  /* 🔘 Botones */
+  .btn-inscribete-vibrante,
+  .btn-fosforescente {
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    display: flex !important;
+    margin-bottom: 12px;
+  }
+
+  /* ⬆️ Espaciado superior */
+  .box-banner-left,
+  .hero-content,
+  .hero-text-wrapper {
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+    text-align: center !important;
+  }
+
+  /* 🚫 Evita desplazamiento horizontal */
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
+
+.lite-youtube-bg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.lite-youtube-bg iframe {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.btn-inscribete-vibrante {
+  color: #ffffff !important;
+  background-color: #FF6C00;
+  border-radius: 12px;
+  padding: 14px 26px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-inscribete-vibrante:hover {
+  background-color: #e85f00; /* opcional: un poco más oscuro */
+  color: #ffffff !important; /* mantener blanco al hacer hover */
+}
+
+.btn-fosforescente {
+  background-color: #c7ff00; /* color vibrante */
+  color: #000; /* texto negro */
+  border-radius: 50px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  width: auto;
+  max-width: 100%;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn-fosforescente:hover {
+  background-color: #b6eb00; /* tono un poco más oscuro al hacer hover */
+  color: #000; /* sigue negro */
+  transform: scale(1.03); /* efecto sutil */
+}
+
+.btn-fosforescente .etiqueta {
+  background: #333;
+  color: #c7ff00;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Section1.js */
+/* Section1.js */
+
+
+/* Section10.js */
+/* Section10.js */
+/* Section10.js */
+/* Section10.js */
+
+.card-categoria {
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-categoria:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* COLORES DE FONDO POR CATEGORÍA */
+.card-elite {
+  background: white;
+  color: #000;
+}
+
+.card-master {
+  background: #000;
+  color: #D4FF50;
+}
+
+.card-leyenda {
+  background: white;
+  border: 2px solid #4C1C6F;
+  color: #000;
+}
+
+.card-especiales {
+  background: #000;
+  border: 2px solid #FF6C00;
+  color: #D4FF50;
+}
+
+/* BOTÓN BASE */
+.btn-inscribete,
+.mandarina-cat-btn--uniform {
+  font-weight: bold;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  text-transform: uppercase;
+  display: inline-block;
+  font-style: normal;
+  font-size: 0.95rem;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* EFECTO HOVER MODERNO */
+.mandarina-cat-btn--uniform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  opacity: 0.15;
+  transform: skewX(-20deg);
+}
+
+.mandarina-cat-btn--uniform:hover::before {
+  left: 100%;
+}
+
+/* EFECTO DE SOMBRA + ESCALA */
+.mandarina-cat-btn--uniform:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* COLORES DIFERENCIADOS POR CATEGORÍA */
+.mandarina-cat--elite .mandarina-cat-btn--uniform {
+  background-color: #FF6347; /* tomate llamativo */
+  color: #fff;
+  animation: pulsoElite 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 rgba(255, 99, 71, 0.7);
+}
+
+.mandarina-cat--master .mandarina-cat-btn--uniform {
+  background-color: #D4FF50;
+  color: #000;
+}
+
+.mandarina-cat--leyenda .mandarina-cat-btn--uniform {
+  background-color: #4C1C6F;
+  color: #fff;
+}
+
+.mandarina-cat--especiales .mandarina-cat-btn--uniform {
+  background-color: #FF6C00;
+  color: #fff;
+}
+
+/* ANIMACIÓN DESTACADA PARA ÉLITE */
+@keyframes pulsoElite {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 99, 71, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 99, 71, 0);
+  }
+}
+
+/* Section10.js */
+/* Section10.js */
+/* Section10.js */
+/* Section10.js */
+
+
+/* Hero.js */
+/* Hero.js */
+/* Hero.js */
+/* Hero.js */
+
+/* ===== HERO INFORMACIÓN (prefijo inf-) ===== */
+/* ===== HERO INFORMACIÓN (prefijo inf-) ===== */
+.inf-hero{
+  color:#fff;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.45), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.35), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(48px, 8vw, 96px) 0 clamp(28px, 6vw, 64px);
+  border-bottom:1px solid #151522;
+  padding-top: 100px!important;
+}
+
+.inf-container{
+  width:100%;
+  max-width:1240px;
+  margin-inline:auto;
+  padding:0 24px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+  align-items:center;
+}
+@media (min-width:960px){
+  .inf-container{ grid-template-columns:.9fr 1.1fr; gap:48px; }
+}
+
+/* ---------- Tipografía ---------- */
+.inf-colText{ display:flex; flex-direction:column; gap:16px; }
+.inf-title{
+  font-weight:900;
+  letter-spacing:.2px;
+  line-height:1.08;
+  font-size:clamp(28px, 4.6vw, 40px);
+}
+.inf-subtitle{
+  color:#fff;
+  opacity:.85;
+  font-size:clamp(14px, 1.9vw, 18px);
+}
+
+/* ---------- Navegación rápida (chips de ancla) ---------- */
+.inf-quick{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.inf-quickItem{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  color:#F1EEFF;
+  font-size:14px;
+  text-decoration:none;
+  transition:background .2s ease, border-color .2s ease, transform .06s ease;
+}
+.inf-quickItem:hover{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.26);
+  transform:translateY(-1px);
+}
+
+/* ---------- Chips informativos ---------- */
+.inf-chips{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.inf-chip{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  color:#ECECF5;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:13px;
+  backdrop-filter:blur(6px);
+}
+
+/* ---------- Countdown ---------- */
+.inf-countdown{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.inf-counter{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  padding:14px 18px;
+  border-radius:16px;
+  min-width:100px;
+  text-align:center;
+}
+.inf-counter b{ display:block; font-size:26px; font-weight:900; }
+.inf-counter small{ opacity:.85; }
+
+/* ---------- Botones (estilo cápsula) ---------- */
+.inf-btns{ display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; }
+.inf-btn{
+  appearance:none;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:800;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid transparent;
+  transition:
+    transform .06s ease,
+    box-shadow .2s ease,
+    opacity .2s ease,
+    background .2s ease,
+    filter .2s ease;
+  white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.inf-btnXL{ padding:16px 28px; font-size:16px; }
+.inf-btn:active{ transform: translateY(1px); }
+.inf-arrow{ font-weight:900; transition:transform .15s ease; }
+.inf-btn:hover .inf-arrow{ transform: translateX(4px); }
+
+/* Botón principal (ovalado, marca) */
+.inf-btnPrimary{
+  background:#FF6C00;
+  color:#FFFFFF;               /* texto blanco consistente */
+  box-shadow:0 12px 28px rgba(255,108,0,.35);
+}
+@media (hover:hover){
+  .inf-btnPrimary:hover{ filter:saturate(1.06) brightness(1.05); }
+}
+
+/* Botón secundario */
+.inf-btnGhost{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.5);
+  color:#F6F3FF;
+}
+
+.inf-btnGhost:hover {
+  color:#F6F3FF;
+}
+@media (hover:hover){
+  .inf-btnGhost:hover{ background:rgba(255,255,255,.10); }
+  
+}
+
+/* ---------- Media (sin recorte ni desbordes) ---------- */
+.inf-colMedia{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  inline-size:100%;
+  aspect-ratio:16 / 9;                       /* proporción del bloque */
+  max-block-size: clamp(320px, 45vw, 560px); /* tope para no salirse */
+  border-radius:28px;
+  background:#0e0e14;                        /* bandas laterales si sobra */
+  overflow:hidden;                           /* respeta bordes redondeados */
+}
+.inf-mediaImg{
+  display:block;
+  max-inline-size:100%;
+  max-block-size:100%;
+  object-fit:contain;                         /* nunca recorta */
+  object-position:center;
+}
+
+/* =================== Responsive fino (<= 860px) =================== */
+@media (max-width:860px){
+  .inf-title{ font-size: clamp(26px, 6vw, 44px); }
+  .inf-subtitle{ font-size: clamp(14px, 2.8vw, 17px); }
+}
+
+/* =================== Responsive móvil fuerte (<= 640px) =================== */
+@media (max-width:640px){
+
+  /* Más separación vertical entre columna de texto e imagen */
+  .inf-container{
+    gap: clamp(36px, 8vw, 56px);
+  }
+
+  /* El countdown deja aire abajo antes de los botones */
+  .inf-countdown{
+    margin-top: 6px;
+    margin-bottom: clamp(22px, 6vw, 40px);
+  }
+
+  /* Los botones bajan un poco más */
+  .inf-btns{
+    margin-top: clamp(24px, 7vw, 44px);
+  }
+
+  /* Botón grande ocupa todo y centrado */
+  .inf-btnXL{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* Un pequeño “colchón” al final del bloque de texto */
+  .inf-colText{
+    padding-bottom: clamp(12px, 4vw, 24px);
+  }
+
+  /* La imagen separada del texto (y un poco más compacta) */
+  .inf-colMedia{
+    margin-top: clamp(12px, 4vw, 28px);
+    max-block-size: clamp(260px, 52vw, 420px);
+  }
+
+  /* Contadores más compactos */
+  .inf-counter{
+    min-width: 92px;
+    padding:12px 14px;
+    border-radius:14px;
+  }
+  .inf-counter b{ font-size:22px; }
+}
+
+/* === Countdown: 1 sola fila en móvil === */
+@media (max-width:640px){
+  .inf-countdown{
+    display:flex;
+    flex-wrap: nowrap;          
+    justify-content: space-between;
+    gap: 10px;                  
+    width: 100%;
+  }
+
+  .inf-counter{
+    flex: 1 1 0;                
+    min-width: 0;               
+    padding: 12px 10px;         
+    border-radius: 14px;        
+  }
+
+  .inf-counter b{
+    font-size: 22px;            
+    line-height: 1.05;
+  }
+
+  .inf-counter small{
+    font-size: 12px;            
+  }
+}
+
+
+/* Hero.js */
+/* Hero.js */
+/* Hero.js */
+
+
+
+/* SectionCards.js */
+/* SectionCards.js */
+/* SectionCards.js */
+/* SectionCards.js */
+
+/* ===== Sección tarjetas compacta, justo bajo el hero ===== */
+/* ===== Sección tarjetas: sin fondo negro y superpuesta al hero ===== */
+.cats-section{
+  background: transparent;                 /* <-- sin bloque negro */
+  padding: clamp(12px, 2vw, 20px) 0 clamp(36px, 5vw, 56px);
+  position: relative;
+  z-index: 2;                               /* queda por encima del hero */
+}
+
+/* Superpone sutilmente al hero (sube las tarjetas) */
+.cats--overlap{
+  margin-top: clamp(-56px, -6vw, -84px);    /* súbelo sin tocar el hero */
+}
+@media (max-width: 640px){
+  .cats--overlap{ margin-top: 0; }          /* en móvil no se solapa para evitar cortes */
+}
+
+.cats-container{
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;                                /* más compacto */
+}
+@media (min-width: 680px){
+  .cats-container{ grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+@media (min-width: 1024px){
+  .cats-container{ grid-template-columns: repeat(3, 1fr); gap: 22px; }
+}
+
+/* ------- Tarjeta / Botón ------- */
+.cats-card{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14px;
+
+  text-decoration: none;
+  border-radius: 22px;
+  padding: 16px 18px;                       /* más compacto */
+  min-height: 112px;
+
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.26),
+    0 0 0 1px rgba(0,0,0,.02) inset;        /* arista limpia */
+  transition: transform .18s ease, box-shadow .22s ease, filter .22s ease;
+}
+.cats-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.34);
+}
+
+/* Ícono redondo */
+.cats-ico{
+  width: 52px; height: 52px;                /* un poco menor */
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 24px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(6px);
+}
+
+/* Contenido */
+.cats-title{
+  margin: 0 0 4px 0;
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.15;
+}
+.cats-desc{
+  margin: 0;
+  font-size: clamp(13px, 1.2vw, 15px);
+  opacity: .92;
+}
+
+/* Tarjeta clara (blanca) → mejor contraste de bordes/sombra */
+.cats-card.is-light{
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+.cats-card.is-light .cats-ico{
+  background: rgba(0,0,0,.06);
+  border-color: rgba(0,0,0,.10);
+}
+
+/* Focus accesible para teclado */
+.cats-card:focus-visible{
+  outline: 3px solid #FF6C00;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(255,108,0,.35);
+}
+
+/* Responsive fino (móvil) */
+@media (max-width: 520px){
+  .cats-card{
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "ico title"
+      "ico desc";
+  }
+  .cats-ico{ grid-area: ico; }
+}
+
+
+
+/* SectionCards.js */
+/* SectionCards.js */
+/* SectionCards.js */
+/* SectionCards.js */
+
+
+
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+
+/* =============== Inscripción & Precio (Preventa) – Mejorado =============== */
+
+/* ===== Sección Inscripción & Precio (Preventa) ===== */
+.reg-section{
+  background:
+    radial-gradient(1100px 600px at 110% -10%, rgba(76,28,111,.22), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, rgba(255,108,0,.16), transparent 55%);
+  padding: clamp(40px,6vw,80px) 0;
+  color:#EDEDF6;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+
+.reg-container{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline:max(24px, env(safe-area-inset-left));
+  padding-right:max(24px, env(safe-area-inset-right));
+}
+
+/* ---------- Cabecera ---------- */
+.reg-title{
+  font-weight:900;
+  font-size: clamp(22px,4vw,36px);
+  letter-spacing:.2px;
+  margin:0 0 12px 0;
+}
+.reg-badge{ font-weight:800; color:#FFB482; }
+
+.reg-steps{
+  list-style:none; padding:0; margin: 10px 0 26px 0;
+  display:grid; gap:10px;
+}
+@media (min-width:860px){
+  .reg-steps{ grid-template-columns:repeat(3, 1fr); gap:16px; }
+}
+.reg-step{
+  display:flex; align-items:center; gap:10px;
+  color:#E9E9F3;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  padding:12px 14px; border-radius:14px; backdrop-filter:blur(6px);
+}
+.reg-stepNum{
+  width:30px;height:30px;border-radius:999px;display:grid;place-items:center;
+  font-weight:900;background:#ffffff14;border:1px solid #ffffff2a;
+}
+
+/* ---------- Tarjetas ---------- */
+.reg-cards{
+  margin-top:18px;
+  display:grid; gap:16px; grid-template-columns:1fr;
+}
+@media (min-width:860px){
+  .reg-cards{ grid-template-columns:repeat(3, 1fr); gap:22px; }
+}
+
+.reg-card{
+  position:relative;
+  background:#fff; color:#121217;
+  border-radius:22px;
+  padding:18px clamp(16px, 2vw, 22px);
+  border:1px solid rgba(10,10,15,.08);
+  box-shadow:0 8px 22px rgba(0,0,0,.16);
+  transition:transform .14s ease, box-shadow .22s ease;
+  min-height: 200px;
+}
+.reg-card:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(0,0,0,.22); }
+.reg-card--soft{ background: #fff; }
+
+/* Borde con gradiente sutil */
+.reg-card::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:22px;
+  padding:1px; background: linear-gradient(130deg, #0000, #0000 35%, #4C1C6F33, #FF6C0033);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+
+/* Icono */
+.reg-ico{
+  width:58px;height:58px;border-radius:14px; display:grid; place-items:center;
+  font-size:26px; background:#F4F5F7; border:1px solid rgba(0,0,0,.06); margin-bottom:10px;
+}
+
+/* Títulos y textos */
+.reg-cardTitle{ margin:4px 0 6px 0; font-weight:900; font-size: clamp(18px,2.2vw,22px); }
+.reg-cardSub{ margin:0; font-weight:700; color:#2a2a31; opacity:.9; }
+.reg-chip{
+  margin-left:.5ch; background:#F4F5FF; color:#343343; border:1px solid #E4E6F0;
+  font-size:.8rem; font-weight:800; padding:4px 8px; border-radius:999px;
+}
+
+/* Listas */
+.reg-list{
+  margin:10px 0 0 0;
+  padding-left: 1.1rem;
+  color:#2a2a31;
+}
+.reg-list--bullets li{ list-style: disc; }
+
+/* Card de precio */
+.reg-card--price{ overflow:hidden; }
+.reg-priceRibbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, #FF6C00, #FF9248);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: .4px;
+  padding: 6px 14px;
+  border-radius: 999px;  /* pastilla */
+  box-shadow: 0 4px 12px rgba(255, 108, 0, .4);
+  z-index: 2;
+}
+.reg-price{
+  font-size: clamp(26px, 3.2vw, 34px);
+  font-weight:900; letter-spacing:.2px;
+  background:linear-gradient(90deg,#4C1C6F,#FF6C00);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.reg-kitList{
+  margin:10px 0 0 0; padding:0; list-style:none;
+  columns: 2; column-gap:16px;
+}
+.reg-kitItem{ color:#3a3a46; opacity:.95; font-weight:700; margin:2px 0; }
+@media (max-width:520px){
+  .reg-kitList{ columns:1; }
+}
+.reg-miniNote{
+  margin-top:8px; font-size:.9rem; color:#3b3b49; opacity:.85;
+}
+
+/* ---------- CTAs ---------- */
+.reg-ctas{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top: clamp(16px, 3vw, 24px);
+}
+.reg-btn{
+  appearance:none;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:999px;
+  border:1px solid transparent;
+  padding:16px 32px;            /* tamaño igual al home */
+  font-weight:900;
+  font-size: 1.05rem;           /* tipografía igual */
+  letter-spacing:.2px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  min-width:220px;              /* ancho consistente */
+}
+.reg-btn:active{ transform:translateY(1px); }
+
+.reg-btnPrimary{
+  background:#FF6C00; 
+  color:#FFFFFF;
+  box-shadow:0 12px 28px rgba(255,108,0,.35);
+}
+.reg-arrow{ font-weight:900; margin-left:6px; }
+
+.reg-btnGhost{
+  background:transparent;
+  color:#F6F3FF;
+  border:1.5px solid rgba(255,255,255,.55);
+}
+
+/* Sin hover (no cambian estilo al pasar el mouse) */
+.reg-btnPrimary:hover,
+.reg-btnGhost:hover{
+  filter:none;
+  background:#FF6C00; 
+  color:inherit;
+  box-shadow:inherit;
+}
+
+/* Notas / extra */
+.reg-extra{ margin-top: clamp(12px, 2.6vw, 22px); color:#ECECF5; opacity:.96; }
+.reg-footNote{ margin:8px 0 0 0; opacity:.85; color:#E7E7F0; font-size:.95rem; }
+
+/* ---------- Responsive fino ---------- */
+@media (max-width:560px){
+  .reg-btn{ width:100%; }
+  .reg-card{ min-height:auto; }
+}
+
+/* Accesibilidad */
+.reg-btn:focus-visible,
+.reg-card:focus-visible{
+  outline:3px solid #FF6C00; outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(255,108,0,.35);
+}
+
+/* Texto extra en tarjetas */
+.reg-extraText{
+  margin-top:12px;
+  font-size:.95rem;
+  line-height:1.45;
+  color:#33333b;
+  opacity:.9;
+}
+
+
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+/* RegistrationPreventa.js */
+
+
+
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+/* ===== CATEGORÍAS & PREVENTA (prefijo catp-) ===== */
+/* ===== Sección Categorías & Precios de Preventa ===== */
+/* ===== CATEGORÍAS & PRECIOS (PREVENTA) ===== */
+/* ===== CATEGORÍAS & PRECIOS (PREVENTA) ===== */
+.catp-sec{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.20), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.16), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(48px, 6vw, 80px) 0;
+  color:#EDECF9;
+}
+
+.catp-wrap{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+
+.catp-title{
+  font-weight: 900;
+  letter-spacing:.2px;
+  font-size: clamp(22px, 3.3vw, 40px);
+  margin: 0 0 18px 0;
+  color:#fff;
+}
+.catp-badge{
+  font-weight: 900;
+  font-size: inherit;          /* mismo tamaño que el título */
+  color:#FF9A4A;
+}
+
+/* Grid responsive */
+.catp-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 2.8vw, 24px);
+  margin-top: clamp(16px, 2vw, 20px);
+  align-items: stretch;        /* estira todas las tarjetas a la misma altura */
+}
+@media (min-width: 780px){
+  .catp-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1180px){
+  .catp-grid{ grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Card */
+.catp-card{
+  background: #0F0F16;
+  border: 1px solid rgba(220,225,255,.10);
+  border-radius: 18px;
+  padding: clamp(16px, 2.3vw, 22px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.02);
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+
+  /* Altura uniforme y distribución interna */
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;               /* texto arriba, precio+botón abajo */
+  min-height: clamp(380px, 56vw, 480px);        /* altura base afinada */
+}
+@media (min-width:1180px){
+  .catp-card{ min-height: 460px; }              /* altura en desktop para que no queden tan abajo */
+}
+.catp-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 24px 48px rgba(0,0,0,.42);
+}
+
+/* Head (icono + título) */
+.catp-head{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.catp-ico{
+  width:60px; height:60px; border-radius:16px;
+  display:grid; place-items:center; font-size:28px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(6px);
+}
+.catp-h3{
+  margin:0; color:#FFF;
+  font-weight: 900; letter-spacing:.2px;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height:1.15;
+}
+
+/* Texto */
+.catp-body{
+  margin: 6px 0 16px 0;
+  color:#D8DAE9;
+  line-height: 1.55;
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+
+/* Precio (anclado al fondo) */
+.catp-price{
+  margin-top:5px;                                /* empuja precio al fondo */
+  font-size: clamp(16px, 1.6vw, 18px);
+  font-weight:800;
+  line-height:1.15;
+  color:#EAEAF6;
+}
+.catp-price span{ opacity:.95; }
+.catp-price strong{ color:#fff; font-weight:900; }
+
+/* Botón — igual al hero, sin hover visual */
+.catp-btn{
+  width:100%;
+  appearance:none;
+  cursor:pointer;
+  border-radius:999px;
+  padding:16px 28px;
+  border:1px solid transparent;
+  background:#FF6C00;
+  color:#FFFFFF;
+  font-weight:900;
+  font-size:1rem;
+  box-shadow:0 12px 28px rgba(255,108,0,.35);
+  transition: transform .06s ease;               /* sin cambios de color al hover */
+  margin-top:10px;
+}
+.catp-btn:hover{
+  background:#FF6C00;                            /* sin cambios */
+  color:#FFFFFF;                                 /* sin cambios */
+  box-shadow:0 12px 28px rgba(255,108,0,.35);    /* sin cambios */
+}
+.catp-btn:active{ transform:translateY(1px); }
+.catp-btn:focus-visible{
+  outline:3px solid #FF9A4A;
+  outline-offset:3px;
+}
+
+/* Notas */
+.catp-notes{
+  margin-top: clamp(18px, 3vw, 26px);
+  color:#CDD0E6;
+  font-size: clamp(13px, 1.4vw, 15px);
+}
+.catp-note{ margin:.35rem 0; }
+.catp-note b{ color:#fff; }
+
+
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+/*CategoriasPreventa.js*/
+
+
+/*KitOficial.js*/
+/*KitOficial.js*/
+/*KitOficial.js*/
+/*KitOficial.js*/
+
+/* ===== KIT OFICIAL (prefijo kit-) ===== */
+.kit-sec{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.18), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.14), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(48px, 6vw, 80px) 0;
+  color:#ECECF7;
+}
+
+.kit-wrap{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+
+.kit-title{
+  margin:0 0 clamp(16px, 2.4vw, 22px) 0;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size: clamp(22px, 3.3vw, 40px);
+}
+
+/* ===== Grid ===== */
+.kit-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 2.2vw, 20px);
+}
+@media (min-width: 900px){
+  .kit-grid{ grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ===== Card ===== */
+.kit-card{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  align-items:center;
+  gap: clamp(12px, 2vw, 16px);
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius: 18px;
+  padding: clamp(14px, 2.2vw, 20px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.02);
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.kit-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 24px 48px rgba(0,0,0,.40);
+}
+
+/* Wide (Souvenirs ocupa todo el ancho) */
+@media (min-width: 900px){
+  .kit-card--wide{
+    grid-column: 1 / -1;
+    min-height: 150px;
+    justify-content: flex-start;
+  }
+}
+
+/* ===== Icono ===== */
+.kit-ico{
+  width:64px; height:64px;
+  border-radius:16px;
+  display:grid; place-items:center;
+  font-size:30px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(6px);
+}
+
+/* ===== Texto ===== */
+.kit-content{ display:flex; flex-direction:column; gap:6px; }
+
+.kit-h3{
+  margin:0; color:#fff;
+  font-weight:900; letter-spacing:.2px;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height:1.15;
+}
+
+.kit-sub{
+  margin:0; color:#C9CDE3;
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+
+/* ===== Foco teclado ===== */
+.kit-card:focus-visible{
+  outline: 3px solid #FF6C00;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(255,108,0,.30);
+}
+
+/* ===== Imagen cuadrada grande ===== */
+.kit-media{
+  margin-top: clamp(24px, 5vw, 40px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:10px;
+}
+
+.kit-mediaBox{
+  width: clamp(320px, 90vw, 640px); /* más grande en desktop */
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow:hidden;
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  box-shadow:0 24px 60px rgba(0,0,0,.40);
+}
+
+.kit-mediaImg{
+  width:100%;
+  height:100%;
+  object-fit: cover;  /* usa contain si no quieres recorte */
+  object-position:center;
+  display:block;
+}
+
+.kit-mediaCap{
+  margin-top:8px;
+  font-size:0.95rem;
+  color:#C9CDE3;
+  opacity:.9;
+}
+
+
+/*KitOficial.js*/
+/*KitOficial.js*/
+/*KitOficial.js*/
+/*KitOficial.js*/
+
+
+/*Ruta.js*/
+/*Ruta.js*/
+/*Ruta.js*/
+/*Ruta.js*/
+/* ===== RUTA (prefijo route-) ===== */
+/* ===== RUTA (prefijo route-) ===== */
+/* =========================
+   RUTA (prefijo .route-)
+   ========================= */
+/* =========================
+   RUTA (prefijo .route-)
+   ========================= */
+.route-sec{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.18), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.14), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(48px, 6vw, 80px) 0;
+  color:#ECECF7;
+}
+
+.route-wrap{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+
+.route-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.4vw, 24px);
+}
+@media (min-width: 1000px){
+  .route-grid{ grid-template-columns: 1.05fr 0.95fr; }
+}
+
+.route-card,
+.route-mapCard{
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius:18px;
+  padding: clamp(16px, 2.4vw, 24px);
+  box-shadow:0 20px 40px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+.route-title{
+  margin:0 0 clamp(12px, 2vw, 18px) 0;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height:1.1;
+}
+
+.route-meta{
+  margin:0 0 8px 0;
+  color:#C9CDE3;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+.route-meta span{ opacity:.9; }
+.route-meta strong{ color:#fff; font-weight:800; }
+.route-dot{ padding:0 8px; opacity:.5; }
+
+.route-desc{
+  margin: 0 0 clamp(14px, 2vw, 20px) 0;
+  color:#C9CDE3;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+/* ===== Botones ===== */
+.route-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: clamp(10px, 1.6vw, 14px);
+}
+.route-btn{
+  appearance:none;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.2px;
+  border-radius:999px;
+  border:1px solid transparent;
+  white-space:nowrap;
+  padding:16px 28px;
+  min-height:56px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+.route-btnPrimary{
+  background:#FF6C00;
+  color:#FFFFFF;
+  border-color:transparent;
+  box-shadow:0 12px 28px rgba(255,108,0,.35);
+}
+.route-btnPrimary:hover{ background:#FF6C00; box-shadow:0 12px 28px rgba(255,108,0,.35); }
+.route-btnPrimary:active{ transform: translateY(1px); }
+.route-btnGhost{
+  background:transparent;
+  color:#F6F3FF;
+  border:1px solid rgba(255,255,255,.45);
+}
+.route-btnGhost:hover{ border-color:rgba(255,255,255,.65); }
+.route-btnGhost:active{ transform: translateY(1px); }
+
+/* Pill “SOONER” */
+.route-soonPill{
+  margin-left:.6ch;
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.4px;
+  padding:.2rem .55rem;
+  border-radius:999px;
+  color:#0f0f16;
+  background:#FFC170;
+}
+
+/* Botones móviles */
+@media (max-width: 560px){
+  .route-actions .route-btn{ width:100%; }
+}
+
+/* ===== Mapa / Imagen 1:1 ===== */
+.route-mapCard{
+  display:grid;
+  place-items:center;
+  padding: clamp(10px, 1.4vw, 14px);
+}
+.route-mapBox{
+  inline-size: 100%;
+  max-inline-size: 560px;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background:#0b0b12;
+  border:1px solid rgba(200,205,230,.18);
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  display:grid; place-items:center;
+  padding:0;
+  cursor:zoom-in;
+}
+.route-mapImg{
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;          /* <- evita recorte en la miniatura */
+  object-position: center;
+  background:#0b0b12;
+  display:block;
+}
+.route-mapPlaceholder{
+  inline-size: 100%;
+  max-inline-size: 560px;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  background:#0b0b12;
+  border:1px dashed rgba(200,205,230,.45);
+  color:#9aa3ba;
+  font-size: clamp(14px, 1.6vw, 18px);
+  display:grid; place-items:center;
+  text-align:center;
+  padding:12px;
+}
+
+/* ===== Lightbox (sin recortes) ===== */
+.route-lightbox{
+  position:fixed; inset:0;
+  background:rgba(10,10,12,.78);
+  backdrop-filter: blur(6px) saturate(115%);
+  -webkit-backdrop-filter: blur(6px) saturate(115%);
+  display:grid; place-items:center;
+  z-index:9999;
+  padding:clamp(12px, 3vw, 28px);
+  animation: fadeIn .25s ease;
+}
+
+/* Deja que el contenedor se adapte a la imagen */
+.route-lightboxInner{
+  position:relative;
+  display:inline-block;
+  border-radius:16px;
+  background:#0b0b12;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 20px 60px rgba(0,0,0,.55);
+  animation: scaleIn .25s ease;
+}
+
+/* La imagen manda: limita por viewport, sin recorte */
+.route-lightboxImg{
+  display:block;
+  width:auto;                  /* <- no forzar 100% */
+  height:auto;                 /* <- no forzar 100% */
+  max-width:96vw;
+  max-height:92vh;             /* <- cabe completa */
+  object-fit: contain;         /* <- nunca se corta */
+  user-select:none;
+  pointer-events:none;
+  touch-action:none;
+}
+
+.route-lightboxClose{
+  position:absolute; top:10px; right:10px;
+  width:44px; height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);
+  color:#fff; font-weight:900;
+  display:grid; place-items:center;
+  cursor:pointer;
+  z-index:2;
+}
+.route-lightboxClose:hover{ background:rgba(255,255,255,.14); }
+.route-lightboxClose:focus-visible{
+  outline:3px solid #FF6C00;
+  outline-offset:2px;
+}
+
+/* Animaciones */
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+@keyframes scaleIn{ from{transform:scale(.95);opacity:0} to{transform:scale(1);opacity:1} }
+
+/* Focus accesible */
+.route-btn:focus-visible,
+.route-card:focus-visible,
+.route-mapCard:focus-visible{
+  outline:3px solid #FF6C00;
+  outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(255,108,0,.28);
+}
+
+
+/*Ruta.js*/
+/*Ruta.js*/
+/*Ruta.js*/
+/*Ruta.js*/
+
+
+/*Beneficios.js*/
+/*Beneficios.js*/
+/*Beneficios.js*/
+/*Beneficios.js*/
+
+
+/* ===== BENEFICIOS (prefijo benef-) ===== */
+.benef-sec{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.12), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.10), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(44px, 6vw, 80px) 0;
+  color:#ECECF7;
+}
+
+.benef-wrap{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+
+.benef-title{
+  margin:0 0 clamp(18px, 3vw, 28px) 0;
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height:1.1;
+  color:#fff;
+}
+
+/* Grid superior de tarjetas */
+.benef-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 2.4vw, 20px);
+  margin-bottom: clamp(16px, 3vw, 24px);
+}
+
+@media (min-width:860px){
+  .benef-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.benef-card{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items:center;
+
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius: 18px;
+  padding: clamp(14px, 2.2vw, 20px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.02);
+
+  transition: transform .14s ease, box-shadow .2s ease, background .2s ease;
+}
+.benef-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 26px 50px rgba(0,0,0,.34);
+}
+.benef-card:active{ transform: translateY(0); }
+
+/* Icono en píldora */
+.benef-ico{
+  width:56px; height:56px;
+  display:grid; place-items:center;
+  border-radius:16px;
+  font-size:26px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+}
+
+.benef-content{ min-width: 0; }
+.benef-cardTitle{
+  margin:0 0 4px 0;
+  font-weight:900;
+  letter-spacing:.2px;
+  line-height:1.12;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color:#fff;
+}
+.benef-cardDesc{
+  margin:0;
+  color:#C9CDE3;
+  font-size: clamp(13px, 1.6vw, 18px);
+}
+
+/* Tarjeta ancha inferior */
+.benef-wide{
+  margin-top: clamp(8px, 1.6vw, 12px);
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items:center;
+
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius: 18px;
+  padding: clamp(18px, 2.6vw, 28px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+.benef-wideContent{ text-align:center; width:100%; }
+.benef-wideTitle{
+  margin:0 0 4px 0;
+  font-weight:900;
+  font-size: clamp(18px, 2.8vw, 30px);
+  color:#fff;
+}
+.benef-wideDesc{
+  margin:0;
+  color:#C9CDE3;
+  font-size: clamp(14px, 2vw, 22px);
+}
+
+/* Accesibilidad (focus visible) */
+.benef-card:focus-visible,
+.benef-wide:focus-visible{
+  outline:3px solid #FF6C00;
+  outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(255,108,0,.28);
+}
+
+/* Responsive fino (tablet/móvil) */
+@media (max-width:860px){
+  .benef-card{ align-items:flex-start; }
+  .benef-ico{ width:52px; height:52px; font-size:24px; }
+}
+@media (max-width:520px){
+  .benef-ico{ width:48px; height:48px; font-size:22px; border-radius:14px; }
+}
+
+/* ===== Showcase: Google Maps + Foto ===== */
+.benef-showcase{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 2.4vw, 20px);
+  margin: clamp(8px, 2.4vw, 16px) 0 clamp(12px, 3vw, 20px);
+}
+@media (min-width:900px){
+  .benef-showcase{ grid-template-columns: 1.1fr 0.9fr; }
+}
+
+/* --- MAPA --- */
+.benef-mapCard{
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.02);
+  padding:0;
+  overflow:hidden;
+}
+.benef-mapBox{
+  width:100%;
+  height: clamp(360px, 42vw, 520px);
+}
+.benef-mapBox iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* --- FOTO --- */
+.benef-photoCard{
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.10);
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.02);
+  padding:0;
+  overflow:hidden;
+}
+.benef-photoBox{
+  width:100%;
+  aspect-ratio:1 / 1;
+  border-radius:inherit;
+  overflow:hidden;
+}
+.benef-photoBox img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.benef-photoCap{
+  margin-top:8px;
+  color:#C9CDE3;
+  font-size: clamp(12px, 1.3vw, 14px);
+  text-align:center;
+  opacity:.9;
+}
+
+
+/*Beneficios.js*/
+/*Beneficios.js*/
+/*Beneficios.js*/
+/*Beneficios.js*/
+
+
+
+
+/*Faq.js*/
+/*Faq.js*/
+/*Faq.js*/
+/*Faq.js*/
+
+/* ===== FAQ (prefijo faq-) ===== */
+.faq-sec{
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(76,28,111,.12), transparent 60%),
+    radial-gradient(1100px 700px at -20% 110%, rgba(255,108,0,.10), transparent 55%),
+    linear-gradient(180deg, #0c0c12 0%, #0a0a0f 100%);
+  padding: clamp(44px, 6vw, 80px) 0;
+  color:#EAEAF4;
+}
+.faq-wrap{
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+.faq-title{
+  margin:0 0 clamp(18px, 3vw, 28px) 0;
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height:1.1;
+  color:#fff;
+}
+
+/* Grid */
+.faq-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap: clamp(12px, 2.2vw, 16px);
+}
+@media (min-width: 980px){
+  .faq-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Item */
+.faq-item{
+  background:#0F0F16;
+  border:1px solid rgba(220,225,255,.14);
+  border-radius:18px;
+  box-shadow:0 16px 36px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.02);
+  overflow:hidden;
+}
+
+/* Summary */
+.faq-summary{
+  list-style:none; /* oculta triangle default en Safari */
+  padding: clamp(16px, 2.4vw, 22px);
+  font-weight:900;
+  font-size: clamp(16px, 2.6vw, 22px);
+  color:#fff;
+  display:flex; align-items:center; gap:10px;
+  cursor:pointer;
+  outline:none;
+}
+.faq-summary::-webkit-details-marker{ display:none; }
+
+.faq-caret{
+  width:22px; flex:0 0 auto;
+  color:#fff; opacity:.95;
+  transition: transform .18s ease;
+}
+
+/* Answer */
+.faq-answer{
+  padding: 0 clamp(16px, 2.4vw, 22px) clamp(16px, 2.4vw, 22px);
+  color:#C9CDE3;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 1.55;
+  border-top:1px solid rgba(220,225,255,.10);
+}
+
+/* State: open */
+.faq-item[open] .faq-caret{ transform: rotate(180deg); }
+.faq-item[open] .faq-summary{
+  background: linear-gradient(180deg, rgba(255,108,0,.08), transparent 80%);
+}
+
+/* Focus accesible */
+.faq-item:focus-within{
+  outline:3px solid #FF6C00;
+  outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(255,108,0,.26);
+  border-color: rgba(255,108,0,.35);
+}
+
+/* Hover suave */
+.faq-item:hover{
+  border-color: rgba(220,225,255,.20);
+  box-shadow:0 20px 44px rgba(0,0,0,.30);
+}
+
+/*Faq.js*/
+/*Faq.js*/
+/*Faq.js*/
+/*Faq.js*/
+
+
+
+/* ========= Footer Mandarinas DARK (namespace .fm-) ========= */
+/* ===================== Footer Mandarinas (DARK • Interactivo) ===================== */
+/* Pégalo en: public/assets/css/main.css  */
+/* Namespace: .fm-  (no colisiona con estilos globales) */
+/* =============================
+   WIREFRAME B/N (sin colores)
+   Estructura y proporciones
+/* Variables y paleta *locales* al footer para no chocar con otros */
+.wf-footer{
+  /* ajusta estos dos si tu header usa otro ancho/padding */
+  --wf-maxw: 1120px;     /* ancho del contenido */
+  --wf-gutter: 24px;     /* padding lateral alineado al header */
+
+  --wf-bg-1:#121417;     /* bloque footer */
+  --wf-bg-2:#191c20;     /* superficies / chips */
+  --wf-line:#23272d;     /* líneas/bordes */
+  --wf-fg:#f1f5f9;       /* texto alto contraste */
+  --wf-muted:#b8c2cf;    /* texto secundario */
+
+  background: linear-gradient(180deg, var(--wf-bg-1), #0b0d10 60%, var(--wf-bg-1));
+  border-top:1px solid var(--wf-line);
+  color:var(--wf-fg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+
+  /* ✨ full-bleed: rompe el contenedor centrado y ocupa todo el viewport */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw); /* evita overflow por la barra de scroll */
+  display: block;
+}
+
+/* Wrapper extendido (sin max-width, ocupa todo el ancho) */
+.wf-wrap{
+  width:100%;
+  max-width:none;   /* ✅ eliminamos límite */
+  margin:0;
+  padding:32px 40px; /* ✅ padding lateral */
+}
+
+/* Marca + CTAs */
+.wf-brand{ display:grid; grid-template-columns: 1fr auto; align-items:end; gap:24px; }
+.wf-brand-left{ display:flex; align-items:center; gap:18px; min-width:280px; }
+
+/* ✅ Logo limpio (sin recuadro gris) */
+.wf-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.wf-logo img {
+  display: block;
+  max-height: 48px;   /* ✅ tamaño controlado */
+  width: auto;
+  height: auto;
+}
+
+.wf-meta{ display:flex; flex-direction:column; gap:6px; }
+.wf-title{ margin:0; font-weight:900; text-transform:uppercase; letter-spacing:.2px; font-size:clamp(20px,3.2vw,30px); color:#fff; }
+.wf-sub{ margin:0; color:var(--wf-muted); font-size:14px; }
+
+/* CTAs XL con subtítulo (como el header) */
+.wf-ctas{ 
+  display:flex; gap:12px; flex-wrap:wrap;
+  position: relative;
+  z-index: 20; /* ✅ evita que el botón flotante lo tape */
+}
+.wf-ctas--right{ justify-content:flex-end; }
+.wf-btn{
+  appearance:none; cursor:pointer; border-radius:999px;
+  padding:14px 20px; font-weight:800; line-height:1; white-space:nowrap;
+  border:1px solid var(--wf-line); background:var(--wf-bg-2); color:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+  transition:transform .06s ease, box-shadow .18s ease, filter .18s ease;
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.wf-btn:active{ transform:translateY(1px); }
+.wf-btn--primary{ background:#fff; color:#000; border-color:#fff; }
+.wf-btn--ghost{ background:transparent; color:#e8ecf2; }
+.wf-btn:hover{ filter:brightness(1.05); box-shadow:0 10px 22px rgba(0,0,0,.35); }
+.wf-btn--xl{ padding:16px 22px; }
+.wf-btnMain{ line-height:1; }
+.wf-btnSub{ font-size:12px; font-weight:600; opacity:.75; margin-top:4px; }
+
+/* Pills de navegación */
+.wf-links{ margin-top:16px; }
+.wf-pills{ list-style:none; padding:0; margin:0; display:flex; gap:12px; flex-wrap:wrap; }
+.wf-pill{
+  display:inline-block; padding:12px 16px; border-radius:999px; font-size:14px; line-height:1;
+  border:1px solid var(--wf-line); background:var(--wf-bg-2); color:#e7ebf1; text-decoration:none;
+  box-shadow:0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.35);
+  transition:transform .08s ease, filter .18s ease, box-shadow .18s ease;
+}
+.wf-pill:hover{ transform:translateY(-1px); filter:brightness(1.06); box-shadow:0 12px 24px rgba(0,0,0,.35); }
+
+/* Meta/Legal: también en full-bleed */
+.wf-legal{
+  border-top:1px solid var(--wf-line);
+  background:#0b0d10;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+/* Barra legal con copy + botones alineados juntos */
+.wf-legalbar{
+  max-width:none;
+  margin:0;
+  padding:14px 40px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start; /* 👈 ahora copy + botones juntos */
+  gap:20px; /* 👈 espacio entre copy y botones */
+  flex-wrap:wrap;
+}
+.wf-copy{ color:var(--wf-muted); font-size:13px; margin:0; }
+.wf-legalLinks{ display:flex; gap:12px; flex-wrap:wrap; }
+.wf-legalLinks a{
+  display:inline-block; font-size:13px; color:#fff; text-decoration:none;
+  padding:10px 14px; border-radius:12px; border:1px solid var(--wf-line); background:var(--wf-bg-2);
+}
+
+/* Botón flotante scroll */
+.scroll-top {
+  position: fixed;
+  bottom: 80px;  /* ✅ deja espacio sobre el footer */
+  right: 20px;
+  z-index: 50;   /* ✅ siempre visible */
+}
+
+/* Accesibilidad */
+.wf-btn:focus-visible, .wf-pill:focus-visible, .wf-legalLinks a:focus-visible{
+  outline:2px solid #fff; outline-offset:3px;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .wf-brand{ grid-template-columns:1fr; align-items:center; justify-items:center; text-align:center; }
+  .wf-ctas{ justify-content:center; }
+  .wf-btn{ align-items:center; }
+}
+@media (max-width:640px){
+  /* 👉 Logo arriba y centrado */
+  .wf-brand-left{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .wf-logo img{ max-height:70px; } /* más grande en móviles */
+  .wf-meta{ text-align:center; }
+
+  .wf-title{ font-size:clamp(18px,6vw,24px); }
+  .wf-btn{ width:100%; padding:12px 16px; }
+  .wf-pill{ padding:10px 14px; }
+
+  /* En móviles, copy y botones centrados */
+  .wf-legalbar{ 
+    justify-content:center; 
+    text-align:center; 
+  }
+}
+
+.link-like {
+  background: none;
+  border: none;
+  color: var(--wf-muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color .18s ease;
+}
+
+.link-like:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+
+/* ========= Footer Mandarinas DARK (namespace .fm-) ========= */
+/* ===================== Footer Mandarinas (DARK • Interactivo) ===================== */
+/* Pégalo en: public/assets/css/main.css  */
+/* Namespace: .fm-  (no colisiona con estilos globales) */
+/* =============================
+   WIREFRAME B/N (sin colores)
+   Estructura y proporciones
+/* Variables y paleta *locales* al footer para no chocar con otros */
+
+
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+
+/* ==== Premios Section (Mandarinas Linea Gráfica) ==== */
+.premios-section {
+  width: 100%;
+  padding: clamp(40px, 6vw, 80px) 0;
+  background: radial-gradient(circle at top right, rgba(255,108,0,.25), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(138,43,226,.25), transparent 50%),
+              linear-gradient(180deg, #1b0828 0%, #0d0314 100%);
+  color: #fff;
+}
+
+.premios-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.premios-title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  color: #FF6C00;
+  margin-bottom: 8px;
+}
+
+.premios-sub {
+  opacity: .85;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.premios-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.premios-tab {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.premios-tab:hover {
+  background: rgba(255,255,255,0.18);
+}
+.premios-tab.active {
+  background: #FF6C00;
+  border-color: #FF6C00;
+  color: #fff;
+}
+
+/* Card */
+.premios-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+  animation: fadeIn .3s ease;
+}
+.premios-card h3 {
+  color: #FF6C00;
+  margin-bottom: 16px;
+}
+
+/* Table */
+.premios-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+.premios-card th, 
+.premios-card td {
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 10px;
+  text-align: center;
+}
+.premios-card thead {
+  background: rgba(255,108,0,0.2);
+  font-weight: bold;
+}
+.premios-card tfoot td {
+  font-weight: bold;
+  background: rgba(255,255,255,0.1);
+}
+
+/* CTA */
+.btn-cta {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #FF6C00;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all .2s ease;
+}
+.btn-cta:hover {
+  color: #fff;
+  filter: brightness(1.1);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 640px) {
+  .premios-container {
+    max-width: 100% !important;
+    padding: 0 16px !important;   /* 🔥 mantiene margen lateral solo para título y tabs */
+  }
+
+  .premios-card {
+    margin-left: -16px;           /* 🔥 estira card full width */
+    margin-right: -16px;
+    border-radius: 0;             /* 🔥 opcional: igual que otras secciones */
+    padding: 16px;
+  }
+
+  .premios-card table {
+    width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed;
+  }
+
+  .premios-card th,
+  .premios-card td {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .premios-tabs {
+    margin-bottom: 20px;
+  }
+
+  .premios-tab {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px;
+    font-size: clamp(12px, 3vw, 14px);
+  }
+}
+
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+/* PremiosTabs.js */
+
+
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+
+/* =============================
+   Sección 2 columnas
+============================= */
+.verificar-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(18,0,36,0.95), rgba(18,0,36,0.98));
+  padding: 2rem;
+}
+
+.verificar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Columna izquierda */
+.verificar-card {
+  background: rgba(40, 0, 70, 0.85);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+}
+
+/* Responsive: dar espacio extra a la tarjeta para que no choque con el menú */
+@media (max-width: 900px) {
+  .verificar-card {
+    margin-top: 40px;
+  }
+}
+
+
+.verificar-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff5c00;
+  margin-bottom: 0.8rem;
+}
+
+.verificar-sub {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Formulario */
+.verificar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.verificar-form input {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background: #1a001f;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.verificar-form button {
+  background: linear-gradient(90deg, #ff5c00, #ff8a00);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.verificar-form button:hover {
+  filter: brightness(1.1);
+}
+
+/* Resultado */
+.resultado-card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.resultado-card.ok {
+  background: rgba(0, 128, 0, 0.2);
+  border: 1px solid #00ff88;
+}
+
+.resultado-card.error {
+  background: rgba(128, 0, 0, 0.3);
+  border: 1px solid #ff4444;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #25d366;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+/* Seguridad */
+.seguridad-box {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #bbb;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+/* Columna derecha (imagen) */
+.verificar-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.verificar-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .verificar-grid {
+    grid-template-columns: 1fr;
+  }
+  .verificar-img {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Etapa resaltada */
+.etapa-text.alerta-etapa {
+  color: #b58900;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Caja de alerta */
+.alerta-box {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff3cd;
+  border: 1px solid #ffecb5;
+  color: #856404;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.verificar-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* 👈 centramos solo horizontal */
+  background: linear-gradient(to bottom, rgba(18,0,36,0.95), rgba(18,0,36,0.98));
+  padding: 6rem 2rem 2rem;   /* 👈 arriba 6rem para despegar del menú */
+  box-sizing: border-box;
+}
+
+
+:root {
+  --header-height: 80px; /* ajusta al real */
+}
+
+.verificar-section {
+  min-height: calc(100vh - var(--header-height));
+  padding-top: var(--header-height);
+}
+.btn-pago {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #ffcc00;
+  color: #000;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.btn-pago:hover {
+  background: #ffdb4d;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #25d366;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+  color: #fff !important; /* texto se mantiene blanco */
+}
+
+/* Responsive: botón se pega abajo */
+@media (max-width: 900px) {
+  .btn-whatsapp {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}
+
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+/* VerificarInscripcion.js */
+
+
+
+/* PromoCarrera.js */
+/* PromoCarrera.js  */
+/* PromoCarrera.js  */
+/* PromoCarrera.js  */
+
+/* =========================================
+   FONDO Y LAYOUT BASE
+========================================= */
+:root{
+  --hero-offset: 8vh;
+  /* altura aprox del header fijo en móvil (ajusta si tu header es más alto) */
+  --mobile-header-h: 72px;
+}
+
+/* ===== FONDO Y LAYOUT BASE ===== */
+.promo8k{
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(255,138,0,0.25), transparent 55%),
+    radial-gradient(900px 500px at 90% 110%, rgba(255,138,0,0.18), transparent 60%),
+    linear-gradient(180deg, #12051f 0%, #1a082b 45%, #0f0720 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+@media (min-width: 1100px){
+  .promo8k{
+    padding-top: calc(24px + var(--hero-offset));
+    padding-bottom: 6vh;
+  }
+}
+@media (min-width: 1440px){
+  :root{ --hero-offset: 10vh; }
+}
+
+/* ===== HEADER (opcional) ===== */
+.promo8k__header{
+  display:flex; align-items:center; justify-content:space-between;
+  position:fixed; top:16px; left:24px; right:24px; z-index:20;
+  padding:12px 16px; border-radius:12px;
+  background: linear-gradient(180deg, rgba(10,5,20,0.85), rgba(10,5,20,0));
+  backdrop-filter: blur(4px);
+}
+.promo8k__logo{ height:34px; width:auto; }
+
+/* ===== GRID CENTRAL ===== */
+.promo8k__wrap{
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr;
+  gap: 28px;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: stretch; /* iguala altura columnas */
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:#2a0d43; border-radius:22px; padding:26px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ▶️ Card derecho (flex + scroll interno) */
+.card--right{
+  position: relative;
+  background:#2f114d; padding:12px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Contenedor que alterna póster/form -> ocupa todo */
+.card--right .swap{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto; /* scroll si el form es largo */
+}
+
+/* ===== PÓSTER ===== */
+.swap__poster{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 6px;
+}
+.card__poster{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;     /* no se recorta */
+  border-radius:18px;
+  background-color:#1a0c2f;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+.card__title{
+  font-weight:800; letter-spacing:.03em;
+  font-size: clamp(28px, 4vw, 38px);
+  color:#ff7a00; text-transform:uppercase; margin:0 0 8px;
+}
+.card__subtitle{ color:#e6d7ff; line-height:1.6; margin:0 0 18px; }
+
+/* ===== BLOQUE PROMO ===== */
+.promo-box{
+  background:#1f0a34; border-radius:14px; padding:16px 18px; margin:8px 0 18px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.promo-box__price{ font-weight:700; font-size:18px; color:#fff; margin-bottom:4px; }
+.promo-box__price span{ color:#ff7a00; font-size:22px; font-weight:800; }
+.promo-box__note{ color:#cbb7ff; font-size:14px; }
+
+/* ===== COUNTDOWN ===== */
+.countdown{
+  background:#2f114d;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:12px 14px;
+  margin-bottom:14px;
+}
+.countdown__label{
+  display:flex; align-items:center; gap:8px;
+  font-size:12px; color:#ffb37a; text-transform:uppercase; letter-spacing:.08em;
+}
+.dot{
+  width:8px; height:8px; background:#ff7a00; border-radius:50%;
+  box-shadow:0 0 10px #ff7a00; display:inline-block; animation:pulse 1.2s infinite;
+}
+@keyframes pulse{ 0%{transform:scale(1);opacity:.9} 60%{transform:scale(1.35);opacity:.5} 100%{transform:scale(1);opacity:.9} }
+.countdown__numbers{ margin-top:6px; font-weight:800; font-size:22px; color:#fff; }
+.countdown__bar{ margin-top:10px; height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.08); }
+.countdown__bar span{
+  display:block; height:100%;
+  background:linear-gradient(90deg,#ff7a00 0%, #ff5b00 100%);
+  box-shadow: inset 0 0 12px rgba(255,122,0,.45);
+  transition: width .6s ease;
+}
+
+/* ===== BENEFICIOS + NOTA ===== */
+.list-benefits{ margin-top:16px; color:#e6d7ff; line-height:1.6; padding-left:18px; }
+.list-benefits li{ margin:4px 0; }
+.legal-note{ margin-top:10px; font-size:12px; color:#cbb7ff; opacity:.9; }
+
+/* ===== BOTONES + SHIMMER CTA ===== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; font-weight:700; border-radius:12px; text-decoration:none; cursor:pointer;
+  transition:.2s ease;
+}
+.btn--cta{ padding:12px 18px; background:#ff7a00; color:#fff; border-radius:12px; }
+.btn--cta:hover{ background:#ff5b00; }
+.btn--primary{
+  padding:14px 18px; color:#fff;
+  background: linear-gradient(90deg,#ff7a00 0%, #ff5b00 100%);
+  box-shadow: 0 10px 22px rgba(255,122,0,0.35);
+  animation: ctaGlow 5s ease-in-out infinite;
+}
+.btn--primary:hover{ transform: translateY(-1px); filter:brightness(1.05); }
+.btn--block{ width:100%; }
+.btn--disabled{ opacity:.6; cursor:not-allowed; filter:grayscale(.2); animation:none; }
+.btn--shine{ position: relative; overflow: hidden; backface-visibility: hidden; will-change: transform; }
+.btn--shine::after{
+  content:""; position:absolute; top:-60%; bottom:-60%; left:-120%; width:60%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%,
+                                       rgba(255,255,255,.85) 45%,
+                                       rgba(255,255,255,0) 70%);
+  mix-blend-mode: screen; filter: blur(1px);
+  animation: shineSweep 2.6s cubic-bezier(.4,0,.2,1) infinite; pointer-events: none;
+}
+@keyframes shineSweep{ 0%{transform:translateX(0);opacity:.9} 60%{transform:translateX(320%);opacity:.9} 100%{transform:translateX(320%);opacity:0} }
+@keyframes ctaGlow{ 0%,100%{ box-shadow:0 10px 22px rgba(255,122,0,.35) } 50%{ box-shadow:0 16px 40px rgba(255,122,0,.60) } }
+@media (prefers-reduced-motion: reduce){
+  .btn--primary{ animation:none; }
+  .btn--shine::after{ animation:none; }
+}
+
+/* ===== INTERCAMBIO POSTER ⇄ FORM ===== */
+.swap{
+  flex: 1 1 auto;
+  display: grid;
+  min-height: 560px;
+  height: 100%;
+  position: relative;
+}
+.swap__panel{
+  grid-area: 1 / 1;
+  transition: opacity .25s ease, transform .25s ease;
+  transform: translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+}
+.swap.is-poster .swap__poster{ position: relative; opacity:1; transform:none; pointer-events:auto; }
+.swap.is-poster .swap__form{ position:absolute; inset:0; }
+.swap.is-form   .swap__form{ position:relative; opacity:1; transform:none; pointer-events:auto; height:100%; overflow:auto; padding:8px 14px 14px; scrollbar-gutter:stable both-edges; }
+.swap.is-form   .swap__poster{ position:absolute; inset:0; }
+
+/* Caja limpia del formulario */
+.swap .form-embed{
+  background: transparent; border: 0; padding: 0; width: 100%; max-width: none;
+}
+.swap .form-embed input,
+.swap .form-embed select,
+.swap .form-embed textarea{ width:100%; font-size:16px; }
+.swap .form-embed h1,
+.swap .form-embed h2{ font-size:clamp(22px, 3vw, 34px); line-height:1.15; margin:6px 0 10px; }
+.swap .form-embed h3{ font-size:clamp(16px, 2.2vw, 20px); }
+
+.btn-back{ background:transparent; border:0; color:#ffb37a; font-weight:700; cursor:pointer; margin:4px 4px 10px; padding:6px 8px; border-radius:8px; }
+.btn-back:hover{ background: rgba(255,255,255,.06); }
+
+.swap.is-form .swap__form::-webkit-scrollbar{ width:10px; }
+.swap.is-form .swap__form::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.18); border-radius:999px; }
+.swap.is-form .swap__form::-webkit-scrollbar-track{ background: rgba(255,255,255,.06); border-radius:999px; }
+
+/* ===== CÉDULA + CTA (izquierda, botón abajo) ===== */
+.cta-row{
+  display:flex;
+  flex-direction: column;
+  align-items:stretch;
+  gap:12px;
+  margin-top:16px;
+}
+.cedula-input{
+  flex:1 1 auto;
+  background:#1f0a34;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;
+  color:#fff;
+  padding:14px 14px;
+  font-weight:600;
+  letter-spacing:.02em;
+  outline:0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0);
+  transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.cedula-input::placeholder{ color:#cbb7ff; opacity:.9; }
+.cedula-input:focus{ border-color:#ff7a00; box-shadow:0 0 0 3px rgba(255,122,0,.25); }
+.cta-row .btn{ width:100%; padding-left:22px; padding-right:22px; white-space:nowrap; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px){
+  .promo8k__wrap{ grid-template-columns: 1fr; max-width: 760px; gap: 20px; }
+  .card--right .swap{ max-height: none; overflow: visible; }
+  .swap{ min-height: 480px; }
+}
+@media (max-width: 920px){
+  .promo8k{ align-content:start; padding-block:32px; }
+  .card{ padding:22px; border-radius:18px; }
+  .card__poster{ border-radius:14px; }
+}
+
+/* ==== Ajustes MOBILE extra: no chocar con header y 100% ancho ==== */
+@media (max-width: 768px){
+  .promo8k{
+    /* deja espacio bajo el header fijo y soporta notch (safe-area) */
+    padding: calc(var(--mobile-header-h) + 12px + env(safe-area-inset-top))
+             clamp(10px, 4vw, 16px)
+             28px;
+  }
+  .promo8k__wrap{
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 18px;
+  }
+  .card{
+    width: 100%;
+    margin-inline: 0;
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .card--right{ padding: 12px; }
+  .card--right .swap{
+    max-height: none;
+    overflow: visible;
+  }
+}
+@media (max-width: 380px){
+  .promo8k{ padding-inline: 8px; }
+  .card{ padding: 18px; border-radius: 16px; }
+}
+
+/* ===== XL ===== */
+@media (min-width: 1440px){
+  .promo8k__wrap{ max-width: 1500px; grid-template-columns: 0.95fr 1.55fr; }
+  .card{ padding: 30px; }
+  .swap{ min-height: 640px; }
+}
+
+
+
+
+/* PromoCarrera.js */
+/* PromoCarrera.js  */
+/* PromoCarrera.js  */
+/* PromoCarrera.js  */
+
+
+
+
+/* HeroRuta.js */
+/* HeroRuta.js */
+/* HeroRuta.js */
+/* HeroRuta.js */
+
+
+/* ===============================
+   Hero Ruta Mandarinas (Full-width + UI Fix)
+   =============================== */
+.hero-ruta {
+  width: 100%;
+  padding: 80px 16px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #4C1C6F 0%, #FF6C00 100%); /* degradado mandarina */
+  border-radius: 0;
+}
+
+.hero-ruta__content {
+  max-width: 1100px; /* controla el ancho del contenido */
+  margin: 0 auto;
+}
+
+/* ----------- Títulos ----------- */
+.hero-ruta__title {
+  font-size: clamp(26px, 5vw, 44px);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.hero-ruta__subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+}
+
+/* ----------- Chips ----------- */
+.hero-ruta__chips,
+.hero-ruta__status,
+.hero-ruta__benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chip {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+.chip--black {
+  background: #000;
+  color: #fff;
+  border: none;
+}
+
+.chip--dashed {
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+/* ----------- Botones ----------- */
+.hero-ruta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn--fill {
+  background: #FF6C00;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 108, 0, 0.4);
+}
+
+.btn--fill:hover {
+  background: #e85f00;
+}
+
+.btn--outline {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* HeroRuta.js */
+/* HeroRuta.js */
+/* HeroRuta.js */
+/* HeroRuta.js */
+
+
+
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+/* =========================================
+   Banda principal (mismo patrón de otras páginas)
+   ========================================= */
+.ruta-detalle.container{
+  /* la banda completa con esquinas grandes */
+  max-width: 1200px;        /* mismo ancho que usas en otras secciones */
+  margin: 0 auto 40px;      /* centrada y con respiración inferior */
+  padding: 24px;            /* padding de banda */
+  background: rgba(14, 5, 28, 0.96);                  /* púrpura profundo */
+  border: 1px solid rgba(255,255,255,0.06);           /* línea sutil */
+  border-radius: 24px;                                 /* <<< esquinas grandes */
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);              /* relieve suave */
+  overflow: hidden;                                    /* recorta hijos redondeados */
+}
+
+@media (min-width: 1280px){
+  .ruta-detalle.container{ border-radius: 28px; }      /* como en info/registro */
+}
+
+/* grid interno se mantiene */
+.ruta-detalle__grid{
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 900px){
+  .ruta-detalle__grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* =========================================
+   Cards internas (más ligeras dentro de la banda)
+   ========================================= */
+.card{
+  background: rgba(255,255,255,0.03);                 /* muy sutil para que predomine la banda */
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  color: #f3f3f6;                                      /* texto principal mejor legible */
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+
+.card__title{
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #FF7A1A;                                      /* naranja mandarina */
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.card__subtitle{
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #cab8ff;                                      /* morado de acento */
+  text-transform: uppercase;
+}
+
+.card p{ margin-bottom: 10px; color: #e9e9ef; }
+.muted{ color:#c9c9d2; }
+
+/* =========================================
+   Steps (lista del recorrido)
+   ========================================= */
+.steps{ margin:0; padding:0; list-style:none; }
+.step{
+  display:flex; gap:14px; align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  color:#ececf3;
+}
+.km{
+  min-width:72px; padding:6px 10px; text-align:center;
+  font-weight:800; font-size:14px;
+  color:#fff; background:rgba(255,122,26,.18);
+  border:1px dashed rgba(255,255,255,.25);
+  border-radius:10px;
+}
+.step small{ display:block; font-size:12.5px; color:#b9bac6; }
+
+/* =========================================
+   Header de la tarjeta derecha (Recorrido)
+   ========================================= */
+.card__header{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:16px;
+}
+
+/* Chips / pestañas de Recorrido */
+.segmented{ display:flex; gap:8px; margin-bottom:16px; }
+.segmented button{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.25);
+  padding:8px 14px; border-radius:999px;
+  font-weight:700; cursor:pointer; color:#f4f4f7;
+  transition:transform .12s ease, background-color .2s ease, border-color .2s ease;
+}
+.segmented button:hover{ transform:translateY(-1px); }
+.segmented button.active{
+  background:#FF7A1A; border-color:#FF7A1A; color:#fff;
+}
+
+/* Contenedor del mapa/foto */
+.map-placeholder{
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px; padding:12px; text-align:center;
+}
+.map-img, .map-iframe{
+  width:100%; display:block; border-radius:10px;
+}
+
+/* =========================================
+   Botones coherentes con el CTA global
+   ========================================= */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 20px;
+  border-radius:999px; font-weight:800; text-decoration:none;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+.btn--fill{
+  background: linear-gradient(180deg,#FF8A2A 0%, #FF6C00 100%);
+  color:#fff; border:0;
+  box-shadow: 0 10px 18px rgba(255,108,0,.22);
+}
+.btn--fill:hover{ transform: translateY(-1px); box-shadow:0 14px 22px rgba(255,108,0,.28); }
+.btn--outline{
+  background: transparent; color:#fff;
+  border:2px solid rgba(255,255,255,.6);
+}
+.btn--outline:hover{ border-color:#fff; }
+
+/* Versión pequeña (CTA en cabecera de Recorrido) */
+.btn.small{ padding:10px 16px; font-weight:800; }
+
+
+
+
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+/* RutaDetalle.js */
+
+
+
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+
+
+/* Contenedor principal del reglamento */
+.reglamento {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #f2f2f2; /* texto gris claro para mejor lectura */
+  background: rgba(20, 10, 30, 0.92); /* 🔥 morado oscuro casi negro */
+  backdrop-filter: blur(10px); /* efecto glass oscuro */
+  padding: 2.5rem 2rem;
+  line-height: 1.8;
+  max-width: 950px;
+  margin: 90px auto 50px auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+  transition: all 0.4s ease-in-out;
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* Encabezado principal */
+/* Encabezado principal */
+.reglamento h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #ff6c00; /* naranja mandarinas */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Artículos */
+.reglamento .articulo {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* líneas más suaves */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+.reglamento .articulo:nth-child(1) { animation-delay: 0.3s; }
+.reglamento .articulo:nth-child(2) { animation-delay: 0.5s; }
+.reglamento .articulo:nth-child(3) { animation-delay: 0.7s; }
+.reglamento .articulo:nth-child(4) { animation-delay: 0.9s; }
+.reglamento .articulo:nth-child(5) { animation-delay: 1.1s; }
+
+/* Títulos de artículos */
+.reglamento .articulo h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #ff6c00; /* naranja mandarinas */
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.reglamento .articulo h2:hover {
+  color: #ffa04d;
+  text-shadow: 0 0 15px rgba(255, 108, 0, 0.7);
+}
+
+/* Links dentro del reglamento */
+.reglamento a {
+  color: #ff884d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.reglamento a:hover {
+  border-color: #ff884d;
+  color: #fff;
+}
+
+/* --- Animaciones --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px rgba(255, 108, 0, 0.4),
+                 0 0 10px rgba(255, 108, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 108, 0, 0.95),
+                 0 0 35px rgba(255, 108, 0, 0.7);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reglamento {
+    margin: 70px 1rem 30px 1rem;
+    padding: 1.8rem;
+  }
+  .reglamento h1 {
+    font-size: 1.7rem;
+  }
+  .reglamento .articulo h2 {
+    font-size: 1.05rem;
+  }
+}
+
+
+
+
+
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+/*ReglamentoContent.js */
+
+/* ============================================
+   NUEVO — Contador con línea gráfica Mandarinas
+   (colores tomados del sitio: púrpuras + naranja)
+   ============================================ */
+
+.mandarina-countdown {
+  /* paleta local (no rompe el resto del sitio) */
+  --bg-1: #210B25;           /* púrpura profundo */
+  --bg-2: #120815;           /* púrpura casi negro */
+  --stroke: rgba(255,255,255,0.10);
+  --txt: #F3F4F6;            /* texto claro */
+  --accent: #FF7A00;         /* naranja mandarina principal */
+  --accent-ink: #FFD6A8;     /* texto/halo sobre naranja */
+  --accent-soft: rgba(255,122,0,0.12);
+  --accent-stroke: rgba(255,122,0,0.38);
+  --danger: #FF5252;         /* rojo para “cerradas” */
+  --danger-soft: rgba(255,82,82,0.12);
+  --danger-stroke: rgba(255,82,82,0.38);
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 16px auto 28px;
+  padding: 14px 18px 16px;
+  border-radius: 16px;
+
+  /* card en sintonía con el fondo del sitio */
+  background:
+    linear-gradient(180deg, rgba(255,122,0,0.08) 0%, rgba(255,122,0,0) 22%),
+    radial-gradient(90% 140% at 0% 0%, rgba(255,122,0,0.10) 0%, rgba(255,122,0,0) 35%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  border: 1px solid var(--stroke);
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+/* ribete/“línea gráfica” a la izquierda */
+.mandarina-countdown::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 16px 0 0 16px;
+  background: linear-gradient(180deg, #FFC285 0%, var(--accent) 60%, #FF9E42 100%);
+  box-shadow: 0 0 22px rgba(255,122,0,0.35);
+}
+
+.mandarina-countdown p {
+  margin: 0;
+  line-height: 1.35;
+  font-size: 1rem;
+  color: var(--txt);
+  letter-spacing: .2px;
+}
+
+/* tiempo “00:00:00” con chip naranja */
+.mandarina-countdown strong {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 12px;
+
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .4px;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-stroke);
+  color: var(--accent-ink);
+  text-shadow: 0 0 12px rgba(255,122,0,0.25);
+}
+
+/* estado: inscripciones cerradas */
+.mandarina-countdown .expired {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-stroke);
+  color: #FFC7C7;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+/* versión para tema claro del SO (por si aplica) */
+@media (prefers-color-scheme: light) {
+  .mandarina-countdown {
+    --bg-1: #FFFFFF;
+    --bg-2: #F6F6F8;
+    --stroke: rgba(0,0,0,0.10);
+    --txt: #1B1B1F;
+  }
+  .mandarina-countdown p { color: var(--txt); }
+  .mandarina-countdown strong {
+    color: #8A3E00;
+    text-shadow: none;
+  }
+  .mandarina-countdown .expired { color: #9a1e1e; }
+}
+
+/* responsivo */
+@media (min-width: 640px) {
+  .mandarina-countdown { padding: 18px 22px; }
+  .mandarina-countdown p { font-size: 1.06rem; }
+}
+@media (min-width: 1024px) {
+  .mandarina-countdown p { font-size: 1.12rem; }
+}

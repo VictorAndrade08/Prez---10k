@@ -1,0 +1,22 @@
+
+> nivia@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.30
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+
+> Build error occurred
+Error: Page "/blog/[id]" is missing "generateStaticParams()" so it cannot be used with "output: export" config.
+    at /Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/build/index.js:1297:59
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Span.traceAsyncFn (/Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/trace/trace.js:154:20)
+    at async Promise.all (index 8)
+    at async /Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/build/index.js:1175:17
+    at async Span.traceAsyncFn (/Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/trace/trace.js:154:20)
+    at async /Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/build/index.js:1098:124
+    at async Span.traceAsyncFn (/Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/trace/trace.js:154:20)
+    at async build (/Users/skychopan/Desktop/Prez - Mandarinas/Proyecto/Nivia-nextjs-v2.0.0-unzip-first/1.Nivia-Nextjs/node_modules/next/dist/build/index.js:368:9)
