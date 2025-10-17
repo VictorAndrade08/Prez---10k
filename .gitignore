@@ -1,5 +1,5 @@
 # =========================================
-# 🚫 Archivos que no deben subirse al repo
+# 🚫 Archivos y carpetas que NO deben subirse
 # Proyecto: 10K Independencia de Ambato (Next.js export)
 # =========================================
 
@@ -17,29 +17,33 @@ dist/
 build/
 *.log
 
-# Archivos del sistema
-.DS_Store
-Thumbs.db
-
-# Configs locales del editor
-.vscode/
-.idea/
-*.swp
-
-# Archivos de entorno (claves o URLs privadas)
+# Archivos de entorno (variables privadas)
 .env
 .env.local
 .env.development.local
 .env.production.local
 .env.test.local
 
-# Archivos temporales o de sistema
+# Archivos del sistema (Mac/Windows)
+.DS_Store
+Thumbs.db
 ._*
 .Spotlight-V100
 .Trashes
 
+# Configuraciones locales de editores
+.vscode/
+.idea/
+*.swp
+
+# Archivos temporales o backups
+*.tmp
+*.bak
+*.old
+*.orig
+
 # =========================================
-# ✅ Archivos esenciales que sí deben subirse
+# ✅ Archivos importantes que sí se deben subir
 # =========================================
 !package.json
 !package-lock.json
