@@ -75,27 +75,70 @@
 }
 
 
-/* -------------------------------------------------------------------------- */
-/* FONDO GLOBAL (degradado + imagen)                                          */
-/* -------------------------------------------------------------------------- */
-html {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,108,0,0.85) 0%,
-      rgba(76,28,111,0.95) 100%
-    ),
-    url('/assets/imgs/page/homepage1/mandarinafondo.webp') center / cover no-repeat fixed;
-  background-attachment: fixed, fixed;
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
+html, body { min-height: 100%; }
+
+html{
+  background-color:#0b0e13 !important; /* fallback */
+  background-image:
+    linear-gradient(135deg, rgba(255,108,0,.85) 0%, rgba(76,28,111,.95) 100%),
+    url('/assets/imgs/bg-hcs-mesh.svg') !important;
+  background-position: center, center;
+  background-size: auto, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, fixed;  /* solo la imagen fija */
   background-blend-mode: multiply;
 }
 
-body {
-  background: transparent;
-  color: #1A1A1A;
-  font-family: var(--tg-body-font-family);
-  line-height: 1.4;
+@media (max-width:1023px){
+  html{ background-attachment: scroll, scroll; }
 }
+
+body{ background: transparent !important; }
+
+
+/* Solo en la vista de inscripción */
+.page-inscripcion, .mandarina-form-wrapper{
+  background:
+    linear-gradient(135deg, rgba(255,108,0,.85) 0%, rgba(76,28,111,.95) 100%),
+    url('/assets/imgs/bg-hcs-mesh.svg') center/cover no-repeat fixed !important;
+  background-blend-mode: multiply;
+}
+@media (max-width:1023px){
+  .page-inscripcion, .mandarina-form-wrapper{
+    background-attachment: scroll !important;
+  }
+}
+
+/* Fondo global con el nuevo SVG */
+html, body { min-height: 100%; }
+
+html{
+  background-color:#0b0e13 !important; /* fallback */
+  background-image:
+    linear-gradient(135deg, rgba(255,108,0,.85) 0%, rgba(76,28,111,.95) 100%),
+    url('/assets/imgs/bg-hcs-mesh.svg') !important;
+  background-position: center, center;
+  background-size: auto, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, fixed;  /* solo la imagen fija */
+  background-blend-mode: multiply;
+}
+
+@media (max-width:1023px){
+  html{ background-attachment: scroll, scroll; }
+}
+
+body{ background: transparent !important; }
+
+
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
+/* ===== Fondo global con el nuevo SVG ===== */
 
 
 /* -------------------------------------------------------------------------- */

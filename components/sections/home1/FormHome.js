@@ -17,24 +17,25 @@ const MANDARINA_MAX_FILE_BYTES = 5 * 1024 * 1024; // 5MB
 
 /* =========================================================
    Opciones de categorías con precios en etiqueta
+   (ACTUALIZADAS para que se vean como en tu captura)
    ========================================================= */
 const CATEGORIES = {
   principales: [
-    { value: 'ELITE',   label: 'ELITE PRO 8K (Menores de 40 años) ($23)' }, // sin cambios
+    { value: 'ELITE',   label: 'ELITE PRO: $25. Personas de hasta 39 años.' },
   ],
   master: [
-    { value: 'MASTER',  label: 'MASTER (40–64 años) ($23)' },               // actualizado
-    { value: 'LEYENDA', label: 'LEYENDA (65+ años) ($18)' },                // actualizado
+    { value: 'MASTER',  label: 'MASTER: $25. Entre 40 a 64 años.' },
+    { value: 'LEYENDA', label: 'LEYENDA: $18. 65 años en adelante.' },
   ],
   especiales: [
-    { value: 'ESPECIALES', label: 'ESPECIALES (Abierto) ($18)' },           // actualizado
+    { value: 'ESPECIALES', label: 'DISCAPACIDAD: $18.' },
   ],
 };
 
-/* Valor numérico en USD por categoría (sin cambios) */
+/* Valor numérico en USD por categoría (ACTUALIZADO) */
 const CATEGORY_PRICE = {
-  ELITE:      23,
-  MASTER:     23,
+  ELITE:      25,
+  MASTER:     25,
   LEYENDA:    18,
   ESPECIALES: 18,
 };

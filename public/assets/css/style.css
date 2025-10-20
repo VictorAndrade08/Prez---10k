@@ -10171,3 +10171,285 @@ html .btn.btn-brand-4-medium:hover {
 /* Header1.js */
 /* Header1.js */
 
+/* =========================
+   FIX header roto + ajustes
+   ========================= */
+
+/* Separación del header respecto al borde superior */
+:root{
+  --header-gap: 12px;
+  --header-pad-y: 10px;
+}
+
+/* Header relajado (sin pegarse arriba) */
+.header.sticky-bar{
+  position: sticky;
+  top: var(--header-gap) !important;
+  padding-top: var(--header-pad-y) !important;
+  padding-bottom: var(--header-pad-y) !important;
+  z-index: 50;
+}
+
+/* ---- REPARACIÓN: el left NO debe ocupar todo ---- */
+.header .main-header{
+  display: flex;
+  align-items: center;
+}
+
+.header .header-left{
+  width: auto !important;        /* <— antes 100% */
+  flex: 0 0 auto !important;
+  justify-content: flex-start !important;
+}
+
+.header .header-right{
+  margin-left: auto !important;  /* empuja el botón a la derecha */
+  flex: 0 0 auto !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tamaño del logo */
+.header .header-logo img{
+  height: 40px !important;       /* ajusta a gusto (36–44px) */
+  margin-top: 0 !important;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  :root{ --header-gap: 10px; --header-pad-y: 8px; }
+  .header .header-logo img{ height: 36px !important; }
+}
+@media (max-width: 640px){
+  :root{ --header-gap: 8px; --header-pad-y: 6px; }
+  .header .header-logo img{ height: 32px !important; }
+}
+
+
+.mandarina-countdown 
+{
+    display: none!important;
+}
+
+/* === Variables del header (definidas al final del CSS) === */
+:root{
+  --header-gap: 0px;     /* separación desde el top cuando es sticky/fijo */
+  --header-pad-y: 10px;  /* padding vertical del header */
+}
+
+/* El header toma las variables */
+.header.sticky-bar,
+.header.sticky-bar.stick{
+  top: var(--header-gap) !important;
+  padding-top: var(--header-pad-y) !important;
+  padding-bottom: var(--header-pad-y) !important;
+}
+
+
+
+
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+:root{
+  /* Usa el mismo color que tu botón “¡Inscríbete!” */
+  --brand: #26B3AC;       /* ⬅️ ajusta si tu CTA tiene otro hex */
+  --brand-600: #1E8F89;
+  --brand-700: #187A75;
+  --on-brand: #ffffff;
+}
+
+/* Botones del formulario */
+.mandarina-btn,
+.mandarina-btn-next,
+.mandarina-btn-submit{
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: var(--on-brand) !important;
+}
+.mandarina-btn:hover,
+.mandarina-btn-next:hover,
+.mandarina-btn-submit:hover,
+.mandarina-btn:focus-visible,
+.mandarina-btn-next:focus-visible,
+.mandarina-btn-submit:focus-visible{
+  background: var(--brand-600) !important;
+  border-color: var(--brand-600) !important;
+}
+
+/* Paso 1 / Paso 2 activos */
+.mandarina-form-steps .is-current{
+  color: var(--brand) !important;
+  border-bottom: 2px solid var(--brand) !important;
+}
+
+/* Acento en mensajes/ayudas */
+.mandarina-price-hint,
+.mandarina-form a{
+  color: var(--brand) !important;
+}
+
+/* Focus de inputs, selects y textarea */
+.mandarina-form input:focus,
+.mandarina-form select:focus,
+.mandarina-form textarea:focus{
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 25%, transparent) !important;
+}
+
+/* Tarjeta de banco con acento de marca */
+.mandarina-bank-card{
+  border-left: 4px solid var(--brand) !important;
+}
+.mandarina-bank-card h3{
+  color: var(--brand) !important;
+}
+
+/* Input file: borde/acento */
+.mandarina-form input[type="file"]{
+  border-color: var(--brand) !important;
+}
+
+/* Cualquier pill/badge/bolita en naranja -> marca */
+.mandarina-badge,
+.mandarina-chip,
+.mandarina-dot,
+.mandarina-pill{
+  background: var(--brand) !important;
+  color: var(--on-brand) !important;
+}
+
+/* Por si quedara algún naranja “duro” inline */
+.mandarina-form [style*="#ff7a00"],
+.mandarina-form [style*="#f2994a"],
+.mandarina-form [style*="#f1ad34"]{
+  color: var(--brand) !important;
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+}
+
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+
+/* —— Pasos del formulario: usar color de marca y no naranja —— */
+:root{ --brand:#26B3AC; } /* ya lo tienes, solo por referencia */
+
+.mandarina-form-steps .is-current{
+  color: var(--brand) !important;
+  position: relative;
+}
+
+/* el subrayado que se veía naranja */
+.mandarina-form-steps .is-current::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom:-6px;                /* separa la raya del texto */
+  height:6px;
+  border-radius:4px;
+  background: var(--brand) !important;
+}
+
+/* por si el tema añade otro decorador en before/gradiente/borde */
+.mandarina-form-steps .is-current::before,
+.mandarina-form-steps .is-current span::after,
+.mandarina-form-steps .is-current em::after{
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+/* ===== FromHome.js ===== */
+
+
+
+/* Botones legales como pill y desactivados visualmente */
+.link-like.is-disabled{
+  opacity:.8;
+  cursor:not-allowed;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.12);
+  padding:.45rem .9rem;
+  border-radius:14px;
+  color:inherit;
+}
+.link-like.is-disabled:hover{
+  filter:none; transform:none; text-decoration:none;
+}
+
+.wf-logo{
+  width: 180px;   /* ajusta a lo que necesites */
+  height: 44px;
+}
+.wf-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Fondo global en todo el sitio */
+html, body {
+  min-height: 100%;
+  background-color: #0b0e13; /* fallback */
+  background-image: url('/assets/imgs/bg-hcs-mesh.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Parallax suave solo en desktop (evita jank en iOS) */
+@media (min-width: 1024px){
+  html, body { background-attachment: fixed; }
+}
+
+
+
+/* ===== Header transparente (sin barra negra) ===== */
+.header.sticky-bar,
+.sticky-bar.stick,
+.mobile-header-active .mobile-header-wrapper-style {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Si el tema tiene una barra superior (“top bar”), ocúltala */
+.header__top,
+.header-top-area { display: none !important; }
+
+/* Algunos temas insertan un div “espaciador” con padding-top:...  */
+div[style*="padding-top"] {
+  padding-top: 0 !important;
+}
+
+/* Quita margen/relleno del primer bloque debajo del header */
+main .section:first-child,
+main .hero:first-child,
+main > section:first-of-type {
+  margin-top: 0 !important;
+  padding-top: clamp(16px, 3vh, 40px) !important; /* ajusta si necesitas aire */
+}
+
+/* Por si el header usa variables de separación */
+:root{
+  --header-gap: 0px !important;
+  --header-pad-y: 10px !important; /* o el que uses */
+}
+
+
+

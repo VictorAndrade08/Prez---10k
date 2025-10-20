@@ -1,24 +1,43 @@
+// app/inscripcion/page.js (o donde tengas esta ruta)
 import Layout from '@/components/layout/Layout';
 import FromHome from '@/components/sections/home1/FormHome';
 
-// opcional si quieres asegurar build estático
+// Opcional: asegurar build estático
 export const dynamic = 'force-static';
 
 export const metadata = {
-  title: 'Inscripción | 8K Ruta de las Mandarinas',
-  description: 'Formulario oficial de inscripción para la 8K Ruta de las Mandarinas.',
-  alternates: { canonical: 'https://8krutadelasmandarinas.com/inscripcion' },
+  title: 'Inscripción | 10K Independencia de Ambato',
+  description:
+    'Formulario oficial de inscripción para la 10K Independencia de Ambato. Completa tus datos y confirma por WhatsApp.',
+  alternates: {
+    canonical: 'https://10kindependenciadeambato.com/inscripcion',
+  },
+  openGraph: {
+    title: 'Inscripción | 10K Independencia de Ambato',
+    description:
+      'Inscríbete a la 10K Independencia de Ambato y confirma tu participación en minutos.',
+    url: 'https://10kindependenciadeambato.com/inscripcion',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Inscripción | 10K Independencia de Ambato',
+    description:
+      'Inscríbete a la 10K Independencia de Ambato y confirma tu participación en minutos.',
+  },
 };
 
 export default function InscripcionPage() {
   return (
     <Layout headerStyle={1} footerStyle={1} logoWhite>
-      <div style={{ paddingTop: '50px' }}>
+      {/* Aplica tu fondo con .page-inscripcion en el CSS */}
+      <main className="page-inscripcion">
         <FromHome />
-      </div>
+      </main>
     </Layout>
   );
 }
+
 
 /*
 ==========================================
