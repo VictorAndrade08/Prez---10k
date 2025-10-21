@@ -5155,3 +5155,199 @@ h3, .h3 { font-size: var(--h3-size); }
 @media (min-width: 1024px) {
   .mandarina-countdown p { font-size: 1.12rem; }
 }
+
+
+
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+
+/* =========================================================
+   LandingInscripcionChoice.css
+   - 2 tarjetas (normal / promoción)
+   - imágenes NUNCA se recortan (background-size: contain)
+   - tamaños controlados por variables
+   - estilos encapsulados para evitar choques
+   ========================================================= */
+
+/* --- Bloque contenedor opcional (espaciado vertical) --- */
+.landing-choice-block {
+  padding-block: clamp(8px, 2.5vw, 24px);
+}
+
+/* --- Contenedor interno opcional (ancho máximo) --- */
+.landing-choice-inner {
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3vw, 24px);
+}
+
+/* --- GRID base -------------------------------------------------- */
+.landing-choice {
+  /* 🔧 Ajusta aquí los altos por defecto */
+  --card-h-mobile: 320px;
+  --card-h-desktop: 420px;
+
+  --radius: 18px;
+  --gap: 24px;
+  --shadow: 0 8px 24px rgba(0,0,0,.18);
+  --text-light: #ffffff;
+  --text-dim: rgba(255,255,255,.85);
+  --btn-bg: rgba(255,255,255,.08);
+  --btn-border: rgba(255,255,255,.85);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+@media (min-width: 900px) {
+  .landing-choice {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --- TARJETA ---------------------------------------------------- */
+.landing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  /* Alto controlado por variables */
+  height: var(--card-h-mobile);
+  min-height: 260px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #0b0b0b;
+  box-shadow: var(--shadow);
+  color: var(--text-light);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+}
+
+@media (min-width: 900px) {
+  .landing-card { height: var(--card-h-desktop); }
+}
+
+/* Hover sutil (solo dispositivos con puntero) */
+@media (hover: hover) {
+  .landing-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.22);
+  }
+}
+
+/* Foco accesible */
+.landing-card:focus-visible {
+  outline: 3px solid #6ee7ff;
+  outline-offset: 4px;
+}
+
+/* --- IMAGEN: nunca se recorta ---------------------------------- */
+/* Importante: NO usar shorthand `background:` aquí para no
+   borrar el `background-image` que viene inline en el JSX. */
+.landing-card__img {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;        /* ← clave para no recortar */
+  background-color: #0b0b0b;       /* “letterbox” discreto si sobra espacio */
+}
+
+/* Overlay para legibilidad del texto */
+.landing-card__img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.72) 0%,
+    rgba(0,0,0,.45) 40%,
+    rgba(0,0,0,0) 70%
+  );
+  pointer-events: none;
+}
+
+/* --- CONTENIDO -------------------------------------------------- */
+.landing-card__body {
+  position: relative;
+  margin-top: auto;               /* empuja al fondo */
+  z-index: 1;
+  padding: 18px 20px 22px;
+
+  display: grid;
+  gap: 8px;
+}
+
+.landing-card__title {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: .2px;
+  font-size: clamp(1.05rem, 0.9rem + 0.9vw, 1.6rem);
+  color: var(--text-light);
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+.landing-card__subtitle {
+  margin: 0 0 6px 0;
+  font-size: clamp(.9rem, .85rem + .25vw, 1rem);
+  line-height: 1.35;
+  color: var(--text-dim);
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+/* --- Botón ------------------------------------------------------ */
+.landing-card__btn {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text-light);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .landing-card__btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,.14);
+    border-color: #ffffff;
+  }
+}
+.landing-card__btn:active { transform: translateY(0); }
+
+/* --- Modificadores de tamaño (opcionales por tarjeta) ----------- */
+/* Ejemplo en JSX: <a class="landing-card card--sm">…</a> */
+.card--xs { --card-h-mobile: 240px; --card-h-desktop: 320px; }
+.card--sm { --card-h-mobile: 280px; --card-h-desktop: 360px; }
+.card--md { --card-h-mobile: 320px; --card-h-desktop: 420px; } /* default */
+.card--lg { --card-h-mobile: 360px; --card-h-desktop: 500px; }
+
+/* --- Margen inferior del bloque (si no hay espaciado de layout) */
+.landing-choice + * { margin-top: 24px; }
+
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */
+/* LandingInscripcionChoice.js */

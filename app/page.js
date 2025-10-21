@@ -1,6 +1,7 @@
 // app/inscripcion/page.js (o donde tengas esta ruta)
 import Layout from '@/components/layout/Layout';
 import FromHome from '@/components/sections/home1/FormHome';
+import LandingInscripcionChoice from '@/components/sections/home1/LandingInscripcionChoice';
 
 // Opcional: asegurar build estático
 export const dynamic = 'force-static';
@@ -32,7 +33,8 @@ export default function InscripcionPage() {
     <Layout headerStyle={1} footerStyle={1} logoWhite>
       {/* Aplica tu fondo con .page-inscripcion en el CSS */}
       <main className="page-inscripcion">
-        <FromHome />
+        <LandingInscripcionChoice/>
+        
       </main>
     </Layout>
   );
