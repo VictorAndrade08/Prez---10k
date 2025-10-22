@@ -1,4 +1,3 @@
-
 // components/LandingInscripcionChoice.js
 import Link from 'next/link';
 
@@ -12,7 +11,7 @@ const DEFAULT_PROMO_IMG =
  * Funciona en export estático (no hooks, no fetch).
  */
 export default function LandingInscripcionChoice({
-  normalHref = '/#formulario',
+  normalHref = '/inscripcion/',             // <-- cambiado aquí
   promoHref = '/promo#formulario',
   normalImg = DEFAULT_NORMAL_IMG,
   promoImg = DEFAULT_PROMO_IMG,
