@@ -1,130 +1,240 @@
-'use client';
-
 export default function RegistrationPreventa({
-  distance = '8K',
-  price = 'US$ 23',
-  priceLabel = 'Últimos cupos',
-  priceNote = 'Incluye kit oficial',
-  kitItems = ['Camiseta', 'Medalla', 'Chip', 'Fruta/Hidratación'],
-  timeMax = 'Tiempo Máx 2h',
-  timeSub = 'Para todos los niveles',
+  distance = '10K',
+  price = 'US$ 25',
+  priceLabel = 'Inscripciones abiertas',
+  priceNote = 'Incluye kit oficial del corredor',
+  kitItems = [
+    'Camiseta oficial',
+    'Medalla finisher',
+    'Chip de cronometraje',
+    'Hidratación y fruta en ruta',
+  ],
+  timeMax = 'Tiempo Máx 2h 30min',
+  timeSub = 'Ruta urbana, apta para todos los niveles',
   ctaHref = '/inscripcion/',
-  verifyHref = '/verificar',
 }) {
   return (
     <section id="registro" className="reg-section" aria-labelledby="reg-title">
       <div className="reg-container">
-
-        {/* Cabecera */}
+        {/* TÍTULO PRINCIPAL */}
         <header className="reg-head">
-          <h2 id="reg-title" className="reg-title">
-            Inscripción &amp; Precio <span className="reg-badge">(Últimos cupos)</span>
+          <h2 id="reg-title" className="reg-title" style={{ color: '#FFFFFF' }}>
+            Inscripción &amp; Precio{' '}
+            <span
+              className="reg-badge"
+              style={{
+                color: '#D6E764',
+                fontWeight: '700',
+              }}
+            >
+              (Cupos limitados)
+            </span>
           </h2>
 
-          {/* Pasos */}
-          <ol className="reg-steps" aria-label="Cómo inscribirte">
+          {/* PASOS */}
+          <ol className="reg-steps" aria-label="Cómo inscribirte" style={{ color: '#EAEAEA' }}>
             <li className="reg-step">
-              <span className="reg-stepNum">1</span>
-              Completa el formulario online o escríbenos por WhatsApp.
+              <span className="reg-stepNum" style={{ background: '#1CA7A6', color: '#fff' }}>
+                1
+              </span>
+              Completa el formulario online o comunícate por WhatsApp.
             </li>
             <li className="reg-step">
-              <span className="reg-stepNum">2</span>
-              Realiza el pago y adjunta tu comprobante.
+              <span className="reg-stepNum" style={{ background: '#1CA7A6', color: '#fff' }}>
+                2
+              </span>
+              Realiza el pago y adjunta tu comprobante de inscripción.
             </li>
             <li className="reg-step">
-              <span className="reg-stepNum">3</span>
-              Recibe confirmación y retira tu kit.
+              <span className="reg-stepNum" style={{ background: '#1CA7A6', color: '#fff' }}>
+                3
+              </span>
+              Recibe tu confirmación y retira el kit del corredor.
             </li>
           </ol>
         </header>
 
-        {/* Tarjetas */}
+        {/* TARJETAS */}
         <div className="reg-cards" role="list">
-          {/* Distancia */}
+          {/* DISTANCIA */}
           <article
             className="reg-card reg-card--soft"
             role="listitem"
             aria-label={`Distancia oficial ${distance}`}
+            style={{
+              background: '#FFFFFF',
+              color: '#1B2230',
+            }}
           >
-            <div className="reg-ico" role="img" aria-label="Bandera de meta">🏁</div>
-
-            <h3 className="reg-cardTitle">
-              {distance} <span className="reg-chip">Distancia</span>
+            <div className="reg-ico" role="img" aria-label="Bandera de meta">
+              🏁
+            </div>
+            <h3
+              className="reg-cardTitle"
+              style={{
+                color: '#1CA7A6',
+                fontWeight: 800,
+                fontStyle: 'italic',
+                textTransform: 'uppercase',
+              }}
+            >
+              {distance}
             </h3>
-            <p className="reg-cardSub">Recorrido oficial</p>
-
-            <ul className="reg-list reg-list--bullets" aria-label="Detalles del recorrido">
-              <li>Salida: <b>Patate Garden – 08h00</b></li>
-              <li>Llegada: <b>Parque Central</b></li>
-              <li>Terreno mixto: tierra compacta + asfalto</li>
-              <li>Puntos de hidratación señalizados</li>
-              <li>Experiencia única entre mandarinales</li>
-              <li>Seguridad y asistencia en toda la ruta</li>
+            <p
+              className="reg-cardSub"
+              style={{ color: '#0B0B0B', fontWeight: 700 }}
+            >
+              Recorrido oficial urbano
+            </p>
+            <ul
+              className="reg-list reg-list--bullets"
+              style={{
+                color: '#1B2230',
+                lineHeight: 1.6,
+                fontSize: '0.95rem',
+              }}
+            >
+              <li>Fecha: <b>Domingo 23 de noviembre 2025</b></li>
+              <li>Hora de partida: <b>08h00</b></li>
+              <li>Lugar: <b>Ambato – Ecuador</b></li>
+              <li>Ruta certificada, rápida y segura</li>
+              <li>Puntos de hidratación y asistencia médica</li>
+              <li>Ambiente deportivo y familiar</li>
             </ul>
           </article>
 
-          {/* Precio preventa */}
+          {/* PRECIO */}
           <article
             className="reg-card reg-card--price"
-            role="listitem"
-            aria-label={`${priceLabel} ${price}`}
+            style={{
+              background: '#FFFFFF',
+              color: '#1B2230',
+            }}
           >
-            <div className="reg-priceRibbon" aria-hidden="true">{priceLabel}</div>
-            <div className="reg-ico" role="img" aria-label="Precio en efectivo">💵</div>
-
-            <h3 className="reg-cardTitle">
-              <span className="reg-price">{price}</span>
+            <div
+              className="reg-priceRibbon"
+              style={{
+                background: 'linear-gradient(135deg, #1CA7A6, #D6E764)',
+                color: '#0B0B0B',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
+                fontWeight: 700,
+              }}
+            >
+              {priceLabel}
+            </div>
+            <div className="reg-ico" role="img" aria-label="Precio en efectivo">
+              💵
+            </div>
+            <h3
+              className="reg-cardTitle"
+              style={{
+                color: '#1CA7A6',
+                fontWeight: 800,
+                fontStyle: 'italic',
+              }}
+            >
+              {price}
             </h3>
-            <p className="reg-cardSub">{priceNote}</p>
-
-            <ul className="reg-kitList" aria-label="Kit incluido">
+            <p
+              className="reg-cardSub"
+              style={{ color: '#0B0B0B', fontWeight: 700 }}
+            >
+              {priceNote}
+            </p>
+            <ul
+              className="reg-kitList"
+              style={{
+                color: '#1B2230',
+                lineHeight: 1.6,
+                fontSize: '0.95rem',
+              }}
+            >
               {kitItems.map((k, i) => (
-                <li key={i} className="reg-kitItem">• {k}</li>
+                <li key={i}>• {k}</li>
               ))}
             </ul>
-
-            <p className="reg-miniNote">Confirma tu pago y recibe la validación de tu inscripción.</p>
+            <p
+              className="reg-miniNote"
+              style={{ color: '#555', marginTop: '8px' }}
+            >
+              Confirma tu pago para validar oficialmente tu inscripción.
+            </p>
           </article>
 
-          {/* Tiempo máximo */}
+          {/* TIEMPO */}
           <article
             className="reg-card reg-card--soft"
-            role="listitem"
-            aria-label={`${timeMax}`}
+            style={{
+              background: '#FFFFFF',
+              color: '#1B2230',
+            }}
           >
-            <div className="reg-ico" role="img" aria-label="Cronómetro">⏱️</div>
-
-            <h3 className="reg-cardTitle">{timeMax}</h3>
-            <p className="reg-cardSub">{timeSub}</p>
-
-            <ul className="reg-list reg-list--bullets" aria-label="Recomendaciones">
-              <li>Participa, disfruta y supera tus límites</li>
-              <li>Corre entre paisajes únicos de Patate</li>
-              <li>Ambiente runner y acompañamiento</li>
-              <li>Tiempo suficiente para completar el recorrido</li>
-              <li>Ideal para corredores de todos los niveles</li>
+            <div className="reg-ico" role="img" aria-label="Cronómetro">
+              ⏱️
+            </div>
+            <h3
+              className="reg-cardTitle"
+              style={{
+                color: '#1CA7A6',
+                fontWeight: 800,
+                fontStyle: 'italic',
+                textTransform: 'uppercase',
+              }}
+            >
+              {timeMax}
+            </h3>
+            <p
+              className="reg-cardSub"
+              style={{ color: '#0B0B0B', fontWeight: 700 }}
+            >
+              {timeSub}
+            </p>
+            <ul
+              className="reg-list reg-list--bullets"
+              style={{
+                color: '#1B2230',
+                lineHeight: 1.6,
+                fontSize: '0.95rem',
+              }}
+            >
+              <li>Corre a tu ritmo, disfruta la ciudad y la energía del público</li>
+              <li>Ambiente runner con música y animación</li>
+              <li>Apoyo de voluntarios en toda la ruta</li>
+              <li>Meta ubicada en zona central de Ambato</li>
+              <li>Ideal para corredores novatos y avanzados</li>
             </ul>
           </article>
         </div>
 
-        {/* Acciones */}
+        {/* CTA */}
         <div className="reg-ctas">
-          <a className="reg-btn reg-btnPrimary" href={ctaHref}>
+          <a
+            className="reg-btn reg-btnPrimary"
+            href={ctaHref}
+            style={{
+              background: 'linear-gradient(135deg, #1CA7A6, #D6E764)',
+              color: '#0B0B0B',
+              fontWeight: 700,
+            }}
+          >
             Inscribirme ahora <span className="reg-arrow">→</span>
-          </a>
-          <a className="reg-btn reg-btnGhost" href={verifyHref}>
-            Verificar inscripción
           </a>
         </div>
 
-        {/* Notas / SEO */}
+        {/* TEXTO FINAL */}
         <div className="reg-extra">
-          <p>
-            Corre en la <b>8K Ruta de las Mandarinas – Patate, Ecuador</b>. Inscríbete hoy y vive la
-            emoción de una ruta pensada para todos los niveles, con hidratación, kit oficial y un
-            ambiente inigualable.
+          <p style={{ color: '#FFFFFF' }}>
+            Vive la experiencia de la <b>10K Independencia de Ambato – 2025</b>.
+            Corre “La carrera de la ciudad” este 23 de noviembre, con ruta
+            urbana, ambiente seguro, hidratación, cronometraje y medalla
+            finisher. ¡Inscríbete y sé parte de la historia!
           </p>
-          <p className="reg-footNote">*Venta válida hasta agotar cupos.</p>
+          <p
+            className="reg-footNote"
+            style={{ color: '#D6E764', fontWeight: 600 }}
+          >
+            *Cupos limitados hasta agotar existencias.
+          </p>
         </div>
       </div>
     </section>

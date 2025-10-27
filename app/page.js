@@ -1,44 +1,43 @@
-// app/inscripcion/page.js (o donde tengas esta ruta)
-import Layout from '@/components/layout/Layout';
-import FromHome from '@/components/sections/home1/FormHome';
+
 import LandingInscripcionChoice from '@/components/sections/home1/LandingInscripcionChoice';
 
-// Opcional: asegurar build estático
-export const dynamic = 'force-static';
+import Layout from "@/components/layout/Layout";
+import Hero from "@/components/sections/informacion/Hero";
+import SectionCards from "@/components/sections/informacion/SectionCards";
+import RegistrationPreventa from "@/components/sections/informacion/RegistrationPreventa";
+import CategoriasPreventa from "@/components/sections/informacion/CategoriasPreventa";
+import KitOficial from "@/components/sections/informacion/KitOficial";
+import Ruta from "@/components/sections/informacion/Ruta";
+import Beneficios from "@/components/sections/informacion/Beneficios";
+import Faq from "@/components/sections/informacion/Faq";
+import PremiosTabs from "@/components/sections/informacion/PremiosTabs";
+
+export const dynamic = "force-static";
 
 export const metadata = {
-  title: 'Inscripción | 10K Independencia de Ambato',
-  description:
-    'Formulario oficial de inscripción para la 10K Independencia de Ambato. Completa tus datos y confirma por WhatsApp.',
-  alternates: {
-    canonical: 'https://10kindependenciadeambato.com/inscripcion',
-  },
-  openGraph: {
-    title: 'Inscripción | 10K Independencia de Ambato',
-    description:
-      'Inscríbete a la 10K Independencia de Ambato y confirma tu participación en minutos.',
-    url: 'https://10kindependenciadeambato.com/inscripcion',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Inscripción | 10K Independencia de Ambato',
-    description:
-      'Inscríbete a la 10K Independencia de Ambato y confirma tu participación en minutos.',
-  },
+  title: "Información | 8K Ruta de las Mandarinas",
+  description: "Detalles de inscripción, categorías, kit oficial, ruta y beneficios de la 8K Ruta de las Mandarinas.",
+  alternates: { canonical: "https://8krutadelasmandarinas.com/informacion" },
 };
 
-export default function InscripcionPage() {
+export default function InformacionPage() {
   return (
     <Layout headerStyle={1} footerStyle={1} logoWhite>
-      {/* Aplica tu fondo con .page-inscripcion en el CSS */}
-      <main className="page-inscripcion">
-        <LandingInscripcionChoice/>
-        
-      </main>
+      < LandingInscripcionChoice/>
+      <Hero />
+      
+      <SectionCards />
+      <RegistrationPreventa />
+      <CategoriasPreventa />
+      <PremiosTabs />
+      <KitOficial />
+      <Ruta />
+      <Beneficios />
+      <Faq />
     </Layout>
   );
 }
+
 
 
 /*

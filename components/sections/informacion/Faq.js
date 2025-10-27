@@ -5,27 +5,31 @@ export default function Faq() {
   const items = [
     {
       q: '¿Cómo me inscribo?',
-      a: 'Elige inscripción online o por WhatsApp y confirma tu pago.',
+      a: 'Puedes inscribirte online desde la web oficial o escribirnos por WhatsApp. Completa tus datos y confirma tu pago.',
     },
     {
       q: '¿Cómo verifico mi inscripción?',
-      a: 'Usa el enlace de verificación o contáctanos por WhatsApp.',
+      a: 'Accede al enlace de verificación o comunícate por WhatsApp con tu número de cédula para confirmar tu registro.',
     },
     {
       q: '¿Cuánto cuesta?',
-      a: 'Venta desde US$23. Revisa precios por categoría arriba.',
+      a: 'El valor de inscripción es de US$25 e incluye kit oficial del corredor (camiseta, medalla, chip, hidratación).',
     },
     {
       q: '¿Habrá premios?',
-      a: 'Sí. Próximamente se publicarán los premios económicos por categoría.',
+      a: 'Sí. Habrá premios económicos para los tres primeros lugares de cada categoría (Élite, Master, Leyenda y Capacidades Especiales).',
     },
     {
       q: '¿Dónde retiro mi kit?',
-      a: 'Punto oficial anunciado 1 semana antes del evento.',
+      a: 'El punto de entrega del kit se anunciará en los canales oficiales durante la semana previa a la carrera.',
     },
     {
-      q: 'Políticas',
-      a: 'Número visible, hidratación incluida, respeto a categorías.',
+      q: '¿Cuándo y dónde es la carrera?',
+      a: 'La 10K Independencia de Ambato se correrá el domingo 23 de noviembre de 2025 a las 08h00, con salida en Av. Cevallos y llegada en el Parque Montalvo.',
+    },
+    {
+      q: 'Políticas del evento',
+      a: 'Número visible obligatorio, respeto a las categorías, asistencia médica y seguridad garantizada durante toda la ruta.',
     },
   ];
 

@@ -1,47 +1,46 @@
 'use client';
 
 export default function CategoriasPreventa({
-  title = 'Categorías & Precios de',
-  pricePreventa = 'US$ 23',
-  priceNormal = 'US$ 18',
+  title = 'Categorías & Precios – 10K Independencia de Ambato 2025',
+  priceGeneral = 'US$ 25',
   onRegister = (slug) => (window.location.href = `/inscripcion`),
 }) {
   const items = [
     {
-      slug: 'elite',
+      slug: 'elite-pro',
       icon: '⚡️',
-      title: 'Élite (18–39)',
+      title: 'Élite Pro (18–39)',
       body:
-        'Para corredores que buscan su mejor marca. Categoría oficial competitiva. Ideal si tienes entre 18 y 39 años. Velocidad y adrenalina.',
-      price: pricePreventa,
-      priceLabel: 'Venta',
+        'Categoría competitiva para corredores que buscan su mejor marca. Ideal si tienes entre 18 y 39 años. Velocidad, técnica y pasión por el running.',
+      price: priceGeneral,
+      priceLabel: 'Precio general',
     },
     {
-      slug: 'super-master',
+      slug: 'master',
       icon: '💪',
-      title: 'Súper Master (40–64)',
+      title: 'Master (40–64)',
       body:
-        'Corredores con experiencia y resistencia. Vive el desafío con madurez y fuerza. Damas y varones con espíritu competitivo.',
-      price: pricePreventa,
-      priceLabel: 'Venta',
+        'Corredores con experiencia y fortaleza. Vive el desafío con madurez y energía. Categoría oficial femenina y masculina.',
+      price: priceGeneral,
+      priceLabel: 'Precio general',
     },
     {
       slug: 'leyenda',
       icon: '✨',
       title: 'Leyenda (65+)',
       body:
-        'Para verdaderas leyendas del running. Corre a tu ritmo, con alegría y orgullo. Categoría femenina y masculina. Asistencia total.',
-      price: priceNormal,
-      priceLabel: 'Precio', // <- normal
+        'Para verdaderas leyendas del running. Corre a tu ritmo, con orgullo y alegría. Categoría femenina y masculina con reconocimiento especial.',
+      price: priceGeneral,
+      priceLabel: 'Precio general',
     },
     {
       slug: 'especiales',
       icon: '♿️',
-      title: 'Especiales (Identificación)',
+      title: 'Capacidades Especiales (Abierto)',
       body:
-        'Para atletas con discapacidad visual, intelectual o física. Participación con respeto, apoyo y alegría. Requiere identificación vigente. Asistencia y seguridad.',
-      price: priceNormal,
-      priceLabel: 'Precio', // <- normal
+        'Para atletas con discapacidad visual, intelectual o física. Participación con respeto, apoyo y alegría. Requiere identificación vigente. Seguridad total durante la ruta.',
+      price: priceGeneral,
+      priceLabel: 'Precio general',
     },
   ];
 
@@ -49,7 +48,7 @@ export default function CategoriasPreventa({
     <section id="categorias-preventa" className="catp-sec" aria-label="Categorías y precios">
       <div className="catp-wrap">
         <h2 className="catp-title">
-          {title} <span className="catp-badge">Venta</span>
+          {title} <span className="catp-badge">Venta general</span>
         </h2>
 
         <div className="catp-grid">
@@ -78,9 +77,9 @@ export default function CategoriasPreventa({
         </div>
 
         <div className="catp-notes">
-          <p className="catp-note">Recibe confirmación y retira tu kit.</p>
+          <p className="catp-note">Incluye kit oficial del corredor y medalla finisher.</p>
           <p className="catp-note">
-            🏆 <b>Premios económicos:</b> Próximamente se publicarán los premios para los primeros lugares por categoría.
+            🏆 <b>Premios económicos:</b> se publicarán próximamente para los primeros lugares de cada categoría.
           </p>
         </div>
       </div>

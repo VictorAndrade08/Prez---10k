@@ -3,31 +3,28 @@ import { useEffect, useMemo, useState } from 'react';
 
 export default function Hero({
   className,
-  eventTitle = '8K Ruta de las Mandarinas – 2025',
-  subtitle = 'Información – Aquí vas a encontrar todo sobre la carrera: kit, ruta, categorías, precios y más. Corre en el Pueblo Mágico de Patate – Ecuador',
-  dateISO = '2025-09-27T13:00:00Z',
+  eventTitle = '10K Independencia de Ambato – 2025',
+  subtitle = 'Vive “La carrera de la ciudad”. Descubre toda la información sobre la ruta, categorías, precios, kit del corredor y premios. Este 23 de noviembre, corre por las calles de Ambato, Ecuador.',
+  dateISO = '2025-11-23T08:00:00-05:00',
   chips = [
-    { label: 'Sábado 27 Sept 2025' },
+    { label: 'Domingo 23 Nov 2025' },
     { label: '08h00' },
-    { label: 'Salida: Patate Garden' },
-    { label: 'Llegada: Parque Central' },
+    { label: 'Lugar: Ambato, Ecuador' },
+    { label: 'Distancia: 10 km' },
     { label: 'Premios: Primeros Lugares' },
   ],
   registerHref = '/inscripcion',
   onRegisterClick,
-
-  // id de la sección premios
   premiosId = 'premios',
 
-  // IMAGEN (sitio estático)
-  mediaSrc = '/assets/imgs/page/informacion/8kmandarinas1.webp',
-  mediaAlt = 'Corredores entre campos de mandarina y montañas de Patate',
+  // 🟩 Imagen principal (banner horizontal oficial)
+  mediaSrc = '/assets/imgs/10k2.webp',
+  mediaAlt = 'Banner oficial 10K Independencia de Ambato 2025 — La carrera de la ciudad',
 
-  // Control del media (sin recorte)
-  mediaFit = 'contain',
+  mediaFit = 'cover',
   mediaAspect = '16 / 9',
-  mediaHeight = 'clamp(320px, 45vw, 560px)',
-  mediaBg = '#0e0e14',
+  mediaHeight = 'clamp(360px, 48vw, 620px)',
+  mediaBg = '#0B2439',
 }) {
   const target = useMemo(
     () => (typeof window !== 'undefined' ? new Date(dateISO).getTime() : 0),
@@ -61,11 +58,11 @@ export default function Hero({
     window.location.href = registerHref;
   };
 
-  // 🔥 scroll suave a la sección premios
+  // Scroll suave
   const scrollToPremios = () => {
     const el = document.getElementById(premiosId);
     if (el) {
-      const yOffset = -80; // ajusta si tienes header fijo
+      const yOffset = -80;
       const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -95,6 +92,7 @@ export default function Hero({
             })}
           </div>
 
+          {/* Contador regresivo */}
           <div className="inf-countdown" aria-label="Cuenta regresiva" aria-live="polite">
             <div className="inf-counter"><b>{pad2(time.d)}</b><small>Días</small></div>
             <div className="inf-counter"><b>{pad2(time.h)}</b><small>Horas</small></div>
@@ -102,6 +100,7 @@ export default function Hero({
             <div className="inf-counter"><b>{pad2(time.s)}</b><small>Seg</small></div>
           </div>
 
+          {/* Botones */}
           <div className="inf-btns">
             <button className="inf-btn inf-btnPrimary inf-btnXL" type="button" onClick={handleRegister}>
               <span>¡Inscríbete Online!</span>
@@ -118,7 +117,7 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Columna media */}
+        {/* Columna media — Banner horizontal */}
         <div
           className="inf-colMedia inf-colMedia--fixed"
           style={{

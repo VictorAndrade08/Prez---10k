@@ -3,37 +3,35 @@
 export default function SectionCards() {
   const items = [
     {
-      title: 'Kit',
-      desc: 'Camiseta oficial, número y sorpresas',
-      color: '#FF6C00',
+      title: 'Kit Oficial',
+      desc: 'Camiseta, número, medalla y sorpresas',
+      color: 'linear-gradient(135deg, #1CA7A6, #D6E764)',
       iconSrc: '/assets/imgs/1.webp',
-      href: 'kit', // 👈 solo el id sin #
-      textColor: '#f7f7f7',
+      href: 'kit',
+      textColor: '#0B0B0B',
     },
     {
       title: 'Categorías y Premios',
-      desc: 'Élite, Súper Master, Leyenda, Especiales',
-      color: '#4C1C6F',
+      desc: 'Élite, Súper Máster, Leyenda, Especiales',
+      color: '#01395B',
       iconSrc: '/assets/imgs/2.webp',
-      href: 'categorias-preventa',
-      textColor: '#FFF',
+      href: 'premios',
+      textColor: '#FFFFFF',
     },
     {
-      title: 'Ruta',
+      title: 'Ruta Oficial',
       desc: 'Ver / descargar GPX y PDF',
       color: '#FFFFFF',
       iconSrc: '/assets/imgs/3.webp',
       href: 'ruta',
-      textColor: '#111',
+      textColor: '#0B0B0B', // 🔥 Título y texto en negro puro
     },
   ];
 
   const handleScroll = (e, id) => {
-    e.preventDefault(); // evita el #
+    e.preventDefault();
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -46,10 +44,17 @@ export default function SectionCards() {
         {items.map((c, i) => (
           <li key={i} role="listitem">
             <a
-              href={`#${c.href}`} // fallback en HTML estático
+              href={`#${c.href}`}
               onClick={(e) => handleScroll(e, c.href)}
               className={`cats-card ${c.color === '#FFFFFF' ? 'is-light' : ''}`}
-              style={{ background: c.color, color: c.textColor || '#fff' }}
+              style={{
+                background: c.color,
+                color: c.textColor,
+                boxShadow:
+                  c.color === '#FFFFFF'
+                    ? '0 4px 14px rgba(0,0,0,0.08)'
+                    : '0 8px 24px rgba(0,0,0,0.25)',
+              }}
               aria-label={`${c.title}: ${c.desc}`}
             >
               <span className="cats-ico" aria-hidden="true">
@@ -67,7 +72,12 @@ export default function SectionCards() {
               </span>
 
               <div className="cats-content">
-                <h3 className="cats-title">{c.title}</h3>
+                <h3
+                  className="cats-title"
+                  style={{ color: c.textColor }}
+                >
+                  {c.title}
+                </h3>
                 <p className="cats-desc">{c.desc}</p>
               </div>
             </a>
