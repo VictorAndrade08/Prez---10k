@@ -9,8 +9,8 @@ export default function PremiosTabs() {
   const [active, setActive] = useState('elite');
 
   const tabs = [
-    { id: 'elite', label: 'Élite (18–39)' },
-    { id: 'master', label: 'Súper Máster (40–64)' },
+    { id: 'elite', label: 'Élite (Hasta 39 años)' },
+    { id: 'master', label: 'Máster (40–64)' },
     { id: 'leyenda', label: 'Leyenda (65+)' },
     { id: 'especiales', label: 'Personas con Discapacidad' },
   ];
@@ -88,7 +88,7 @@ export default function PremiosTabs() {
         <div className="premios-panels">
           {active === 'elite' && (
             <PremiosCard
-              title="ÉLITE (18 a 39 años)"
+              title="ÉLITE (Hasta 39 años)"
               premios={[
                 { lugar: '1° lugar', hombre: '$200', mujer: '$200' },
                 { lugar: '2° lugar', hombre: '$150', mujer: '$150' },

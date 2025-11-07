@@ -1,39 +1,37 @@
 // components/LandingInscripcionChoice.js
 import Link from 'next/link';
 
-const DEFAULT_NORMAL_IMG =
-  'https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/10/normal.jpg';
-const DEFAULT_PROMO_IMG =
-  'https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/10/promo1.webp';
+const DEFAULT_NORMAL_IMG = '/assets/imgs/inscripcion.webp';
+const DEFAULT_VERIFICAR_IMG = '/assets/imgs/verificar.webp';
 
 /**
- * Bloque con dos tarjetas: Inscripción normal / Inscripción promoción
+ * Bloque con dos tarjetas: Inscripción normal / Verificar inscripción
  * Funciona en export estático (no hooks, no fetch).
  */
 export default function LandingInscripcionChoice({
-  normalHref = '/inscripcion/',             // <-- cambiado aquí
-  promoHref = '/promo#formulario',
+  normalHref = '/inscripcion/',
+  verificarHref = '/verificar',
   normalImg = DEFAULT_NORMAL_IMG,
-  promoImg = DEFAULT_PROMO_IMG,
+  verificarImg = DEFAULT_VERIFICAR_IMG,
   className = '',
   normalSubtitle = '23 de noviembre · 08h00',
-  promoSubtitle = 'Ruta de los Tres Juanes + 10K Ambato · 2 carreras por $50',
+  verificarSubtitle = 'Consulta tu registro oficial de la 10K Independencia de Ambato',
 }) {
   return (
-    <section className={`landing-choice ${className}`} aria-label="Elige tu inscripción">
+    <section className={`landing-choice ${className}`} aria-label="Elige tu inscripción o verifica">
       <Card
         href={normalHref}
         img={normalImg}
         title="Inscripción normal"
         subtitle={normalSubtitle}
-        cta="Inscripción normal"
+        cta="Inscribirme"
       />
       <Card
-        href={promoHref}
-        img={promoImg}
-        title="Inscripción promoción"
-        subtitle={promoSubtitle}
-        cta="Inscripción promoción"
+        href={verificarHref}
+        img={verificarImg}
+        title="Verificar inscripción"
+        subtitle={verificarSubtitle}
+        cta="Verificar"
       />
     </section>
   );
@@ -50,7 +48,9 @@ function Card({ href, img, title, subtitle, cta }) {
       <div className="landing-card__body">
         <h3 className="landing-card__title">{title}</h3>
         {subtitle ? <p className="landing-card__subtitle">{subtitle}</p> : null}
-        <span className="landing-card__btn" role="button">{cta}</span>
+        <span className="landing-card__btn" role="button">
+          {cta}
+        </span>
       </div>
     </Link>
   );

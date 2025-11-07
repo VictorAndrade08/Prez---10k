@@ -1,6 +1,4 @@
-
 import LandingInscripcionChoice from '@/components/sections/home1/LandingInscripcionChoice';
-
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/sections/informacion/Hero";
 import SectionCards from "@/components/sections/informacion/SectionCards";
@@ -11,21 +9,24 @@ import Ruta from "@/components/sections/informacion/Ruta";
 import Beneficios from "@/components/sections/informacion/Beneficios";
 import Faq from "@/components/sections/informacion/Faq";
 import PremiosTabs from "@/components/sections/informacion/PremiosTabs";
-
+import VideoF1 from "@/components/sections/home1/VideoF1";
+import Section2 from "@/components/sections/home1/Section2";
 export const dynamic = "force-static";
 
 export const metadata = {
-  title: "Información | 8K Ruta de las Mandarinas",
-  description: "Detalles de inscripción, categorías, kit oficial, ruta y beneficios de la 8K Ruta de las Mandarinas.",
-  alternates: { canonical: "https://8krutadelasmandarinas.com/informacion" },
+  title: "Información | 10K Independencia de Ambato 2025",
+  description:
+    "Descubre todos los detalles de la 10K Independencia de Ambato 2025: inscripción, categorías, kit oficial, ruta, beneficios y premios. Vive la energía de la carrera de la ciudad y sé parte de esta gran fiesta deportiva en Ambato, Ecuador.",
+  alternates: { canonical: "https://10kindependenciadeambato.com/informacion" },
 };
 
 export default function InformacionPage() {
   return (
     <Layout headerStyle={1} footerStyle={1} logoWhite>
-      < LandingInscripcionChoice/>
+      <LandingInscripcionChoice />
+      <VideoF1 />
+      <Section2 />
       <Hero />
-      
       <SectionCards />
       <RegistrationPreventa />
       <CategoriasPreventa />

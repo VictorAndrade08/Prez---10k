@@ -9,7 +9,7 @@ export default function CategoriasPreventa({
     {
       slug: 'elite-pro',
       icon: '⚡️',
-      title: 'Élite Pro (18–39)',
+      title: 'Élite Pro (Hasta 39 Años)',
       body:
         'Categoría competitiva para corredores que buscan su mejor marca. Ideal si tienes entre 18 y 39 años. Velocidad, técnica y pasión por el running.',
       price: priceGeneral,
@@ -18,7 +18,7 @@ export default function CategoriasPreventa({
     {
       slug: 'master',
       icon: '💪',
-      title: 'Master (40–64)',
+      title: 'Máster (40–64)',
       body:
         'Corredores con experiencia y fortaleza. Vive el desafío con madurez y energía. Categoría oficial femenina y masculina.',
       price: priceGeneral,

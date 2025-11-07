@@ -32,7 +32,8 @@ export default function VerificarInscripcion() {
 
       const data = await res.json();
 
-      if (data.success && data.ok) {
+      // 🔴 aquí va el cambio
+      if (data.ok) {
         const etapa = data.etapa ?? data.estado ?? '';
         setResultado({
           ok: true,
@@ -99,7 +100,6 @@ export default function VerificarInscripcion() {
                   <p><strong>Nombre:</strong> {resultado.nombre}</p>
                   <p><strong>Categoría:</strong> {resultado.categoria}</p>
 
-                  {/* ETAPA con alerta si es Pago Solicitado */}
                   <p className={`etapa-text ${resultado.etapa === 'Pago Solicitado' ? 'alerta-etapa' : ''}`}>
                     <strong>Etapa:</strong> {resultado.etapa || '—'}
                   </p>
@@ -160,7 +160,7 @@ export default function VerificarInscripcion() {
 
         <div className="verificar-img">
           <img
-            src="/assets/imgs/page/informacion/8kmandarinas1.webp"
+            src="/assets/imgs/page/informacion/10k.webp"
             alt="8K Ruta de las Mandarinas – Evento deportivo en Patate"
           />
         </div>

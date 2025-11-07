@@ -5412,3 +5412,129 @@ h3, .h3 { font-size: var(--h3-size); }
   transform: scale(1.03);
   opacity: 0.9;
 }
+
+
+
+.verificar-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+}
+
+
+.verificar-form button {
+  background: linear-gradient(90deg, #1CA7A6, #D6E764);
+  color: #0B0B0B;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.verificar-form button:hover {
+  background: linear-gradient(90deg, #D6E764, #1CA7A6);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+ .verificar-card {
+  background: #082429;
+  border-radius: 16px;
+  padding: 2rem;
+  color: #E0F2F1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  border-top: 4px solid #1CA7A6;
+}
+
+.verificar-title {
+  color: #D6E764;
+  font-weight: 800;
+}
+
+.verificar-sub {
+  color: #8EC5C3;
+}
+
+.verificar-form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #1CA7A6;
+  color: #D6E764;
+}
+
+.verificar-form input::placeholder {
+  color: #82AFAE;
+}
+
+.verificar-form button {
+  background: linear-gradient(90deg, #1CA7A6, #D6E764);
+  color: #0B0B0B;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(28, 167, 166, 0.3);
+}
+
+.verificar-form button:hover {
+  background: linear-gradient(90deg, #D6E764, #1CA7A6);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(214, 231, 100, 0.4);
+}
+
+.verificar-section {
+  background: linear-gradient(180deg, #0B2E35 0%, #061920 100%);
+}
+
+
+/* ==== Ajuste visual para las tarjetas de inscripción/verificación ==== */
+.landing-card__img {
+  background-size: cover;              /* ✅ La imagen llena todo el espacio */
+  background-position: center center;  /* ✅ Centrada en el eje horizontal y vertical */
+  background-repeat: no-repeat;        /* ✅ Evita mosaicos */
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.landing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  min-height: 320px; /* puedes ajustar si necesitas más altura */
+}
+
+.landing-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  border-radius: 0 0 14px 14px;
+  color: #fff;
+}
+
+.landing-card__title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.landing-card__subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}

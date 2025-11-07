@@ -5,8 +5,8 @@ import { toast } from 'sonner';
 
 export default function Ruta({
   title = 'Ruta Oficial 10K Independencia de Ambato 2025',
-  salida = 'Av. Cevallos (sector centro)',
-  llegada = 'Parque Montalvo – Ambato',
+  salida = 'Puente Luis A. Martínez',
+  llegada = 'Parque Cdla. Nuevo Ambato – Ambato',
   descripcion = 'Circuito urbano de 10 kilómetros por las principales avenidas de Ambato. Ruta certificada, rápida y segura, con puntos de hidratación y asistencia médica.',
   mapSrc = '/assets/imgs/10k3.jpg',
   mapAlt = '10K Independencia de Ambato 2025 — La carrera de la ciudad',
