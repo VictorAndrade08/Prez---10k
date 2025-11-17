@@ -1,23 +1,25 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { toast } from 'sonner';
+import { useState, useEffect } from "react";
+import { toast } from "sonner";
 
 export default function Ruta({
-  title = 'Ruta Oficial 10K Independencia de Ambato 2025',
-  salida = 'Puente Luis A. Martínez',
-  llegada = 'Parque Cdla. Nuevo Ambato – Ambato',
-  descripcion = 'Circuito urbano de 10 kilómetros por las principales avenidas de Ambato. Ruta certificada, rápida y segura, con puntos de hidratación y asistencia médica.',
-  mapSrc = '/assets/imgs/10k3.jpg',
-  mapAlt = '10K Independencia de Ambato 2025 — La carrera de la ciudad',
+  title = "Ruta Oficial 10K Independencia de Ambato 2025",
+  salida = "Puente Luis A. Martínez",
+  llegada = "Parque Cdla. Nuevo Ambato – Ambato",
+  descripcion = "Circuito urbano de 10 kilómetros por las principales avenidas de Ambato. Ruta certificada, rápida y segura, con puntos de hidratación y asistencia médica.",
+  mapSrc = "https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/11/ruta.webp",
+  mapAlt = "10K Independencia de Ambato 2025 — La carrera de la ciudad",
 }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   // Cerrar con ESC
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') setLightboxOpen(false); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    const onKey = (e) => {
+      if (e.key === "Escape") setLightboxOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   // Bloquear scroll del body cuando el lightbox está abierto
@@ -25,13 +27,29 @@ export default function Ruta({
     const { style } = document.body;
     if (lightboxOpen) {
       const prev = style.overflow;
-      style.overflow = 'hidden';
-      return () => { style.overflow = prev; };
+      style.overflow = "hidden";
+      return () => {
+        style.overflow = prev;
+      };
     }
   }, [lightboxOpen]);
 
   const handleSoon = (label) => {
-    toast.info(`Próximamente: ${label} disponible muy pronto 🚧`, { duration: 3000 });
+    toast.info(`Próximamente: ${label} disponible muy pronto 🚧`, {
+      duration: 3000,
+    });
+  };
+
+  const handleDownloadPDF = () => {
+    const pdfUrl = "https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/11/ruta.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "ruta-10k-independencia-ambato-2025.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success("Descargando mapa PDF...", { duration: 2000 });
   };
 
   return (
@@ -40,46 +58,46 @@ export default function Ruta({
       className="route-sec"
       aria-label="Información de la ruta"
       style={{
-        background: 'linear-gradient(180deg, #0B2439 0%, #111111 100%)',
-        color: '#FFFFFF',
-        padding: '80px 20px',
+        background: "linear-gradient(180deg, #0B2439 0%, #111111 100%)",
+        color: "#FFFFFF",
+        padding: "80px 20px",
       }}
     >
       <div
         className="route-wrap"
         style={{
-          maxWidth: '1100px',
-          margin: '0 auto',
+          maxWidth: "1100px",
+          margin: "0 auto",
         }}
       >
         <div
           className="route-grid"
           style={{
-            display: 'grid',
-            gap: '32px',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            alignItems: 'center',
+            display: "grid",
+            gap: "32px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            alignItems: "center",
           }}
         >
           {/* Columna izquierda */}
           <article
             className="route-card"
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '16px',
-              padding: '32px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "16px",
+              padding: "32px",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
             }}
           >
             <h2
               className="route-title"
               style={{
                 fontWeight: 800,
-                fontSize: '1.8rem',
-                color: '#D6E764',
-                fontStyle: 'italic',
-                marginBottom: '16px',
+                fontSize: "1.8rem",
+                color: "#D6E764",
+                fontStyle: "italic",
+                marginBottom: "16px",
               }}
             >
               {title}
@@ -88,26 +106,26 @@ export default function Ruta({
             <p
               className="route-meta"
               style={{
-                color: '#EAEAEA',
-                fontSize: '1rem',
-                marginBottom: '16px',
+                color: "#EAEAEA",
+                fontSize: "1rem",
+                marginBottom: "16px",
               }}
             >
-              <span>Salida:</span>{' '}
-              <strong style={{ color: '#D6E764' }}>{salida}</strong>
-              <span className="route-dot" style={{ margin: '0 6px' }}>
+              <span>Salida:</span>{" "}
+              <strong style={{ color: "#D6E764" }}>{salida}</strong>
+              <span className="route-dot" style={{ margin: "0 6px" }}>
                 ·
               </span>
-              <span>Llegada:</span>{' '}
-              <strong style={{ color: '#1CA7A6' }}>{llegada}</strong>
+              <span>Llegada:</span>{" "}
+              <strong style={{ color: "#1CA7A6" }}>{llegada}</strong>
             </p>
 
             <p
               className="route-desc"
               style={{
                 lineHeight: 1.6,
-                color: '#EAEAEA',
-                marginBottom: '24px',
+                color: "#EAEAEA",
+                marginBottom: "24px",
               }}
             >
               {descripcion}
@@ -116,41 +134,45 @@ export default function Ruta({
             <div
               className="route-actions"
               style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "12px",
               }}
             >
               <button
                 className="route-btn route-btnPrimary"
                 onClick={() => setLightboxOpen(true)}
                 style={{
-                  background: 'linear-gradient(135deg, #1CA7A6, #D6E764)',
-                  color: '#0B0B0B',
+                  background: "linear-gradient(135deg, #1CA7A6, #D6E764)",
+                  color: "#0B0B0B",
                   fontWeight: 700,
-                  border: 'none',
-                  borderRadius: '10px',
-                  padding: '12px 22px',
-                  cursor: 'pointer',
-                  transition: 'transform 0.3s ease',
+                  border: "none",
+                  borderRadius: "10px",
+                  padding: "12px 22px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease",
                 }}
-                onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.transform = "scale(1.05)")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.transform = "scale(1)")
+                }
               >
                 Ver imagen oficial
               </button>
 
-              <button
+              {/* <button
                 className="route-btn route-btnGhost"
                 onClick={() => handleSoon('Descargar mapa GPX')}
                 style={ghostButton}
               >
                 Descargar GPX
-              </button>
+              </button> */}
 
               <button
                 className="route-btn route-btnGhost"
-                onClick={() => handleSoon('Descargar mapa PDF')}
+                onClick={handleDownloadPDF}
                 style={ghostButton}
               >
                 Descargar PDF
@@ -163,11 +185,11 @@ export default function Ruta({
             className="route-mapCard"
             aria-label="Mapa o logo del evento"
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '16px',
-              padding: '12px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "16px",
+              padding: "12px",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
             }}
           >
             <div className="route-mapBox">
@@ -178,11 +200,11 @@ export default function Ruta({
                 loading="lazy"
                 decoding="async"
                 style={{
-                  objectFit: 'contain',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '12px',
-                  background: '#F6F6F6',
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "12px",
+                  background: "#F6F6F6",
                 }}
               />
             </div>
@@ -199,22 +221,22 @@ export default function Ruta({
           aria-modal="true"
           aria-label="Imagen ampliada"
           style={{
-            position: 'fixed',
+            position: "fixed",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
-            background: 'rgba(0,0,0,0.85)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             zIndex: 1000,
           }}
         >
           <div
             className="route-lightboxInner"
             onClick={(e) => e.stopPropagation()}
-            style={{ position: 'relative' }}
+            style={{ position: "relative" }}
           >
             <img
               className="route-lightboxImg"
@@ -222,10 +244,10 @@ export default function Ruta({
               alt={mapAlt}
               draggable={false}
               style={{
-                maxWidth: '90vw',
-                maxHeight: '90vh',
-                borderRadius: '16px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                borderRadius: "16px",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
               }}
             />
             <button
@@ -234,18 +256,18 @@ export default function Ruta({
               aria-label="Cerrar"
               type="button"
               style={{
-                position: 'absolute',
-                top: '-16px',
-                right: '-16px',
-                background: 'linear-gradient(135deg, #1CA7A6, #D6E764)',
-                border: 'none',
-                borderRadius: '50%',
-                color: '#0B0B0B',
+                position: "absolute",
+                top: "-16px",
+                right: "-16px",
+                background: "linear-gradient(135deg, #1CA7A6, #D6E764)",
+                border: "none",
+                borderRadius: "50%",
+                color: "#0B0B0B",
                 fontWeight: 700,
-                fontSize: '1.2rem',
-                width: '36px',
-                height: '36px',
-                cursor: 'pointer',
+                fontSize: "1.2rem",
+                width: "36px",
+                height: "36px",
+                cursor: "pointer",
               }}
             >
               ✕
@@ -258,12 +280,12 @@ export default function Ruta({
 }
 
 const ghostButton = {
-  background: 'transparent',
-  color: '#FFFFFF',
-  border: '1px solid rgba(255,255,255,0.3)',
-  borderRadius: '10px',
-  padding: '12px 22px',
+  background: "transparent",
+  color: "#FFFFFF",
+  border: "1px solid rgba(255,255,255,0.3)",
+  borderRadius: "10px",
+  padding: "12px 22px",
   fontWeight: 600,
-  cursor: 'pointer',
-  transition: 'all 0.3s ease',
+  cursor: "pointer",
+  transition: "all 0.3s ease",
 };

@@ -1,24 +1,29 @@
 // components/LandingInscripcionChoice.js
-import Link from 'next/link';
+import Link from "next/link";
 
-const DEFAULT_NORMAL_IMG = '/assets/imgs/inscripcion.webp';
-const DEFAULT_VERIFICAR_IMG = '/assets/imgs/verificar.webp';
+const DEFAULT_NORMAL_IMG =
+  "https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/11/90x1.webp";
+const DEFAULT_VERIFICAR_IMG =
+  "https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/11/92x2.webp";
 
 /**
  * Bloque con dos tarjetas: Inscripción normal / Verificar inscripción
  * Funciona en export estático (no hooks, no fetch).
  */
 export default function LandingInscripcionChoice({
-  normalHref = '/inscripcion/',
-  verificarHref = '/verificar',
+  normalHref = "/inscripcion/",
+  verificarHref = "/verificar",
   normalImg = DEFAULT_NORMAL_IMG,
   verificarImg = DEFAULT_VERIFICAR_IMG,
-  className = '',
-  normalSubtitle = '23 de noviembre · 08h00',
-  verificarSubtitle = 'Consulta tu registro oficial de la 10K Independencia de Ambato',
+  className = "",
+  normalSubtitle = "23 de noviembre · 08h00",
+  verificarSubtitle = "Consulta tu registro oficial de la 10K Independencia de Ambato",
 }) {
   return (
-    <section className={`landing-choice ${className}`} aria-label="Elige tu inscripción o verifica">
+    <section
+      className={`landing-choice ${className}`}
+      aria-label="Elige tu inscripción o verifica"
+    >
       <Card
         href={normalHref}
         img={normalImg}

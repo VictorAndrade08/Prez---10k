@@ -1,6 +1,6 @@
 "use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Section10() {
   return (
@@ -13,11 +13,13 @@ export default function Section10() {
           </a>
 
           <h2 className="mb-20 mt-15 mandarina-cats-head">
-            Diseñada para todas <br className="d-none d-lg-block" /> las edades y condiciones.
+            Diseñada para todas <br className="d-none d-lg-block" /> las edades
+            y condiciones.
           </h2>
 
           <p className="text-lg neutral-500 mb-65 mandarina-cats-sub">
-            Desde corredores jóvenes hasta adultos mayores, incluyendo atletas con capacidades especiales.
+            Desde corredores jóvenes hasta adultos mayores, incluyendo atletas
+            con capacidades especiales.
           </p>
         </div>
 
@@ -32,7 +34,10 @@ export default function Section10() {
                 <div className="card-price" />
                 <div className="card-button">
                   {/* 👇 sin slash */}
-                  <a href="#formulario" className="btn mandarina-cat-btn mandarina-cat-btn--uniform">
+                  <a
+                    href="#formulario"
+                    className="btn mandarina-cat-btn mandarina-cat-btn--uniform"
+                  >
                     ¡INSCRÍBETE AHORA! →
                   </a>
                 </div>
@@ -51,12 +56,15 @@ export default function Section10() {
             <div className="col-lg-3 col-md-6">
               <div className="card-pricing card-pricing-style-3 mandarina-cat mandarina-cat--master">
                 <div className="card-title">
-                  <h6>Súper Master (40 a 64 años)</h6>
+                  <h6>Master (40 a 64 años)</h6>
                 </div>
                 <div className="card-price" />
                 <div className="card-button">
                   {/* 👇 sin slash */}
-                  <a href="#formulario" className="btn mandarina-cat-btn mandarina-cat-btn--uniform">
+                  <a
+                    href="#formulario"
+                    className="btn mandarina-cat-btn mandarina-cat-btn--uniform"
+                  >
                     ¡INSCRÍBETE AHORA! →
                   </a>
                 </div>
@@ -80,7 +88,10 @@ export default function Section10() {
                 <div className="card-price" />
                 <div className="card-button">
                   {/* 👇 sin slash */}
-                  <a href="#formulario" className="btn mandarina-cat-btn mandarina-cat-btn--uniform">
+                  <a
+                    href="#formulario"
+                    className="btn mandarina-cat-btn mandarina-cat-btn--uniform"
+                  >
                     ¡INSCRÍBETE AHORA! →
                   </a>
                 </div>
@@ -104,13 +115,18 @@ export default function Section10() {
                 <div className="card-price" />
                 <div className="card-button">
                   {/* 👇 sin slash */}
-                  <a href="#formulario" className="btn mandarina-cat-btn mandarina-cat-btn--uniform">
+                  <a
+                    href="#formulario"
+                    className="btn mandarina-cat-btn mandarina-cat-btn--uniform"
+                  >
                     ¡INSCRÍBETE AHORA! →
                   </a>
                 </div>
                 <div className="card-lists">
                   <ul className="list-feature">
-                    <li>Para atletas con discapacidad visual, intelectual o física</li>
+                    <li>
+                      Para atletas con discapacidad visual, intelectual o física
+                    </li>
                     <li>Participación con respeto, apoyo y alegría</li>
                     <li>Requiere carnet CONADIS vigente</li>
                     <li>Asistencia y Seguridad</li>
@@ -118,7 +134,6 @@ export default function Section10() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
