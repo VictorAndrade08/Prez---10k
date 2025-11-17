@@ -75,8 +75,8 @@ export default function ReglamentoContent() {
           <ul className="reglamento__list">
             <li>$25 – Élite Pro</li>
             <li>$25 – Máster</li>
-            <li>$25 – Leyenda</li>
-            <li>$25 – Capacidades Especiales</li>
+            <li>$18 – Leyenda</li>
+            <li>$18 – Capacidades Especiales</li>
           </ul>
           <p className="reglamento__item-text">
             Incluye kit oficial (camiseta, chip, número, medalla, hidratación).

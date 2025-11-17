@@ -18,9 +18,6 @@ const IMG_KIT_FOTO =
 const IMG_LUGAR =
   "https://mandarinas.10kindependenciadeambato.com/wp-content/uploads/2025/11/AF1QipOME5T7h8SzsLD0JBg5IW8avqMx.webp";
 
-/**
- * Sección de 4 tarjetas (estático)
- */
 export default function LandingInscripcionChoice({
   normalHref = "/inscripcion/",
   verificarHref = "/verificar",
@@ -59,7 +56,6 @@ export default function LandingInscripcionChoice({
           cta="Leer reglamento"
         />
 
-        {/* TARJETA QUE ABRE EL POPUP */}
         <button
           className="landing-card landing-card--btn"
           onClick={() => setOpenKit(true)}
@@ -78,7 +74,6 @@ export default function LandingInscripcionChoice({
         </button>
       </section>
 
-      {/* ========= POPUP =========== */}
       {openKit && (
         <div className="modal-kit open">
           <div className="modal-kit__overlay" onClick={() => setOpenKit(false)} />
@@ -105,9 +100,10 @@ export default function LandingInscripcionChoice({
               Av. Los Guaytambos, Ambato 180108
             </p>
 
+            {/* 🔥 HORARIO NUEVO */}
             <p className="modal-kit__info">
-              <strong>🗓 Viernes 21 de noviembre</strong> <br />
-              <strong>🕘 09h00 a 18h00</strong>
+              <strong>🗓 Sábado 22 de noviembre</strong> <br />
+              <strong>🕘 10h00 a 17h00</strong>
             </p>
 
             <a
