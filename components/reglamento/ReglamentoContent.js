@@ -1,163 +1,174 @@
 export default function ReglamentoContent() {
   return (
-    <section className="reglamento">
-      <h1>Reglamento Oficial – 8K Ruta de las Mandarinas</h1>
-      <p><strong>Patate, Tungurahua – Ecuador</strong></p>
+    <section className="reglamento reglamento--10k">
+      <header className="reglamento__header">
+        <h1 className="reglamento__title">
+          Reglamento Oficial – 10K Independencia de Ambato 2025
+        </h1>
+        <p className="reglamento__location">
+          <strong>Ambato, Tungurahua – Ecuador</strong>
+        </p>
+      </header>
 
-      <div className="articulo" id="art1">
-        <h2>ARTÍCULO 1. Denominación</h2>
-        <p>
-          La Carrera Atlética 8K Ruta de las Mandarinas es organizada por el Comité Organizador en colaboración con el GAD Municipal de Patate y auspiciantes.
-        </p>
-      </div>
+      <div className="reglamento__body">
+        {/* ARTÍCULO 1 */}
+        <article className="reglamento__item" id="art1">
+          <h2 className="reglamento__item-title">ARTÍCULO 1. Denominación</h2>
+          <p className="reglamento__item-text">
+            La carrera atlética 10K Independencia de Ambato 2025 es organizada por
+            el Comité Organizador en colaboración con el GAD Municipal de Ambato y
+            entidades auspiciantes.
+          </p>
+        </article>
 
-      <div className="articulo" id="art2">
-        <h2>ARTÍCULO 2. Fecha y Hora</h2>
-        <p>
-          La competencia se llevará a cabo el sábado 27 de septiembre de 2025, con salida desde Patate Gardens a las 08:00 am.  
-          El tiempo máximo para completar el recorrido será de 2 horas.
-        </p>
-      </div>
+        {/* ARTÍCULO 2 */}
+        <article className="reglamento__item" id="art2">
+          <h2 className="reglamento__item-title">ARTÍCULO 2. Fecha y Hora</h2>
+          <p className="reglamento__item-text">
+            El evento se llevará a cabo el domingo <strong>23 de noviembre de 2025</strong>, con hora
+            de salida oficial a las <strong>08h00</strong>. El tiempo máximo permitido será de 
+            <strong> 2 horas 30 minutos</strong>.
+          </p>
+        </article>
 
-      <div className="articulo" id="art3">
-        <h2>ARTÍCULO 3. Participantes</h2>
-        <p>
-          Podrán participar todos los corredores, tanto nacionales como extranjeros, en buen estado de salud y que hayan completado su inscripción de manera válida.
-        </p>
-      </div>
+        {/* ARTÍCULO 3 */}
+        <article className="reglamento__item" id="art3">
+          <h2 className="reglamento__item-title">ARTÍCULO 3. Participantes</h2>
+          <p className="reglamento__item-text">
+            Podrán participar corredores nacionales y extranjeros en buen estado
+            de salud y con inscripción válida. Atletas extranjeros que aspiren a
+            premios deberán cumplir los requisitos administrativos.
+          </p>
+        </article>
 
-      <div className="articulo" id="art4">
-        <h2>ARTÍCULO 4. Distancia y Recorrido</h2>
-        <p>
-          La carrera tendrá una distancia de 8 kilómetros, con un recorrido escénico que conecta las principales calles y zonas rurales de Patate, rodeadas de cultivos de mandarinas.
-        </p>
-        <p>➡️ La ruta oficial estará disponible en la página web y puntos de información del evento.</p>
-      </div>
+        {/* ARTÍCULO 4 */}
+        <article className="reglamento__item" id="art4">
+          <h2 className="reglamento__item-title">ARTÍCULO 4. Distancia y Recorrido</h2>
+          <p className="reglamento__item-text">
+            La distancia oficial es de <strong>10 kilómetros</strong>, con salida en el
+            <strong> Puente Luis A. Martínez</strong> y llegada al <strong>Parque Cdla. Nuevo Ambato</strong>.
+          </p>
+          <p className="reglamento__item-text">
+            El recorrido incluye puntos de hidratación, control y asistencia médica.
+          </p>
+          <p className="reglamento__item-text">➡️ Ruta oficial disponible en imagen, PDF y GPX.</p>
+        </article>
 
-      <div className="articulo" id="art5">
-        <h2>ARTÍCULO 5. Categorías</h2>
-        <ul>
-          <li>Élite Pro 8K (Damas y Varones): Menores de 40 años</li>
-          <li>Máster (Damas y Varones): 40–64 años</li>
-          <li>Leyenda – Tercera Edad (Damas y Varones): 65 años en adelante</li>
-          <li>Especiales / Capacidades Diferentes: Abierto</li>
-        </ul>
-      </div>
+        {/* ARTÍCULO 5 */}
+        <article className="reglamento__item" id="art5">
+          <h2 className="reglamento__item-title">ARTÍCULO 5. Categorías</h2>
+          <ul className="reglamento__list">
+            <li>Élite Pro (Hasta 39 años)</li>
+            <li>Máster (40–64 años)</li>
+            <li>Leyenda (65+ años)</li>
+            <li>Capacidades Especiales (Abierto)</li>
+          </ul>
+        </article>
 
-      <div className="articulo" id="art6">
-        <h2>ARTÍCULO 6. Inscripciones</h2>
-        <p>
-          Las inscripciones se realizarán en línea a través del sitio oficial www.8krutadelasmandarinas.com o vía WhatsApp habilitado por la organización y la Cooperativa de Ahorro y Crédito OSCUS - C. Joaquin Lalama 06-39, Ambato 180107
-        </p>
-        <p><strong>Costos de inscripción:</strong></p>
-        <ul>
-          <li>$23 – Élite Pro 8K (Menores de 40 años)</li>
-          <li>$23 – Máster (40–64 años)</li>
-          <li>$18 – Leyenda (65 años en adelante)</li>
-          <li>$18 – Especiales / Capacidades Diferentes</li>
-        </ul>
-        <p>
-          ➡️ Incluye kit del corredor (camiseta oficial, dorsal, chip de cronometraje, medalla y obsequios de auspiciantes).  
-          Requisito: Presentar cédula a color al momento de retirar el kit.
-        </p>
-      </div>
+        {/* ARTÍCULO 6 */}
+        <article className="reglamento__item" id="art6">
+          <h2 className="reglamento__item-title">ARTÍCULO 6. Inscripciones</h2>
+          <p className="reglamento__item-text">
+            Inscripciones habilitadas en <strong>www.10kindependenciadeambato.com</strong> o vía WhatsApp.
+          </p>
+          <p className="reglamento__item-text"><strong>Costos 2025:</strong></p>
+          <ul className="reglamento__list">
+            <li>$25 – Élite Pro</li>
+            <li>$25 – Máster</li>
+            <li>$25 – Leyenda</li>
+            <li>$25 – Capacidades Especiales</li>
+          </ul>
+          <p className="reglamento__item-text">
+            Incluye kit oficial (camiseta, chip, número, medalla, hidratación).
+            Es obligatorio presentar cédula.
+          </p>
+        </article>
 
-      <div className="articulo" id="art7">
-        <h2>ARTÍCULO 7. Entrega de Kits y Chips</h2>
-        <p>
-          La entrega del kit oficial del corredor se realizará el viernes 26 de septiembre de 2025 en:
-        </p>
-        <p>
-          <strong>Vehicentro | Sinotruk – Ficoa</strong><br />
-          Av. Los Guaytambos, Ambato – Ecuador. C.P. 180108
-        </p>
-        <p><strong>Horario:</strong> 10h00 a 17h00</p>
-        <p>Luego de este horario no se aceptarán reclamos ni reembolsos.</p>
-        <p><strong>Requisitos:</strong></p>
-        <ul>
-          <li>Comprobante de inscripción</li>
-          <li>Cédula de identidad a color</li>
-        </ul>
-      </div>
+        {/* ARTÍCULO 7 */}
+        <article className="reglamento__item" id="art7">
+          <h2 className="reglamento__item-title">ARTÍCULO 7. Entrega de Kits y Chips</h2>
+          <p className="reglamento__item-text">
+            Entrega: sábado <strong>22 de noviembre de 2025</strong>.  
+            <strong>Lugar:</strong> Por confirmar.
+          </p>
+          <p className="reglamento__item-text"><strong>Horario:</strong> 10h00 a 17h00</p>
+          <ul className="reglamento__list">
+            <li>Comprobante de inscripción</li>
+            <li>Cédula de identidad</li>
+          </ul>
+        </article>
 
-      <div className="articulo" id="art8">
-        <h2>ARTÍCULO 8. Clasificación</h2>
-        <p>
-          Los resultados generales y por categoría estarán disponibles en la web oficial de la carrera, con sistema de cronometraje digital.
-        </p>
-      </div>
+        {/* ARTÍCULO 8 */}
+        <article className="reglamento__item" id="art8">
+          <h2 className="reglamento__item-title">ARTÍCULO 8. Clasificación</h2>
+          <p className="reglamento__item-text">
+            Resultados oficiales publicados en línea al finalizar el evento.
+          </p>
+        </article>
 
-      <div className="articulo" id="art9">
-        <h2>ARTÍCULO 9. Puntos de Control</h2>
-        <p>
-          La organización contará con puntos de control de ruta, hidratación y asistencia médica. El no pasar por un punto de control será motivo de descalificación.
-        </p>
-      </div>
+        {/* ARTÍCULO 9 */}
+        <article className="reglamento__item" id="art9">
+          <h2 className="reglamento__item-title">ARTÍCULO 9. Puntos de Control</h2>
+          <p className="reglamento__item-text">
+            No pasar por un punto de control es causal de descalificación.
+          </p>
+        </article>
 
-      <div className="articulo" id="art10">
-        <h2>ARTÍCULO 10. Vehículos Autorizados</h2>
-        <p>
-          Solo los vehículos acreditados por la organización podrán circular durante la competencia. El tránsito será gestionado por la Policía Nacional y Agentes de Tránsito.
-        </p>
-      </div>
+        {/* ARTÍCULO 10 */}
+        <article className="reglamento__item" id="art10">
+          <h2 className="reglamento__item-title">ARTÍCULO 10. Vehículos Autorizados</h2>
+          <p className="reglamento__item-text">
+            Solo vehículos acreditados podrán circular durante el evento.
+          </p>
+        </article>
 
-      <div className="articulo" id="art11">
-        <h2>ARTÍCULO 11. Seguridad y Atención Médica</h2>
-        <p>
-          Habrá asistencia, seguridad y personal médico ubicados estratégicamente a lo largo del recorrido y en la meta, garantizando el bienestar de todos los participantes durante la competencia, además de contar con un seguro de accidentes.
-        </p>
-      </div>
+        {/* ARTÍCULO 11 */}
+        <article className="reglamento__item" id="art11">
+          <h2 className="reglamento__item-title">ARTÍCULO 11. Seguridad y Atención Médica</h2>
+          <p className="reglamento__item-text">
+            Ambulancias, voluntarios, personal médico y seguridad estarán presentes en
+            todo el recorrido.
+          </p>
+        </article>
 
-      <div className="articulo" id="art12">
-        <h2>ARTÍCULO 12. Descalificación</h2>
-        <ul>
-          <li>No completen el recorrido oficial.</li>
-          <li>Excedan el tiempo límite (2 horas).</li>
-          <li>No pasen por los puntos de control designados.</li>
-          <li>Usen un número de otro corredor o no lo lleven visible.</li>
-          <li>Reciban ayuda externa no autorizada.</li>
-        </ul>
-        <p><strong>Sanción adicional:</strong> Los corredores descalificados quedarán inhabilitados para participar en competencias de la organización por 5 años.</p>
-      </div>
+        {/* ARTÍCULO 12 */}
+        <article className="reglamento__item" id="art12">
+          <h2 className="reglamento__item-title">ARTÍCULO 12. Descalificación</h2>
+          <ul className="reglamento__list">
+            <li>No completar la ruta.</li>
+            <li>Exceder 2h30.</li>
+            <li>No pasar por controles.</li>
+            <li>Usar número no oficial.</li>
+            <li>Recibir ayuda externa.</li>
+          </ul>
+        </article>
 
-      <div className="articulo" id="art13">
-        <h2>ARTÍCULO 13. Premios y Sorteos</h2>
-        <p><strong>Premios económicos:</strong></p>
-        <ul>
-          <li>Élite Pro 8K – 1° $120, 2° $100, 3° $80</li>
-          <li>Máster – 1° $80, 2° $60, 3° $40</li>
-          <li>Leyenda – 1° $80, 2° $60, 3° $40</li>
-          <li>Discapacidad – 1° $80, 2° $60, 3° $40</li>
-        </ul>
-        <p>
-          Los ganadores deberán contar con una cuenta activa en la Cooperativa de Ahorro y Crédito OSCUS para recibir los premios económicos.
-        </p>
-        <p>
-          En sorteos, los atletas deberán estar presentes en el momento de la entrega y haber cumplido con los requisitos de la carrera.
-        </p>
-        <p>
-          Los reclamos deberán presentarse dentro de los 10 minutos posteriores al anuncio oficial de resultados. Transcurrido este plazo, el cuadro oficial no sufrirá modificaciones y los premios serán entregados de manera definitiva.
-        </p>
-        <p>Para cada categoría deberá haber un mínimo de 10 participantes.</p>
-      </div>
+        {/* ARTÍCULO 13 */}
+        <article className="reglamento__item" id="art13">
+          <h2 className="reglamento__item-title">ARTÍCULO 13. Premios Económicos</h2>
+          <p className="reglamento__item-text">
+            Premios para los primeros lugares de cada categoría. Publicación oficial en
+            el sitio web.
+          </p>
+        </article>
 
-      <div className="articulo" id="art14">
-        <h2>ARTÍCULO 14. Declaración de Salud y Aceptación del Reglamento</h2>
-        <p>
-          Al inscribirse, cada atleta declara bajo su responsabilidad que se encuentra en condiciones físicas y de salud adecuadas para participar.  
-          Asimismo, exonera al Comité Organizador, auspiciantes y entidades colaboradoras de cualquier responsabilidad médica o legal derivada de su participación.
-        </p>
-        <p>
-          La inscripción implica la aceptación total del presente reglamento y el compromiso de cumplir con todas sus disposiciones sin excepción.
-        </p>
-      </div>
+        {/* ARTÍCULO 14 */}
+        <article className="reglamento__item" id="art14">
+          <h2 className="reglamento__item-title">ARTÍCULO 14. Declaración de Salud</h2>
+          <p className="reglamento__item-text">
+            El corredor declara estar apto para participar y libera de
+            responsabilidades a la organización.
+          </p>
+        </article>
 
-      <div className="articulo" id="art15">
-        <h2>ARTÍCULO 15. Modificaciones</h2>
-        <p>
-          El Comité Organizador se reserva el derecho de modificar el reglamento, el recorrido o las fechas de la competencia, así como de cancelar el evento en caso de fuerza mayor.  
-          En tal situación, no habrá obligación de reembolso; sin embargo, se establecerá una nueva fecha para la carrera.
-        </p>
+        {/* ARTÍCULO 15 */}
+        <article className="reglamento__item" id="art15">
+          <h2 className="reglamento__item-title">ARTÍCULO 15. Modificaciones</h2>
+          <p className="reglamento__item-text">
+            La organización podrá modificar el reglamento o fechas por fuerza
+            mayor.
+          </p>
+        </article>
       </div>
     </section>
   );

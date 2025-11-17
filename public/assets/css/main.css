@@ -5538,3 +5538,492 @@ h3, .h3 { font-size: var(--h3-size); }
   font-size: 0.95rem;
   opacity: 0.9;
 }
+
+
+
+
+/* ==========================================================================
+   REGLAMENTO 10K AMBATO – UX/UI PREMIUM DARK
+   ========================================================================== */
+
+:root {
+  --reg-bg: #0A0D10;         /* fondo página */
+  --reg-card: #14181B;       /* contenedor */
+  --reg-text: #F2F5F7;       /* texto principal */
+  --reg-title: #1C9B97;      /* verde azulado oscuro */
+  --reg-title-hover: #D6E764;
+  --reg-border: rgba(255,255,255,0.08);
+}
+
+/* ------ FONDO DE LA PÁGINA ------- */
+body {
+  background: var(--reg-bg);
+}
+
+/* ------ CONTENEDOR PRINCIPAL ------- */
+.reglamento--10k {
+  max-width: 880px;            /* tamaño perfecto para lectura */
+  margin: 80px auto;
+  background: var(--reg-card);
+  padding: 70px 55px;
+  border-radius: 26px;
+  color: var(--reg-text);
+  line-height: 1.65;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* ------ TITULO PRINCIPAL ------- */
+.reglamento__title {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--reg-title);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reglamento__location {
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.75;
+  margin-bottom: 60px;
+}
+
+/* ------ BODY: UNA SOLA COLUMNA -------- */
+.reglamento__body {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;                /* espacio entre artículos */
+}
+
+/* ------ CADA ARTÍCULO ------- */
+.reglamento__item {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--reg-border);
+}
+
+/* ------ TITULOS DE ARTICULO ------- */
+.reglamento__item-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--reg-title);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.reglamento__item:hover .reglamento__item-title {
+  color: var(--reg-title-hover);
+}
+
+/* ------ TEXTO ------- */
+.reglamento__item-text {
+  font-size: 17px;
+  font-weight: 400;
+  opacity: 0.94;
+  margin-bottom: 10px;
+}
+
+/*------ LISTAS ------- */
+.reglamento__list {
+  margin-left: 22px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.reglamento__list li {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+/* ------ RESPONSIVE ------- */
+@media (max-width: 700px) {
+  .reglamento--10k {
+    padding: 50px 28px;
+    margin: 40px 10px;
+  }
+
+  .reglamento__title {
+    font-size: 26px;
+  }
+}
+
+.reglamento h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #ffff!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   POPUP OFICIAL – KIT 10K AMBATO 2025
+   ===================================== */
+
+.modal-kit {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-kit.open {
+  display: flex;
+}
+
+.modal-kit__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  backdrop-filter: blur(6px);
+}
+
+.modal-kit__content {
+  position: relative;
+  background: #0B0B0B;
+  width: 94%;
+  max-width: 520px;
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeInUp .25s ease-out;
+}
+
+.modal-kit__close-x {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #D6E764;
+  cursor: pointer;
+}
+
+.modal-kit__image,
+.modal-kit__kit-img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  object-fit: cover;
+}
+
+.modal-kit h2 {
+  color: #D6E764;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.modal-kit__info {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.modal-kit__maps-btn {
+  display: inline-block;
+  background: #1CA7A6;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 10px 0 20px;
+}
+
+.modal-kit__subtitle {
+  color: #1CA7A6;
+  font-size: 20px;
+  margin: 16px 0 8px;
+  font-weight: 700;
+}
+
+.modal-kit__list {
+  text-align: left;
+  margin: 0 auto 16px;
+  padding-left: 18px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.modal-kit__note {
+  background: rgba(255,255,255,0.06);
+  padding: 14px;
+  border-radius: 14px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.modal-kit__close-btn {
+  background: #1CA7A6;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Para que la tarjeta del kit sea clickeable */
+.landing-card--btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+
+
+/* =====================================================
+   POPUP 10K AMBATO – FULLSCREEN PRO 2025 (v2 Mejorado)
+   ===================================================== */
+
+.modal-kit {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-kit.open {
+  display: flex;
+}
+
+.modal-kit__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- CONTENEDOR ---------- */
+.modal-kit__content {
+  position: relative;
+  width: 100%;
+  max-width: 720px;                  /* MÁS ANCHO = MEJOR UX */
+  max-height: 92vh;                  /* MÁS ALTO -> CASI FULL */
+  margin: auto;
+  background: #0E0E0E;
+  border-radius: 28px;
+  padding: 36px;
+  color: #fff;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 0 60px rgba(0,0,0,0.65);
+  animation: modalFade .32s ease-out;
+  scrollbar-width: thin;
+}
+
+/* Scroll suave */
+.modal-kit__content::-webkit-scrollbar {
+  width: 7px;
+}
+.modal-kit__content::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+}
+.modal-kit__content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ANIMACIÓN */
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(20px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* BOTÓN X (FLOTANTE REAL) */
+.modal-kit__close-x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #D6E764;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMÁGENES FLUIDAS */
+.modal-kit__image,
+.modal-kit__kit-img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+/* TITULOS */
+.modal-kit h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #D6E764;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.modal-kit__info {
+  margin-bottom: 14px;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* BOTÓN GOOGLE MAPS */
+.modal-kit__maps-btn {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 28px;
+  padding: 13px 26px;
+  background: #1CA7A6;
+  color: #111;
+  font-weight: 700;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.modal-kit__maps-btn:hover {
+  background: #22c1c0;
+  transform: translateY(-2px);
+}
+
+/* SUBSECCIÓN */
+.modal-kit__subtitle {
+  margin-top: 18px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #1CA7A6;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* LISTA */
+.modal-kit__list {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 22px 0;
+  padding-left: 22px;
+}
+
+/* NOTA */
+.modal-kit__note {
+  background: rgba(255,255,255,0.08);
+  padding: 16px;
+  border-radius: 18px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin-bottom: 26px;
+}
+
+/* BOTÓN CERRAR STICKY */
+.modal-kit__close-btn {
+  background: #1CA7A6;
+  color: #111;
+  padding: 16px;
+  width: 100%;
+  border-radius: 18px;
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  position: sticky;
+  bottom: 0;
+  margin-top: 20px;
+}
+
+
+/* ============================
+   MOBILE – FULLSCREEN TOTAL
+   ============================ */
+@media (max-width: 640px) {
+
+  .modal-kit__content {
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 26px 22px;
+  }
+
+  .modal-kit__close-x {
+    top: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+  }
+
+  .modal-kit h2 {
+    font-size: 24px;
+  }
+
+  .modal-kit__subtitle {
+    font-size: 19px;
+  }
+
+  .modal-kit__list {
+    font-size: 15px;
+  }
+}
+
+/* BOTÓN CERRAR (VERSIÓN SECUNDARIA) */
+.modal-kit__close-btn {
+  background: #0F0F0F;                       /* Fondo oscuro */
+  color: #D6E764;                             /* Verde lima (color branding) */
+  padding: 14px;
+  width: 100%;
+  border-radius: 18px;
+  border: 2px solid #D6E764;                 /* Borde verde */
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  position: sticky;
+  bottom: 0;
+  margin-top: 25px;
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.modal-kit__close-btn:hover {
+  background: #D6E764;                       /* Inversión */
+  color: #0F0F0F;
+  transform: translateY(-2px);
+}
